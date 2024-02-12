@@ -15,12 +15,16 @@ class User:
 
     def on_channel_open(self, channel):
         self.channel = channel
-        self.channel.queue_declare(queue='notifications', callback=self.on_queue_declare)
+        self.channel.queue_declare(queue='user_requests')
+        self.channel.exchange_declare(exchange='notifications', exchange_type='direct')
 
-    def on_queue_declare(self, _unused_frame):
+        # Declare queue with username as binding key
+        self.channel.queue_declare(queue=f'notifications{self.username}', durable=True)
+
         if self.action and self.youtuber_name:
             self.update_subscription()
         else:
+            self.channel.queue_bind(exchange='notifications', queue=f'notifications{self.username}', routing_key=self.username)
             self.receive_notifications()
 
     def update_subscription(self):
@@ -35,7 +39,7 @@ class User:
             notification = json.loads(body.decode('utf-8'))
             print(f"New Notification: {notification['youtuber']} uploaded {notification['video']}")
 
-        self.channel.basic_consume(queue='notifications', on_message_callback=callback, auto_ack=True)
+        self.channel.basic_consume(queue=f'notifications{self.username}', on_message_callback=callback, auto_ack=True)
 
     def start(self):
         try:

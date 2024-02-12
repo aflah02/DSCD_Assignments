@@ -14,11 +14,10 @@ class YoutubeServer:
     def on_channel_open(self, channel):
         print("Youtube server started.")
         self.channel = channel
-
+        self.channel.exchange_declare(exchange='notifications', exchange_type='direct')
         # Declare queues
         self.channel.queue_declare(queue='user_requests')
         self.channel.queue_declare(queue='youtuber_requests')
-        self.channel.queue_declare(queue='notifications')
 
         # Set up consumers for user and YouTuber requests
         self.channel.basic_consume(queue='user_requests', on_message_callback=self.consume_user_requests, auto_ack=True)
@@ -63,11 +62,17 @@ class YoutubeServer:
 
     def notify_users(self, youtuber_name, video_name):
         notification = {"youtuber": youtuber_name, "video": video_name}
-
+        property = pika.BasicProperties(delivery_mode=2)
         for username, data in self.users.items():
-            if youtuber_name in data['subscriptions']:
-                self.channel.basic_publish(exchange='', routing_key='notifications', body=json.dumps(notification))
 
+            if youtuber_name in data['subscriptions']:
+                # Publish with username as routing key
+                self.channel.basic_publish(
+                    exchange='notifications',
+                    routing_key=username,
+                    body=json.dumps(notification),
+                    properties=property
+                )
         print(f"Notifications sent to {youtuber_name}'s subscribers")
 
     def start(self):
