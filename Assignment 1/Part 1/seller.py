@@ -99,8 +99,17 @@ class Seller:
             print("")
 
     def ItemBoughtNotif(self, request, context):
+        print()
         print("Item Bought")
-        print("Item with id "+str(request.product_id)+" has been bought in quantity "+str(request.quantity))
+        # print("Item with id "+str(request.product_id)+" has been bought in quantity "+str(request.quantity))
+        print("Product ID: "+str(request.product_id))
+        print("Product Name: "+request.item.product_name)
+        print("Seller IP: "+request.item.ip)
+        print("Product Category: "+self.category_value_keys[str(request.item.category)])
+        print("Product Quantity: "+str(request.item.quantity))
+        print("Product Description: "+request.item.description)
+        print("Product Price: "+str(request.item.price_per_unit))
+        print("Product Rating: "+str(request.rating))
         print()
         return client_pb2.Empty()
     

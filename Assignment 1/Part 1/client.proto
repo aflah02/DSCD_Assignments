@@ -33,6 +33,6 @@ service Buyer{
 }
 
 service Seller{
-    rpc ItemBoughtNotif (itemBought) returns (Empty) {};
+    rpc ItemBoughtNotif (displaySellerItem) returns (Empty) {};
     rpc updateItem (displaySellerItem) returns (Empty) {};
 }

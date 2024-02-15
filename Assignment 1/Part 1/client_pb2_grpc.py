@@ -77,7 +77,7 @@ class SellerStub(object):
         """
         self.ItemBoughtNotif = channel.unary_unary(
                 '/Seller/ItemBoughtNotif',
-                request_serializer=client__pb2.itemBought.SerializeToString,
+                request_serializer=client__pb2.displaySellerItem.SerializeToString,
                 response_deserializer=client__pb2.Empty.FromString,
                 )
         self.updateItem = channel.unary_unary(
@@ -107,7 +107,7 @@ def add_SellerServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ItemBoughtNotif': grpc.unary_unary_rpc_method_handler(
                     servicer.ItemBoughtNotif,
-                    request_deserializer=client__pb2.itemBought.FromString,
+                    request_deserializer=client__pb2.displaySellerItem.FromString,
                     response_serializer=client__pb2.Empty.SerializeToString,
             ),
             'updateItem': grpc.unary_unary_rpc_method_handler(
@@ -137,7 +137,7 @@ class Seller(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Seller/ItemBoughtNotif',
-            client__pb2.itemBought.SerializeToString,
+            client__pb2.displaySellerItem.SerializeToString,
             client__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

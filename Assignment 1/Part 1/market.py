@@ -184,9 +184,16 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
         # print(temp)
         temp=":".join(temp)
         # print(temp)
+        for i in self.products_of_ip[seller_ip]:
+        # print(str(i['id'])+ " "+str(id)+" "+str(type(i['id']))+" "+str(id))
+            if i['id'] == prod_id:
+                itemDetails=client_pb2.soldItems(ip= seller_ip,product_name=i['name'],category=i['category'],quantity=i['quantity'],description=i['description'],price_per_unit=i['cost'])
+                r = 0
+                if r!=len(i['rating']):
+                    r = sum(i['rating'])/len(i['rating'])
         channel = grpc.insecure_channel(temp)
         stub = client_pb2_grpc.SellerStub(channel)
-        request = client_pb2.itemBought(product_id=prod_id,quantity=quan)
+        request = client_pb2.displaySellerItem(item=itemDetails,product_id=prod_id,rating=r)
         response = stub.ItemBoughtNotif(request)
         # print(response)
     
