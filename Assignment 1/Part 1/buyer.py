@@ -130,7 +130,10 @@ def serve(port,ip):
             buyer.wishlist(product_id)
         elif choice == 4:
             product_id = int(input("Enter product id: "))
-            rating = int(input("Enter rating: "))
+            rating = int(input("Enter rating out of 5: "))
+            if rating<0 or rating>5:
+                print("Invalid rating. Please try again.")
+                continue
             buyer.rate(product_id, rating)
         elif choice == 5:
             break

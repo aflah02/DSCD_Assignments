@@ -24,13 +24,14 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
 
     def RegisterSeller(self, request, context):
         # print(context.peer)
+        print("Seller Registeration Request from IP: "+ str(request.ip))
+        print("Seller UUID: "+ str(request.uuid))
         if self.currentClients>=self.max_client or request.ip in self.sellers_ips.keys():
             return market_pb2.sellerMarketResponse(status=1)
         # print("Hello")
         self.sellers_ips[request.ip] = request.uuid
         self.currentClients+=1
-        print("Seller Registered from IP: "+ str(request.ip))
-        print("Seller UUID: "+ str(request.uuid))
+
         self.products_of_ip[request.ip] = []
         return market_pb2.sellerMarketResponse(status=0)        
     
@@ -44,13 +45,13 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
         cost = request.item.price_per_unit
         ip = request.item.ip
         id = self.product_id
+        print("Sell Item request from IP: "+ str(ip))
         if ip not in self.sellers_ips.keys():
             return market_pb2.sellerMarketResponse(status=1)
         if request.uuid != self.sellers_ips[request.item.ip]:
             return market_pb2.sellerMarketResponse(status=1)
         self.product_id+=1
         self.products_of_ip[ip].append({'name':name,'id':id,'category':category,'cost':cost,'quantity':quan,"description":desc,'rating':[]})
-        print("Sell Item request from IP: "+ str(ip))
         return market_pb2.sellerMarketResponse(status=0,product_id=id)
 
     def UpdateItem(self, request, context):
@@ -60,6 +61,7 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
         ip = request.ip
         id = request.product_id
         uuid = request.uuid
+        print("Update Item"+str(id)+"request from IP: "+ str(ip))
         if ip not in self.sellers_ips.keys():
             return market_pb2.sellerMarketResponse(status=1)
         if uuid != self.sellers_ips[ip]:
@@ -74,13 +76,14 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
                 break
         if c == 0:
             return market_pb2.sellerMarketResponse(status=1)
-        print("Update Item"+str(id)+"request from IP: "+ str(ip))
+
         return market_pb2.sellerMarketResponse(status=0)
 
     def DelItem(self, request, context):
         ip = request.ip
         id = request.product_id
         uuid = request.uuid
+        print("Delete Item"+str(id)+"request from IP: "+ str(ip))
         if ip not in self.sellers_ips.keys():
             return market_pb2.sellerMarketResponse(status=1)    
         if uuid != self.sellers_ips[ip]:
@@ -93,7 +96,6 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
         if c==-1:
             return market_pb2.sellerMarketResponse(status=1)
         self.products_of_ip[ip].pop(c)
-        print("Delete Item"+str(id)+"request from IP: "+ str(ip))
         return market_pb2.sellerMarketResponse(status=0)
 
     def ShowItems(self, request, context):
@@ -161,7 +163,7 @@ class MarketServicer(market_pb2_grpc.MarketServicer):
      
     def Rating(self, request, context):
         # need to add the functionality that a buyer can only rate once
-        print("Rating request for item "+str(request.product_id) +" from IP: "+ str(request.ip))
+        print("Rating request for item "+str(request.product_id) +" from IP: "+ str(request.ip)+" with rating "+str(request.rating))
         if request.ip not in self.buyers_ips_rating.keys():
             self.buyers_ips_rating[request.ip] = []
         for i in self.buyers_ips_rating[request.ip]:
