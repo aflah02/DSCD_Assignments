@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+message itemBought{
+    required int32 product_id = 1; 
+    required int32 quantity = 2;
+}
+message soldItems {
+  required string ip = 10;
+  required string product_name = 11;  
+  enum Category{
+    ELECTRONICS=1; 
+    FASHION=2; 
+    OTHERS = 3;
+  }
+  required Category category = 3; 
+  required int32 quantity = 4; 
+  required string description = 12 ; 
+  required double price_per_unit = 7;  // The price per unit of the product.
+}
+
+message displaySellerItem{
+  required soldItems item = 5;
+  required int32 product_id = 1;
+  required double rating = 3;
+}
+
+message Empty{
+
+}
+service Buyer{
+    rpc updateItem (displaySellerItem) returns (Empty) {};
+    
+}
+
+service Seller{
+    rpc ItemBoughtNotif (itemBought) returns (Empty) {};
+    rpc updateItem (displaySellerItem) returns (Empty) {};
+}
