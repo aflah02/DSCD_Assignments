@@ -1,0 +1,121 @@
+syntax = "proto2";
+message buyer {
+  optional string name = 5;
+  required string ip = 6;
+}
+
+message regSeller {
+  required string uuid = 7; 
+  required string ip = 8;
+}
+
+message sellerMarketResponse {
+  enum Status {
+    SUCCESS = 0;
+    FAILED = 1;
+  }
+  required Status status = 1; 
+  optional int32 product_id = 2;
+}
+
+
+message soldItem {
+
+  required string ip = 10;
+  required string product_name = 11;  
+  enum Category{
+    ELECTRONICS=1; 
+    FASHION=2; 
+    OTHERS = 3;
+  }
+  required Category category = 3; 
+  required int32 quantity = 4; 
+  required string description = 12 ; 
+  required double price_per_unit = 7;  // The price per unit of the product.
+}
+
+message sellItem{
+  required soldItem item =1;
+  optional string uuid = 9; 
+}
+
+message updateItem{
+  required int32 product_id = 1;
+  required string uuid = 9; 
+  required string ip = 10;
+  required int32 quantity = 4; 
+  required double price_per_unit = 7; 
+
+}
+
+message delete{
+  required int32 product_id = 1;
+  required string uuid = 9; 
+  required string ip = 10;
+
+}
+
+message requestDisplayItems{
+  optional string uuid = 7; 
+  required string ip = 8;
+}
+message displaySellerItems{
+  repeated soldItem item = 5;
+  repeated int32 product_id = 1;
+  repeated double rating = 3;
+}
+
+
+
+//service SellerMarket{
+ // rpc RegisterSeller (regSeller) returns (sellerMarketResponse) {};
+  //rpc AddProdcut (sellItem) returns (sellerMarketResponse) {};
+  //rpc UpdateItem (updateItem) returns (sellerMarketResponse) {};
+  //rpc DelItem (delete) returns (sellerMarketResponse) {};
+  //rpc ShowItems (requestDisplayItems) returns (displaySellerItems) {};
+//}
+
+message reqSearch{
+  optional string name = 9; // can be blank
+  enum Category{
+    ELECTRONICS=1; 
+    FASHION=2; 
+    OTHERS = 3;
+    ANY = 4;
+  }
+  required Category category = 4;
+
+}
+
+message BuyItem{
+  required int32 quantity=2;
+  required int32 product_id = 1;
+  required string ip = 3;
+}
+
+message wishlist{
+  required int32 product_id = 1;
+  required string ip = 3;
+}
+
+message rate{
+  required int32 rating=2;
+  required int32 product_id = 1;
+  required string ip = 3;
+}
+
+service Market{
+  rpc RegisterSeller (regSeller) returns (sellerMarketResponse) {};
+  rpc AddProdcut (sellItem) returns (sellerMarketResponse) {};
+  rpc UpdateItem (updateItem) returns (sellerMarketResponse) {};
+  rpc DelItem (delete) returns (sellerMarketResponse) {};
+  rpc ShowItems (requestDisplayItems) returns (displaySellerItems) {};
+
+  rpc Search (reqSearch) returns (displaySellerItems) {};
+  rpc Buy (BuyItem) returns (sellerMarketResponse) {};
+  rpc Wishlist (wishlist) returns (sellerMarketResponse) {};
+  rpc Rating (rate) returns (sellerMarketResponse) {};
+}
+
+
+
