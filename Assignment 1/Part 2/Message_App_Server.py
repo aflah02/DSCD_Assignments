@@ -9,26 +9,29 @@ class CentralServer:
         print("Central Server socket created")
         self.server_socket.bind("tcp://*:5555")
         print("Central Server socket bound")
-        self.node_ids = set()
+        self.groups = []
 
     def start(self):
         while True:
             print("Waiting for message from node")
-            message = self.server_socket.recv()
+            recvd = self.server_socket.recv().decode()
+            print(f"Received message: {recvd}")
+            ls_recvd = recvd.split(" ; ")
+            message = ls_recvd[0]
             print(f"Received message: {message}")
-            if message.startswith(b"REGISTER"):
-                # Register new node and assign a unique id
-                node_id = str(uuid.uuid1())
-                self.node_ids.add(node_id)
-                # str_to_send = f"NODE_ID: {node_id}"
-                str_to_send = f"NODE_ID: {node_id}"
+            if message.startswith("REGISTER"):
+                assert len(ls_recvd) == 3
+                group_name = ls_recvd[1]
+                group_address = ls_recvd[2]
+                print(f"JOIN REQUEST FROM {group_name} [{group_address}]")
+                str_to_send = f"SUCCESS"
                 byte_encoded = str_to_send.encode()
                 self.server_socket.send(byte_encoded)
-                print(f"Node {node_id} registered. All IDs: {self.node_ids}")
-            elif message.startswith(b"GET_ALL_GROUPS"):
+                print(f"Group {group_name} registered with address {group_address}")
+                self.groups.append([group_name, group_address])
+            elif message.startswith("GET_ALL_GROUPS"):
                 # Return all group ids
-                groups = " ".join(self.node_ids)
-                self.server_socket.send(groups.encode())
+                self.server_socket.send(str(self.groups).encode())
             else:
                 self.server_socket.send("Invalid message format. Use 'REGISTER'")
 
