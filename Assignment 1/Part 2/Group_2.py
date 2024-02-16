@@ -3,12 +3,13 @@ import datetime
 import time
 
 class GroupServer:
-    def __init__(self, name, ip, port):
+    def __init__(self, name, ip, port, external_address):
         self.group_name = name
         self.group_address = f"{ip}:{port}"
+        self.external_address = external_address
         self.context = zmq.Context()
         self.server_socket = self.context.socket(zmq.REQ)
-        self.server_socket.connect("tcp://localhost:5555")
+        self.server_socket.connect("tcp://35.202.217.105:3389")
         self.group_server_socket = self.context.socket(zmq.REP)
         self.group_server_socket.bind(f"tcp://{self.group_address}")
         self.messages = []
@@ -17,7 +18,7 @@ class GroupServer:
 
     def register_with_central_server(self):
         print("Registering with Central Server")
-        self.server_socket.send(b"REGISTER_GROUP_SERVER ; " + self.group_name.encode() + b" ; " + self.group_address.encode())
+        self.server_socket.send(b"REGISTER_GROUP_SERVER ; " + self.group_name.encode() + b" ; " + self.external_address.encode())
         print("Waiting for response from Central Server")
         response = self.server_socket.recv()
         print(f"Received response from Central Server: {response}")
@@ -58,10 +59,14 @@ class GroupServer:
             self.group_server_socket.send(f"SUCCESS".encode())
         elif message.startswith("GET_MESSAGE"):
             assert len(ls_recvd) == 2 or len(ls_recvd) == 3
+            user_id = ls_recvd[1]
             print(f"MESSAGE REQUEST FROM {ls_recvd[1]}")
-            if len(ls_recvd) == 2:
-                msg = str(self.messages).encode()
+            if user_id not in self.users:
+                messages = []
+                msg = str(messages).encode()
+                print("User not in group")
                 self.group_server_socket.send(msg)
+                return
             else:
                 time = str(ls_recvd[2])
                 filtered_messages = []
@@ -80,5 +85,5 @@ class GroupServer:
 
 
 if __name__ == "__main__":
-    group_server = GroupServer("Slytherin", '0.0.0.0', 5558)
+    group_server = GroupServer("Slytherin", '0.0.0.0', '3389', '34.136.147.252:3389')
     group_server.start()

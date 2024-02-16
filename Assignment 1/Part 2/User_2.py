@@ -5,7 +5,7 @@ class User:
     def __init__(self):
         self.context = zmq.Context()
         self.server_socket = self.context.socket(zmq.REQ)
-        self.server_socket.connect("tcp://localhost:5555")
+        self.server_socket.connect("tcp://35.202.217.105:3389")
         self.user_id = str(uuid.uuid1())
         self.messages = []
         self.group_to_addr_mapping = None # [(group_name, port), ...]

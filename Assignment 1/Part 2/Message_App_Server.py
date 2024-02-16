@@ -7,7 +7,7 @@ class CentralServer:
         self.context = zmq.Context()
         self.server_socket = self.context.socket(zmq.REP)
         print("Central Server socket created")
-        self.server_socket.bind("tcp://*:5555")
+        self.server_socket.bind("tcp://*:3389")
         print("Central Server socket bound")
         self.groups = []
 
