@@ -182,7 +182,7 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[leader_id])
-            socket.send(log_response_message.encode()
+            socket.send(log_response_message.encode())
             response = socket.recv().decode()
             # Handle response
             # TODO
