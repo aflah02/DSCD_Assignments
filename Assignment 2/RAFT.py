@@ -54,8 +54,8 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(connection)
-            socket.send_string(message)
-            response = socket.recv_string()
+            socket.send(message.encode())
+            response = socket.recv().decode()
             # Handle response
             # TODO
 
@@ -77,8 +77,9 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[cId])
-            socket.send_string("VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True))
-            response = socket.recv_string()
+            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)
+            socket.send(message.encode())
+            response = socket.recv().decode()
             # Handle response
             # TODO
         else:
@@ -86,8 +87,9 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[cId])
-            socket.send_string("VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False))
-            response = socket.recv_string()
+            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False)
+            socket.send(message.encode())
+            response = socket.recv().decode()
             # Handle response
             # TODO
     
@@ -128,8 +130,9 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[self.current_leader])
-            socket.send_string("Forward " + str(self.node_id) + " " + str(self.current_term) + " " + message)
-            response = socket.recv_string()
+            message = "Forward " + str(self.node_id) + " " + str(self.current_term) + " " + message
+            socket.send(message.encode())
+            response = socket.recv().decode()
             # Handle response
             # TODO
 
@@ -154,8 +157,8 @@ class RaftNode:
         context = zmq.Context()
         socket = context.socket(zmq.REQ)
         socket.connect(self.connections[follower_id])
-        socket.send_string(message)
-        response = socket.recv_string()
+        socket.send(message.encode())
+        response = socket.recv().decode()
         # Handle response
         # TODO
 
@@ -179,8 +182,8 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[leader_id])
-            socket.send_string(log_response_message)
-            response = socket.recv_string()
+            socket.send(log_response_message.encode()
+            response = socket.recv().decode()
             # Handle response
             # TODO
         else:
@@ -188,8 +191,8 @@ class RaftNode:
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[leader_id])
-            socket.send_string(log_response_message)
-            response = socket.recv_string()
+            socket.send(log_response_message.encode())
+            response = socket.recv().decode()
             # Handle response
             # TODO
 
