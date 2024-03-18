@@ -1,0 +1,5 @@
+# ignore folders with name .hypothesis
+# ignore folders with name .pytest_cache
+
+*/.hypothesis/
+*/.pytest_cache/
