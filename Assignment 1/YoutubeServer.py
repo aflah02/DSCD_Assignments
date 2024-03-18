@@ -3,7 +3,7 @@ import json
 
 class YoutubeServer:
     def __init__(self):
-        self.connection = pika.SelectConnection(pika.ConnectionParameters('localhost'), self.on_connection_open)
+        self.connection = pika.SelectConnection(pika.ConnectionParameters('35.224.158.24'), self.on_connection_open)
         self.channel = None
         self.users = {}  # Dictionary to store user data
         self.youtubers = {}  # Dictionary to store YouTuber data

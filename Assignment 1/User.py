@@ -4,7 +4,7 @@ import json
 
 class User:
     def __init__(self, username, action=None, youtuber_name=None):
-        self.connection = pika.SelectConnection(pika.ConnectionParameters('localhost'), self.on_connection_open)
+        self.connection = pika.SelectConnection(pika.ConnectionParameters('34.172.69.158'), self.on_connection_open)
         self.channel = None
         self.username = username
         self.action = action
