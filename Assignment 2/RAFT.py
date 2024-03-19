@@ -80,17 +80,14 @@ class RaftNode:
             # Reply vote, not sure how to handle where to reply to atm but assuming we know the address
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)
             self.global_zmq_socket.send(message.encode())
-            response = socket.recv().decode()
+            response = self.global_zmq_socket.recv().decode()
             # Handle response
             # TODO
         else:
             # Reply no vote
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[cId])
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False)
-            socket.send(message.encode())
-            response = socket.recv().decode()
+            self.global_zmq_socket.send(message.encode())
+            response = self.global_zmq_socket.recv().decode()
             # Handle response
             # TODO
     
@@ -180,19 +177,13 @@ class RaftNode:
             self.append_entries(prefix_len, leader_commit, suffix)
             ack = prefix_len + len(suffix)
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(ack) + " " + str(True)
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[leader_id])
-            socket.send(log_response_message.encode())
+            self.global_zmq_socket.send(log_response_message.encode())
             response = socket.recv().decode()
             # Handle response
             # TODO
         else:
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(False)
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[leader_id])
-            socket.send(log_response_message.encode())
+            self.global_zmq_socket.send(log_response_message.encode())
             response = socket.recv().decode()
             # Handle response
             # TODO
