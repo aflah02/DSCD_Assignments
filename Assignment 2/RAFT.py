@@ -20,8 +20,12 @@ class RaftNode:
         self.sent_length = []
         self.acked_length = []
 
+        self.global_zmq_socket = zmq.Context().socket(zmq.REP)
+        self.global_zmq_socket.bind("tcp://*:5555")
+
         # Connection to Nodes needs to be there somehow, let's assume it's a list of addresses
         self.connections = {}
+        # {1: IP, 2: IP}
 
         # Build election timer
         MIN_TIMEOUT = 150
@@ -74,22 +78,16 @@ class RaftNode:
         if cTerm == self.current_term and logOk and (self.voted_for is None or self.voted_for == cId):
             self.voted_for = cId
             # Reply vote, not sure how to handle where to reply to atm but assuming we know the address
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[cId])
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)
-            socket.send(message.encode())
-            response = socket.recv().decode()
+            self.global_zmq_socket.send(message.encode())
+            response = self.global_zmq_socket.recv().decode()
             # Handle response
             # TODO
         else:
             # Reply no vote
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[cId])
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False)
-            socket.send(message.encode())
-            response = socket.recv().decode()
+            self.global_zmq_socket.send(message.encode())
+            response = self.global_zmq_socket.recv().decode()
             # Handle response
             # TODO
     
@@ -179,19 +177,13 @@ class RaftNode:
             self.append_entries(prefix_len, leader_commit, suffix)
             ack = prefix_len + len(suffix)
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(ack) + " " + str(True)
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[leader_id])
-            socket.send(log_response_message.encode())
+            self.global_zmq_socket.send(log_response_message.encode())
             response = socket.recv().decode()
             # Handle response
             # TODO
         else:
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(False)
-            context = zmq.Context()
-            socket = context.socket(zmq.REQ)
-            socket.connect(self.connections[leader_id])
-            socket.send(log_response_message.encode())
+            self.global_zmq_socket.send(log_response_message.encode())
             response = socket.recv().decode()
             # Handle response
             # TODO
