@@ -13,6 +13,7 @@ class RaftNode:
         self.current_term = 0
         self.voted_for = None
         self.log = []
+        self.data_truths = {}
         self.commit_length = 0
         self.current_role = "Follower"
         self.current_leader = None
@@ -27,10 +28,32 @@ class RaftNode:
         self.connections = {}
         # {1: IP, 2: IP}
 
-        # Build election timer
-        MIN_TIMEOUT = 150
-        MAX_TIMEOUT = 300
-        self.election_timer = threading.Timer(random.randint(MIN_TIMEOUT, MAX_TIMEOUT) / 1000, self.leader_failed_or_election_timeout)
+    def handle_timers(self):
+        if self.current_role == 'Leader':
+            MIN_TIMEOUT = 75
+            MAX_TIMEOUT = 100
+            self.timer = threading.Timer(random.randint(MIN_TIMEOUT, MAX_TIMEOUT) / 1000, self.periodic_heartbeat)
+        else:
+            MIN_TIMEOUT = 150
+            MAX_TIMEOUT = 300
+            self.timer = threading.Timer(random.randint(MIN_TIMEOUT, MAX_TIMEOUT) / 1000, self.leader_failed_or_election_timeout)
+
+    def main(self):
+        while True:
+            message = self.global_zmq_socket.recv().decode()
+            message_parts = message.split(" ")
+            if message_parts[0] == "VoteRequest":
+                self.handle_vote_request(int(message_parts[1]), int(message_parts[2]), int(message_parts[3]), int(message_parts[4]))
+            elif message_parts[0] == "VoteResponse":
+                self.handle_vote_response(int(message_parts[1]), int(message_parts[2]), message_parts[3] == "True")
+            elif message_parts[0] == "LogRequest":
+                self.handle_log_request(int(message_parts[1]), int(message_parts[2]), int(message_parts[3]), int(message_parts[4]), int(message_parts[5]), message_parts[6])
+            elif message_parts[0] == "LogResponse":
+                self.handle_log_response(int(message_parts[1]), int(message_parts[2]), int(message_parts[3]), message_parts[4] == "True")
+            elif message_parts[0] == "AppendEntries":
+                self.append_entries(int(message_parts[1]), int(message_parts[2]), message_parts[3])
+            elif message_parts[0] == "Forward":
+                self.broadcast_messages(" ".join(message_parts[3:]))
 
     def recovery_from_crash(self):
         """
@@ -60,8 +83,9 @@ class RaftNode:
             socket.connect(connection)
             socket.send(message.encode())
             response = socket.recv().decode()
-            # Handle response
-            # TODO
+            reply_type, voterId, voter_term, granted = response.split(" ")
+            granted = granted == "True"
+            self.handle_vote_response(voterId, voter_term, granted)
 
     def handle_vote_request(self, cId, cTerm, cLogLength, cLogTerm):
         """
@@ -77,19 +101,17 @@ class RaftNode:
         logOk = (cLogTerm > last_term) or (cLogTerm == last_term and cLogLength >= len(self.log))
         if cTerm == self.current_term and logOk and (self.voted_for is None or self.voted_for == cId):
             self.voted_for = cId
-            # Reply vote, not sure how to handle where to reply to atm but assuming we know the address
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)
             self.global_zmq_socket.send(message.encode())
-            response = self.global_zmq_socket.recv().decode()
-            # Handle response
-            # TODO
+            # Even if the one you vote for doesn't wins, you'll recieve heartbeat so no need to handle response 
+            # response = self.global_zmq_socket.recv().decode()
+            # # Handle response
         else:
             # Reply no vote
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False)
             self.global_zmq_socket.send(message.encode())
-            response = self.global_zmq_socket.recv().decode()
-            # Handle response
-            # TODO
+            # response = self.global_zmq_socket.recv().decode()
+            # # Handle response
     
     def handle_vote_response(self, voterId, term, granted):
         """
@@ -101,7 +123,8 @@ class RaftNode:
                 self.current_role = "Leader"
                 self.current_leader = self.node_id
                 # Cancel election timer
-                # TODO
+                self.timer.cancel()
+                self.handle_timers()
                 # Send AppendEntries to all other nodes
                 for follower, _ in self.connections.items():
                     self.sent_length[follower] = len(self.log)
@@ -111,8 +134,8 @@ class RaftNode:
             self.current_role = "Follower"
             self.current_term = term
             self.voted_for = None
-            # Cancel election timer
-            # TODO
+            self.timer.cancel()
+            self.handle_timers()
 
     def broadcast_messages(self, message):
         """
@@ -130,9 +153,6 @@ class RaftNode:
             socket.connect(self.connections[self.current_leader])
             message = "Forward " + str(self.node_id) + " " + str(self.current_term) + " " + message
             socket.send(message.encode())
-            response = socket.recv().decode()
-            # Handle response
-            # TODO
 
     def periodic_heartbeat(self):
         """
@@ -156,9 +176,6 @@ class RaftNode:
         socket = context.socket(zmq.REQ)
         socket.connect(self.connections[follower_id])
         socket.send(message.encode())
-        response = socket.recv().decode()
-        # Handle response
-        # TODO
 
     def handle_log_request(self, leader_id, term, prefix_len, prefix_term, leader_commit, suffix):
         """
@@ -167,8 +184,8 @@ class RaftNode:
         if term > self.current_term:
             self.current_term = term
             self.voted_for = None
-            # Cancel election timer
-            # TODO
+            self.timer.cancel()
+            self.handle_timers()
         if term == self.current_term:
             self.current_role = "Follower"
             self.current_leader = leader_id
@@ -178,15 +195,9 @@ class RaftNode:
             ack = prefix_len + len(suffix)
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(ack) + " " + str(True)
             self.global_zmq_socket.send(log_response_message.encode())
-            response = socket.recv().decode()
-            # Handle response
-            # TODO
         else:
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(False)
             self.global_zmq_socket.send(log_response_message.encode())
-            response = socket.recv().decode()
-            # Handle response
-            # TODO
 
     def append_entries(self, prefix_len, leader_commit, suffix):
         """
@@ -204,8 +215,7 @@ class RaftNode:
         if leader_commit > self.commit_length:
             for i in range(self.commit_length, leader_commit):
                 # deliver log[i].message to application
-                # TODO
-                pass
+                self.broadcast_messages(self.log[i]["message"])
             self.commit_length = leader_commit
 
     def handle_log_response(self, follower_id, term, ack, success):
@@ -225,7 +235,8 @@ class RaftNode:
             self.current_term = term
             self.voted_for = None
             # Cancel election timer
-            # TODO
+            self.timer.cancel()
+            self.handle_timers()
 
     def acks(self, length):
         """
