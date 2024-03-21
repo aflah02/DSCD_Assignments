@@ -43,17 +43,37 @@ class RaftNode:
             message = self.global_zmq_socket.recv().decode()
             message_parts = message.split(" ")
             if message_parts[0] == "VoteRequest":
-                self.handle_vote_request(int(message_parts[1]), int(message_parts[2]), int(message_parts[3]), int(message_parts[4]))
+                cId, cTerm, cLogLength, cLogTerm = message_parts[1:]
+                self.handle_vote_request(int(cId), int(cTerm), int(cLogLength), int(cLogTerm))
             elif message_parts[0] == "VoteResponse":
-                self.handle_vote_response(int(message_parts[1]), int(message_parts[2]), message_parts[3] == "True")
+                voterId, term, granted = message_parts[1:]
+                self.handle_vote_response(int(voterId), int(term), granted == "True")
             elif message_parts[0] == "LogRequest":
-                self.handle_log_request(int(message_parts[1]), int(message_parts[2]), int(message_parts[3]), int(message_parts[4]), int(message_parts[5]), message_parts[6])
+                leader_id, term, prefix_len, prefix_term, leader_commit, suffix = message_parts[1:]
+                suffix = eval(suffix)
+                self.handle_log_request(int(leader_id), int(term), int(prefix_len), int(prefix_term), int(leader_commit), suffix)
             elif message_parts[0] == "LogResponse":
-                self.handle_log_response(int(message_parts[1]), int(message_parts[2]), int(message_parts[3]), message_parts[4] == "True")
-            elif message_parts[0] == "AppendEntries":
-                self.append_entries(int(message_parts[1]), int(message_parts[2]), message_parts[3])
+                follower_id, term, ack, success = message_parts[1:]
+                self.handle_log_response(int(follower_id), int(term), int(ack), success == "True")
+            # elif message_parts[0] == "AppendEntries":
+            #     prefix_len, leader_commit, suffix = message_parts[1:]
+            #     self.append_entries(int(message_parts[1]), int(message_parts[2]), message_parts[3])
             elif message_parts[0] == "Forward":
-                self.broadcast_messages(" ".join(message_parts[3:]))
+                node_id, current_term, message = message_parts[1:]
+                self.broadcast_messages(message)
+            elif message_parts[0] == "GET":
+                key = message_parts[1]
+                self.global_zmq_socket.send(str(self.data_truths[key]).encode())
+            elif message_parts[0] == "SET":
+                key, value = message_parts[1:]
+                self.data_truths[key] = value
+                self.broadcast_messages("SET " + key + " " + value)
+
+    def get_query(self, key):
+        return self.data_truths[key] if key in self.data_truths else "Key not found."
+        
+    def set_query(self, key, value):
+        self.broadcast_messages("SET " + key + " " + value)
 
     def recovery_from_crash(self):
         """
@@ -253,8 +273,9 @@ class RaftNode:
         ready = {i for i in range(len(self.log)) if self.acks(i) >= min_acks}
         if len(ready) != 0 and max(ready) > self.commit_length and self.log[max(ready) - 1]["term"] == self.current_term:
             for i in range(self.commit_length, max(ready)):
-                # deliver log[i].message to application
-                # TODO
-                pass
+                last_message = self.log[i]["message"]
+                if last_message.startswith("SET"):
+                    _, key, value = last_message.split(" ")
+                    self.data_truths[key] = value
             self.commit_length = max(ready)
 
