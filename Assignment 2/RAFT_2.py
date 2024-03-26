@@ -224,6 +224,14 @@ class RaftNode:
                 self.cancel_timers()
                 self.handle_timers()
                 # Send AppendEntries to all other nodes
+                # TODO: Check if this is correct
+
+                with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
+                    file.write("No-OP "+self.current_term +"\n")
+                print("No-OP "+self.current_term )
+                self.log.append({"term": self.current_term, "message": "No-OP"})
+                # when it will be restarted it will reload logs
+
                 for follower, _ in self.connections.items():
                     self.sent_length[follower] = len(self.log)
                     self.acked_length[follower] = 0
