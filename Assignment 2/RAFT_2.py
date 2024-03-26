@@ -7,6 +7,25 @@ import os
 from zmq.utils.monitor import recv_monitor_message
 from typing import Dict, Any
 
+class MyTimer:
+    def __init__(self, interval, onEndCallback) -> None:
+        self.interval = interval
+        self.onEndCallback = onEndCallback
+    
+    def start(self, ):
+        self.start_time = time.time()
+        self._timer = threading.Timer(self.interval, self.onEndCallback)
+        self._timer.start()
+
+    def remaining(self):
+        return self.start_time + self._timer.interval - time.time()
+    
+    def cancel(self):
+        self._timer.cancel()
+
+    def elapsed(self):
+        return time.time() - self.start_time
+
 EVENT_MAP = {}
 print("Event names:")
 for name in dir(zmq):
@@ -68,21 +87,21 @@ class RaftNode:
         # if os.path.isfile("logs_node_"+str(node_id)+"/dump.txt"):
         #     os.remove("logs_node_"+str(node_id)+"/dump.txt")
 
-        self.LEADER_LEASE_TIMEOUT = 7
+        self.MAX_LEASE_TIMER_LEFT = 7
         self.HEARTBEAT_TIMEOUT = 1
 
-    def handle_timers(self, lease_timer_follower_duration):
+    def handle_timers(self):
         if self.current_role == 'Leader':
-            self.timer = threading.Timer(self.HEARTBEAT_TIMEOUT, self.periodic_heartbeat)
+            self.timer = MyTimer(self.HEARTBEAT_TIMEOUT, self.periodic_heartbeat)
             self.timer.start()
-            self.lease_timer = threading.Timer(self.LEADER_LEASE_TIMEOUT, self.step_down)
+            self.lease_timer = MyTimer(self.MAX_LEASE_TIMER_LEFT, self.step_down)
             self.lease_timer.start()
         else:
             MIN_TIMEOUT = 5
             MAX_TIMEOUT = 10
-            self.timer = threading.Timer(random.randint(MIN_TIMEOUT, MAX_TIMEOUT), self.leader_failed_or_election_timeout)
+            self.timer = MyTimer(random.randint(MIN_TIMEOUT, MAX_TIMEOUT), self.leader_failed_or_election_timeout)
             self.timer.start()
-            self.lease_timer = threading.Timer(lease_timer_follower_duration, self.step_down)
+            self.lease_timer = MyTimer(self.MAX_LEASE_TIMER_LEFT, None)
             self.lease_timer.start()
 
     def cancel_timers(self):
@@ -92,10 +111,11 @@ class RaftNode:
             self.lease_timer.cancel()
 
     def step_down(self):
-        self.current_role = "Follower"
-        self.voted_for = None
-        self.cancel_timers()
-        self.handle_timers()
+        if self.current_role == "Leader":
+            self.current_role = "Follower"
+            self.voted_for = None
+            self.cancel_timers()
+            self.handle_timers()
 
     def main(self):
     
@@ -106,12 +126,13 @@ class RaftNode:
                 cId, cTerm, cLogLength, cLogTerm, LEADER_LEASE_TIMEOUT = message_parts[1:]
                 self.handle_vote_request(int(cId), int(cTerm), int(cLogLength), int(cLogTerm), int(LEADER_LEASE_TIMEOUT))
             elif message_parts[0] == "VoteResponse":
-                voterId, term, granted = message_parts[1:]
-                self.handle_vote_response(int(voterId), int(term), granted == "True")
+                voterId, term, granted, lease_timer_left_according_to_voter = message_parts[1:]
+                self.handle_vote_response(int(voterId), int(term), granted == "True", float(lease_timer_left_according_to_voter))
             elif message_parts[0] == "LogRequest":
-                leader_id, term, prefix_len, prefix_term, leader_commit, suffix = message_parts[1:]
+                leader_id, term, prefix_len, prefix_term, leader_commit, suffix, lease_timer_left_according_to_leader = message_parts[1:]
                 suffix = eval(suffix)
-                self.handle_log_request(int(leader_id), int(term), int(prefix_len), int(prefix_term), int(leader_commit), suffix)
+                lease_timer_left_according_to_leader = float(lease_timer_left_according_to_leader)
+                self.handle_log_request(int(leader_id), int(term), int(prefix_len), int(prefix_term), int(leader_commit), suffix, lease_timer_left_according_to_leader)
             elif message_parts[0] == "LogResponse":
                 follower_id, term, ack, success = message_parts[1:]
                 self.handle_log_response(int(follower_id), int(term), int(ack), success == "True")
@@ -130,8 +151,6 @@ class RaftNode:
                 key, value = message_parts[1:]
                 self.data_truths[key] = value
                 self.broadcast_messages("SET " + key + " " + value)
-            elif message_parts[0] == "CommitOnFollowers":
-                self.commit_log_entries_follower()
 
     def get_query(self, key):
         return self.data_truths[key] if key in self.data_truths else "Key not found."
@@ -164,7 +183,7 @@ class RaftNode:
         last_term = 0
         if len(self.log) > 0:
             last_term = self.log[-1]["term"]
-        message = "VoteRequest " + str(self.node_id) + " " + str(self.current_term) + " " + str(len(self.log)) + " " + str(last_term) + " " + str(self.LEADER_LEASE_TIMEOUT)
+        message = "VoteRequest " + str(self.node_id) + " " + str(self.current_term) + " " + str(len(self.log)) + " " + str(last_term)
         for n_id, connection in self.connections.items():
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
@@ -178,7 +197,7 @@ class RaftNode:
             # if granted == "True":
             #     self.handle_vote_response(voterId, voter_term, granted)
 
-    def handle_vote_request(self, cId, cTerm, cLogLength, cLogTerm, LEADER_LEASE_TIMEOUT):
+    def handle_vote_request(self, cId, cTerm, cLogLength, cLogTerm):
         """
         From Pseudocode 2/9
         """
@@ -192,7 +211,8 @@ class RaftNode:
         logOk = (cLogTerm > last_term) or (cLogTerm == last_term and cLogLength >= len(self.log))
         if cTerm == self.current_term and logOk and (self.voted_for is None or self.voted_for == cId):
             self.voted_for = cId
-            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)
+            time_left_in_leader_lease = self.lease_timer.remaining()
+            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)  + " " + str(time_left_in_leader_lease)
             self.global_zmq_socket.send(message.encode())
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Vote Granted for Node "+str(self.cId)+" in term."+str(cTerm) +"\n")
@@ -201,17 +221,19 @@ class RaftNode:
             # # Handle response
         else:
             # Reply no vote
-            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False)
+            time_left_in_leader_lease = self.lease_timer.remaining()
+            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False) + " " + str(time_left_in_leader_lease)
             self.global_zmq_socket.send(message.encode())
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Vote denied for Node "+str(self.cId)+" in term."+str(cTerm) +"\n")
             # response = self.global_zmq_socket.recv().decode()
             # # Handle response
     
-    def handle_vote_response(self, voterId, term, granted):
+    def handle_vote_response(self, voterId, term, granted, lease_timer_left_according_to_voter):
         """
         From Pseudocode 3/9
         """
+        self.MAX_LEASE_TIMER_LEFT = max(self.MAX_LEASE_TIMER_LEFT, lease_timer_left_according_to_voter)
         if self.current_role == 'Candidate' and term == self.current_term and granted:
             self.votes_received.add(voterId)
             if len(self.votes_received) >= math.ceil((len(self.connections) + 1) / 2):
@@ -253,11 +275,11 @@ class RaftNode:
                 file.write("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
             print("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
             self.acked_length[self.node_id] = len(self.log)
+            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
             for follower, _ in self.connections.items():
                 self.replicate_log(self.node_id, follower)
         else:
             # Forward to Leader
-            # 
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[self.current_leader])
@@ -275,6 +297,7 @@ class RaftNode:
             # TODO = "Leader {NodeID of Leader} lease renewal failed. Stepping Down."
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Leader "+str(self.node_id)+" sending heartbeat & Renewing Lease \n")
+            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
             for follower, _ in self.connections.items():
                 self.replicate_log(self.node_id, follower)
 
@@ -287,7 +310,8 @@ class RaftNode:
         prefix_term = 0
         if prefix_len > 0:
             prefix_term = self.log[prefix_len - 1]["term"]
-        message = "LogRequest " + str(leader_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(prefix_term) + " " + str(self.commit_length) + " " + str(suffix)
+        lease_timer_left = self.lease_timer.remaining()
+        message = "LogRequest " + str(leader_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(prefix_term) + " " + str(self.commit_length) + " " + str(suffix) + " " + str(lease_timer_left)
         context = zmq.Context()
         socket = context.socket(zmq.REQ)
         monitor = socket.get_monitor_socket()
@@ -296,10 +320,11 @@ class RaftNode:
         socket.connect(self.connections[follower_id])
         socket.send(message.encode())
 
-    def handle_log_request(self, leader_id, term, prefix_len, prefix_term, leader_commit, suffix):
+    def handle_log_request(self, leader_id, term, prefix_len, prefix_term, leader_commit, suffix, lease_timer_left_according_to_leader):
         """
         From Pseudocode 6/9
         """
+        self.MAX_LEASE_TIMER_LEFT = max(self.MAX_LEASE_TIMER_LEFT, lease_timer_left_according_to_leader)
         if term > self.current_term:
             self.current_term = term
             self.voted_for = None
@@ -353,6 +378,11 @@ class RaftNode:
         """
         From Pseudocode 8/9
         """
+        if success:
+            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS += 1
+            if self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS >= math.ceil((len(self.connections) + 1) / 2):
+                self.cancel_timers()
+                self.handle_timers()
         if term == self.current_term and self.current_role == "Leader":
             if success and ack >= self.acked_length[follower_id]:
                 self.acked_length[follower_id] = ack
@@ -394,7 +424,7 @@ class RaftNode:
                     print("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine ")
                 
                 # deliver log[i].message to application
-                self.broadcast_messages(self.log[i]["message"])
+                # self.broadcast_messages(self.log[i]["message"])
 
                 # On the next LogRequest message that the leader sends to followers, the new value of 
                 # commitLength will be included, causing the followers to commit and deliver the same log entries.
@@ -406,12 +436,6 @@ class RaftNode:
                 os.remove("logs_node_"+str(self.node_id)+"/metadata.txt")
             with open("logs_node_"+str(self.node_id)+"/metadata.txt", "w") as file:
                 file.write("Commit length "+str(self.commit_length)+" Term "+str(self.current_term)+" Node ID "+str(self.voted_for))
-
-
-    def commit_log_entries_follower(self):
-        """
-        From Pseudocode 9/9
-        """
         
 
 if __name__=='__main__':
