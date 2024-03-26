@@ -106,6 +106,7 @@ class RaftNode:
 
         self.MAX_LEASE_TIMER_LEFT = 7
         self.HEARTBEAT_TIMEOUT = 1
+        self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
 
         self.handle_timers()
 
@@ -132,6 +133,7 @@ class RaftNode:
 
     def step_down(self):
         if self.current_role == "Leader":
+            print("Leader "+str(self.node_id)+" lease timer timed out. Stepping down.")
             self.current_role = "Follower"
             self.voted_for = None
             self.cancel_timers()
@@ -157,8 +159,15 @@ class RaftNode:
                 voterId, term, granted, lease_timer_left_according_to_voter = message_parts[1:]
                 self.handle_vote_response(int(voterId), int(term), granted == "True", float(lease_timer_left_according_to_voter))
             elif message_parts[0] == "LogRequest":
-                leader_id, term, prefix_len, prefix_term, leader_commit, suffix, lease_timer_left_according_to_leader = message_parts[1:]
+                print(message_parts)
+                print("Length of message parts: ", len(message_parts))
+                leader_id, term, prefix_len, prefix_term, leader_commit = message_parts[1:6]
+                lease_timer_left_according_to_leader = message_parts[-1]
+                suffix = message_parts[6:-1]
+                suffix = " ".join(suffix)
+                print(suffix)
                 suffix = eval(suffix)
+                print("Suffix: ", suffix)
                 lease_timer_left_according_to_leader = float(lease_timer_left_according_to_leader)
                 self.handle_log_request(int(leader_id), int(term), int(prefix_len), int(prefix_term), int(leader_commit), suffix, lease_timer_left_according_to_leader)
             elif message_parts[0] == "LogResponse":
@@ -380,6 +389,7 @@ class RaftNode:
         """
         print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
         prefix_len = self.sent_length[follower_id]
+        # [1,2,3,4,5]
         suffix = self.log[prefix_len:]
         prefix_term = 0
         if prefix_len > 0:
@@ -399,6 +409,9 @@ class RaftNode:
         """
         From Pseudocode 6/9
         """
+        if self.current_role != "Leader":
+            self.cancel_timers()
+            self.handle_timers()
         self.MAX_LEASE_TIMER_LEFT = max(self.MAX_LEASE_TIMER_LEFT, lease_timer_left_according_to_leader)
         if term > self.current_term:
             self.current_term = term
@@ -408,7 +421,8 @@ class RaftNode:
         if term == self.current_term:
             self.current_role = "Follower"
             self.current_leader = leader_id
-        logOk = len(self.log) >= prefix_len and (self.log[prefix_len]["term"] == prefix_term or prefix_len == 0)
+        print(self.log, prefix_len)
+        logOk = len(self.log) >= prefix_len and (prefix_len == 0 or self.log[prefix_len-1]["term"] == prefix_term)
         if term == self.current_term and logOk:
             self.append_entries(prefix_len, leader_commit, suffix)
             ack = prefix_len + len(suffix)
@@ -488,7 +502,7 @@ class RaftNode:
         """
         From Pseudocode 9/9
         """
-        return sum(1 for ack in self.acked_length if ack >= length)
+        return sum(1 for ack in self.acked_length if int(ack) >= length)
     
 
     def commit_log_entries(self):

@@ -222,3 +222,73 @@ Node 2 election timer timed out, Starting election.
 Node 2 election timer timed out, Starting election. 
 Vote Granted for Node 1 in term.1
 Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 1
+Leader 2 sending heartbeat & Renewing Lease 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.1
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.3
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.10
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.37
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.38
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.46
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.48
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.51
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.53
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.59
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 1
+Leader 2 sending heartbeat & Renewing Lease 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 1
+Leader 2 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.17
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.32
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
