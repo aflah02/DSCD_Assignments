@@ -6,6 +6,7 @@ import math
 import os
 from zmq.utils.monitor import recv_monitor_message
 from typing import Dict, Any
+import argparse
 
 class MyTimer:
     def __init__(self, interval, onEndCallback) -> None:
@@ -14,7 +15,7 @@ class MyTimer:
     
     def start(self, ):
         self.start_time = time.time()
-        self._timer = threading.Timer(self.interval, self.onEndCallback)
+        self._timer = threading.Timer(self.interval, self.onEndCallback if self.onEndCallback is not None else lambda: None)
         self._timer.start()
 
     def remaining(self):
@@ -69,12 +70,11 @@ class RaftNode:
         self.acked_length = []
 
         self.global_zmq_socket = zmq.Context().socket(zmq.REP)
-        self.global_zmq_socket.bind("tcp://*:5558")
+        self.global_zmq_socket.bind("tcp://*:5556")
 
         # Connection to Nodes needs to be there somehow, let's assume it's a list of addresses
         # self.connections = {'1': "tcp://localhost:5556", '2': "tcp://localhost:5557", '3': "tcp://localhost:5558", '4': "tcp://localhost:5559", '5': "tcp://localhost:5560"}
-        self.connections = {'2': "tcp://localhost:5557", '3': "tcp://localhost:5558", '4': "tcp://localhost:5559", '5': "tcp://localhost:5560"}
-        self.handle_timers()
+        self.connections = {'1': "tcp://localhost:5555", '3': "tcp://localhost:5557"}
         # {1: IP, 2: IP}
         self.clients = {}
 
@@ -89,6 +89,8 @@ class RaftNode:
 
         self.MAX_LEASE_TIMER_LEFT = 7
         self.HEARTBEAT_TIMEOUT = 1
+
+        self.handle_timers()
 
     def handle_timers(self):
         if self.current_role == 'Leader':
@@ -145,18 +147,29 @@ class RaftNode:
             elif message_parts[0] == "GET":
                 # TODO: Need to change get_query to return only if reader
                 key = message_parts[1]
-                self.global_zmq_socket.send(str(self.data_truths[key]).encode())
+                return_address = message_parts[2]
+                status, returnVal = self.get_query(key, return_address)
+                # Return the value to the return address
+                # TODO : Check if client is active or not
+                client_socket = zmq.Context().socket(zmq.REQ)
+                client_socket.connect(return_address)
+                client_socket.send(f"{status} {returnVal}".encode())
             elif message_parts[0] == "SET":
                 # TODO  
                 key, value = message_parts[1:]
-                self.data_truths[key] = value
-                self.broadcast_messages("SET " + key + " " + value)
+                self.set_query(key, value)
 
     def get_query(self, key):
-        return self.data_truths[key] if key in self.data_truths else "Key not found."
+        if self.current_role == "Leader":
+            return 1, self.data_truths[key] if key in self.data_truths else 2, ""
+        else:
+            return 0, self.current_leader
         
     def set_query(self, key, value):
-        self.broadcast_messages("SET " + key + " " + value)
+        if self.current_role == "Leader":
+            self.broadcast_messages("SET " + key + " " + value)
+        else:
+            return self.current_leader
 
     def recovery_from_crash(self):
         """
@@ -439,7 +452,9 @@ class RaftNode:
         
 
 if __name__=='__main__':
-    nodeId = 1
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument("--nodeId", type=int)
+    nodeId = argparser.parse_args().nodeId
     print("Starting Node with ID " + str(nodeId))
     node = RaftNode(nodeId)
     try:

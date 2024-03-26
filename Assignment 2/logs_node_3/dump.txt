@@ -1,0 +1,73 @@
+Vote Granted for Node 2 in term.28
+Vote Granted for Node 1 in term.35
+Vote denied for Node 1 in term.29
+Vote Granted for Node 2 in term.40
+Vote Granted for Node 1 in term.41
+Vote denied for Node 2 in term.32
+Vote denied for Node 1 in term.39
+Vote denied for Node 2 in term.26
+Vote denied for Node 2 in term.27
+Vote denied for Node 1 in term.31
+Vote denied for Node 2 in term.34
+Vote denied for Node 1 in term.33
+Vote denied for Node 1 in term.37
+Vote denied for Node 2 in term.38
+Vote denied for Node 2 in term.36
+Vote denied for Node 2 in term.30
+Vote Granted for Node 2 in term.42
+Vote Granted for Node 1 in term.43
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 2 in term.45
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.47
+Vote Granted for Node 1 in term.48
+Vote Granted for Node 2 in term.49
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.51
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 2 in term.53
+Vote Granted for Node 1 in term.54
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.56
+Vote Granted for Node 2 in term.57
+Vote Granted for Node 1 in term.58
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 2 in term.60
+Vote Granted for Node 1 in term.61
+Vote Granted for Node 2 in term.62
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.64
+Vote Granted for Node 2 in term.65
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.67
+Vote Granted for Node 2 in term.68
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.70
+Vote Granted for Node 2 in term.71
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.73
+Vote Granted for Node 2 in term.74
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.76
+Vote Granted for Node 2 in term.77
+Node 3 election timer timed out, Starting election. 
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 2 in term.80
+Vote Granted for Node 1 in term.81
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 2 in term.83
+Vote Granted for Node 1 in term.84
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 2 in term.86
+Vote Granted for Node 1 in term.87
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.89
+Vote Granted for Node 2 in term.90
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.92
+Vote Granted for Node 2 in term.93
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.95
+Vote Granted for Node 2 in term.96
+Node 3 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.98
