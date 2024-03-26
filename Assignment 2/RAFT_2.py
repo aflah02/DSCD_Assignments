@@ -25,7 +25,8 @@ def event_monitor(monitor: zmq.Socket,node_id,follower_id) -> None:
         if evt['event'] == zmq.EVENT_ACCEPT_FAILED:
             print("Connection to Node "+str(id)+" failed. Retrying...")
             with open("logs_node_"+str(node_id)+"/dump.txt", "a", newline="") as file:
-                file.write("“Error occurred while sending RPC to Node "+str(node_id)+"\n")
+                file.write("Error occurred while sending RPC to Node "+str(node_id)+"\n")
+            print("Error occurred while sending RPC to Node "+str(node_id))
             break
     monitor.close()
     print()
@@ -59,12 +60,13 @@ class RaftNode:
         self.clients = {}
 
         # self.log_file =  open("logs_node_0/logs.txt", "w")
-        if os.path.isfile("logs_node_"+str(node_id)+"/logs.txt"):
-            os.remove("logs_node_"+str(node_id)+"/logs.txt")
-        if os.path.isfile("logs_node_"+str(node_id)+"/metadata.txt"):
-            os.remove("logs_node_"+str(node_id)+"/metadata.txt")
-        if os.path.isfile("logs_node_"+str(node_id)+"/dump.txt"):
-            os.remove("logs_node_"+str(node_id)+"/dump.txt")
+        # TODO change the reconntruction of log file
+        # if os.path.isfile("logs_node_"+str(node_id)+"/logs.txt"):
+        #     os.remove("logs_node_"+str(node_id)+"/logs.txt")
+        # if os.path.isfile("logs_node_"+str(node_id)+"/metadata.txt"):
+        #     os.remove("logs_node_"+str(node_id)+"/metadata.txt")
+        # if os.path.isfile("logs_node_"+str(node_id)+"/dump.txt"):
+        #     os.remove("logs_node_"+str(node_id)+"/dump.txt")
 
         self.LEADER_LEASE_TIMEOUT = 7
         self.HEARTBEAT_TIMEOUT = 1
@@ -120,9 +122,11 @@ class RaftNode:
                 node_id, current_term, message = message_parts[1:]
                 self.broadcast_messages(message)
             elif message_parts[0] == "GET":
+                # TODO: Need to change get_query to return only if reader
                 key = message_parts[1]
                 self.global_zmq_socket.send(str(self.data_truths[key]).encode())
             elif message_parts[0] == "SET":
+                # TODO  
                 key, value = message_parts[1:]
                 self.data_truths[key] = value
                 self.broadcast_messages("SET " + key + " " + value)
@@ -151,6 +155,8 @@ class RaftNode:
         """
         with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
             file.write("Node "+str(self.node_id)+" election timer timed out, Starting election. \n")
+
+        print("Node "+str(self.node_id)+" election timer timed out, Starting election. ")
         self.current_term += 1
         self.current_role = "Candidate"
         self.voted_for = self.node_id
@@ -211,7 +217,8 @@ class RaftNode:
             if len(self.votes_received) >= math.ceil((len(self.connections) + 1) / 2):
                 self.current_role = "Leader"
                 with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
-                        file.write("Node "+str(self.node_id)+" became the leader for term "+str(term)+"\n")
+                    file.write("Node "+str(self.node_id)+" became the leader for term "+str(term)+"\n")
+                print("Node "+str(self.node_id)+" became the leader for term "+str(term))
                 self.current_leader = self.node_id
                 # Cancel election timer
                 self.cancel_timers()
@@ -234,14 +241,21 @@ class RaftNode:
         """
         if self.current_role == "Leader":
             self.log.append({"term": self.current_term, "message": message})
+            with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+                file.write("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
+            print("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
             self.acked_length[self.node_id] = len(self.log)
             for follower, _ in self.connections.items():
                 self.replicate_log(self.node_id, follower)
         else:
             # Forward to Leader
+            # 
             context = zmq.Context()
             socket = context.socket(zmq.REQ)
             socket.connect(self.connections[self.current_leader])
+            monitor = socket.get_monitor_socket()
+            t = threading.Thread(target=event_monitor, args=(monitor,1,0))
+            t.start()
             message = "Forward " + str(self.node_id) + " " + str(self.current_term) + " " + message
             socket.send(message.encode())
 
@@ -363,9 +377,13 @@ class RaftNode:
         if len(ready) != 0 and max(ready) > self.commit_length and self.log[max(ready) - 1]["term"] == self.current_term:
             for i in range(self.commit_length, max(ready)):
                 last_message = self.log[i]["message"]
+                # TODO why do we need to see SET - Update NVM
                 if last_message.startswith("SET"):
                     _, key, value = last_message.split(" ")
                     self.data_truths[key] = value
+                    with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+                        file.write("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine \n")
+                    print("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine ")
                 
                 # deliver log[i].message to application
                 self.broadcast_messages(self.log[i]["message"])
