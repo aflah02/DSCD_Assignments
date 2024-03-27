@@ -32,6 +32,14 @@ while True:
             message = socket.recv().decode()
             print("Received reply: ", message)
             reply_parts = message.split()
+            if str(reply_parts[0]) == "1":
+                print("Key set successfully")
+                leaderknown = True
+                checkPrevQuery = True
+            else:
+                leaderknown = True
+                checkPrevQuery = False
+                leader_id = str(reply_parts[1])
         elif query_parts[0].lower() == "get":
             if len(query_parts) != 2:
                 print("Invalid query")
@@ -50,7 +58,7 @@ while True:
             elif str(reply_parts[0]) == "2":
                 print("Key not found")
                 leaderknown = True
-                checkPrevQuery = False
+                checkPrevQuery = True
             elif str(reply_parts[0]) == "0":
                 leaderknown = True
                 checkPrevQuery = False
