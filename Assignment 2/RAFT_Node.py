@@ -492,6 +492,8 @@ class RaftNode:
         if term == self.current_term:
             self.current_role = "Follower"
             self.current_leader = leader_id
+            self.cancel_timers()
+            self.handle_timers()
         # print(self.log, prefix_len)
         print("DEBUG", self.log, prefix_len, prefix_term, term, self.current_term, leader_commit, suffix, self.sent_length)
         logOk = len(self.log) >= prefix_len and (prefix_len == 0 or self.log[prefix_len-1]["term"] == prefix_term)
@@ -532,6 +534,9 @@ class RaftNode:
                 with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                     file.write("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader)+ "\n")
                 print("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader))
+                last_message = suffix[i]
+                with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
+                    file.write(last_message +" "+self.current_term +" \n")
 
         if leader_commit > self.commit_length:
             for i in range(self.commit_length, leader_commit):
