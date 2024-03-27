@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+message req{
+  required string message = 6;
+}
+
+message res{
+
+}
+service Node{
+    rpc main (req) returns (res) {};
+    
+}
