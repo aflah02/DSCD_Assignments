@@ -1,1 +1,1 @@
-Commit length 4 Term 1 Node Voted For ID 1
+Commit length 1 Term 1 Node ID 4

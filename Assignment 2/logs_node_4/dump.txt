@@ -1,9 +1,22 @@
-Vote Granted for Node 1 in term.1
-Node 4  rejected AppendEntries RPC from 1
-Node 4  accepted AppendEntries RPC from 1
-Node 4  accepted AppendEntries RPC from 1
- Node4 (follower) committed the entry SET x 2 to the state machine 
-Node 4  accepted AppendEntries RPC from 1
- Node4 (follower) committed the entry SET y 7 to the state machine 
-Node 4  accepted AppendEntries RPC from 1
- Node4 (follower) committed the entry SET x 5 to the state machine 
+Node 4 election timer timed out, Starting election. 
+Node 4 became the leader for term 1
+Node 4  rejected AppendEntries RPC from 1hence reducing the sent length 
+Node 4  rejected AppendEntries RPC from 2hence reducing the sent length 
+Node 4  rejected AppendEntries RPC from 3hence reducing the sent length 
+Node 4  rejected AppendEntries RPC from 5hence reducing the sent length 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 
+Leader 4 sending heartbeat & Renewing Lease 

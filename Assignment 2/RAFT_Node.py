@@ -113,7 +113,17 @@ class RaftNode:
 
         self.MAX_LEASE_TIMER_LEFT = 7
         self.HEARTBEAT_TIMEOUT = 1
-        self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
+        self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 1
+
+        self.LEADER_TIME_LEFT = 0
+
+        # Max known lease till now (starts at 0)
+        # Load this value when restarting
+        # We take max of all that we recieve
+        # Sleep for this
+        # Become leader
+        # After sleep run normal lease timer
+        # Append RPC with remaining time
 
         self.handle_timers()
 
@@ -341,8 +351,8 @@ class RaftNode:
         logOk = (cLogTerm > last_term) or (cLogTerm == last_term and cLogLength >= len(self.log))
         if cTerm == self.current_term and logOk and (self.voted_for is None or self.voted_for == cId):
             self.voted_for = cId
-            time_left_in_leader_lease = self.lease_timer.remaining()
-            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)  + " " + str(time_left_in_leader_lease)
+            # time_left_in_leader_lease = self.lease_timer.remaining()
+            message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)  + " " + str(self.LEADER_TIME_LEFT)
             candidate_socket_addr = self.connections[str(cId)]
             context = zmq.Context()
             candidate_socket = context.socket(zmq.PUSH)
@@ -384,10 +394,20 @@ class RaftNode:
         """
         From Pseudocode 3/9
         """
-        self.MAX_LEASE_TIMER_LEFT = max(self.MAX_LEASE_TIMER_LEFT, lease_timer_left_according_to_voter)
+        self.LEADER_TIME_LEFT = max(self.LEADER_TIME_LEFT, lease_timer_left_according_to_voter)
+
         if self.current_role == 'Candidate' and term == self.current_term and granted:
             self.votes_received.add(voterId)
             if len(self.votes_received) >= math.ceil((len(self.connections) + 1) / 2):
+                # Sleep for the max known lease
+                print("Going to Sleep before becoming leader")
+                print("Current Time:", time.time())
+                s_time = time.time()
+                time.sleep(self.LEADER_TIME_LEFT)
+                print("Time when woke up", time.time())
+                e_time = time.time()
+                print("Slept for ", e_time - s_time , " expected was ", self.LEADER_TIME_LEFT)
+                print("Woke up")
                 self.current_role = "Leader"
                 with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                     file.write("Node "+str(self.node_id)+" became the leader for term "+str(term)+"\n")
@@ -427,7 +447,7 @@ class RaftNode:
                 file.write("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
             print("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
             self.acked_length[self.node_id] = len(self.log)
-            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
+            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 1
             for follower, _ in self.connections.items():
                 self.replicate_log(self.node_id, follower)
         else:
@@ -450,7 +470,7 @@ class RaftNode:
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Leader "+str(self.node_id)+" sending heartbeat & Renewing Lease \n")
             print("Leader "+str(self.node_id)+" sending heartbeat & Renewing Lease ")
-            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
+            self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 1
             # self.cancel_timers()
             # self.handle_timers()
             for follower, _ in self.connections.items():
@@ -488,7 +508,8 @@ class RaftNode:
         if self.current_role != "Leader":
             self.cancel_timers()
             self.handle_timers()
-        self.MAX_LEASE_TIMER_LEFT = max(self.MAX_LEASE_TIMER_LEFT, lease_timer_left_according_to_leader)
+        # Max not here as otherwise some past leader's highest value will keep persisting
+        self.LEADER_TIME_LEFT = lease_timer_left_according_to_leader
         if term > self.current_term:
             self.current_term = term
             self.voted_for = None
