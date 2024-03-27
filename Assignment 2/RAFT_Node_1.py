@@ -343,6 +343,7 @@ class RaftNode:
         if self.current_role == 'Candidate' and term == self.current_term and granted:
             self.votes_received.add(voterId)
             if len(self.votes_received) >= math.ceil((len(self.connections) + 1) / 2):
+                
                 self.current_role = "Leader"
                 with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                     file.write("Node "+str(self.node_id)+" became the leader for term "+str(term)+"\n")
