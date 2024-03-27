@@ -182,8 +182,8 @@ class RaftNode:
                 client_socket.send(f"{status} {returnVal}".encode())
             elif message_parts[0] == "SET":
                 # TODO  
-                key, value = message_parts[1:]
-                self.set_query(key, value)
+                key, value,return_address = message_parts[1:]
+                self.set_query(key, value,return_address)
             iteration += 1
 
     def get_query(self, key):
@@ -192,11 +192,15 @@ class RaftNode:
         else:
             return 0, self.current_leader
         
-    def set_query(self, key, value):
+    def set_query(self, key, value,return_address):
         if self.current_role == "Leader":
+            # don't we need to send some success or failure message to the client
             self.broadcast_messages("SET " + key + " " + value)
         else:
             return self.current_leader
+                # client_socket = zmq.Context().socket(zmq.REQ)
+                # client_socket.connect(return_address)
+                # client_socket.send(f"{status} {returnVal}".encode())
 
     def recovery_from_crash(self):
         """
