@@ -161,3 +161,1059 @@ Error occurred while sending RPC to Node 1
 Error occurred while sending RPC to Node 1
 Error occurred while sending RPC to Node 1
 Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 2
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.3
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.4
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 5
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.6
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.7
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 8
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.9
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.10
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 11
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.12
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Vote denied for Node 1 in term.13
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.14
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 15
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.16
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 17
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 18
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.19
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 20
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 21
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.22
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.23
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 24
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.25
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 27
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.28
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 29
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.30
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 31
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.32
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.33
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.38
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Vote Granted for Node 1 in term.39
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 40
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Vote denied for Node 1 in term.41
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.42
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.44
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 45
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.46
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 47
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.48
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.50
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.51
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.52
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.53
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 54
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.55
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 56
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.57
+Error occurred while sending RPC to Node 1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.59
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 60
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.61
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.66
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 69
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.70
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 71
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Node 2 became the leader for term 72
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Vote denied for Node 1 in term.73
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 74
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.75
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 76
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 1
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 5
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.6
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Node 2 election timer timed out, Starting election. 
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Error occurred while sending RPC to Node 1
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 1
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader Node 2 received an entry request SET x 2
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Leader 2 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Vote Granted for Node 1 in term.1
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 1
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 1 in term.2
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 3
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 4
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 1 in term.5
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 6
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 1 in term.7
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 8
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 1 in term.9
+Node 2  accepted AppendEntries RPC from 1
+Node 2 election timer timed out, Starting election. 
+Node 2 became the leader for term 10
+Leader 2 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 3

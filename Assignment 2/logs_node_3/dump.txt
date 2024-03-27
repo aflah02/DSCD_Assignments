@@ -62,3 +62,5 @@ Leader 3 sending heartbeat & Renewing Lease
 Leader 3 sending heartbeat & Renewing Lease 
 Leader 3 sending heartbeat & Renewing Lease 
 Leader 3 sending heartbeat & Renewing Lease 
+Vote Granted for Node 1 in term.1
+Node 3  accepted AppendEntries RPC from 1

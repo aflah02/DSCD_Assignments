@@ -86,7 +86,7 @@ class RaftNode:
             self.sent_length[key] = 0
             self.acked_length[key] = 0
 
-        self.global_zmq_socket = zmq.Context().socket(zmq.REP)
+        self.global_zmq_socket = zmq.Context().socket(zmq.PULL)
         self.global_zmq_socket.bind(self_addr)
 
         # Connection to Nodes needs to be there somehow, let's assume it's a list of addresses
@@ -147,7 +147,7 @@ class RaftNode:
                 message = self.global_zmq_socket.recv().decode()
             except Exception as e:
                 print("Exception: ", e)
-                self.global_zmq_socket = zmq.Context().socket(zmq.REP)
+                self.global_zmq_socket = zmq.Context().socket(zmq.PULL)
                 self.global_zmq_socket.bind(self.self_addr)
                 continue
             print("Received message: ", message , " at " , time.time())
@@ -187,7 +187,7 @@ class RaftNode:
                 print("Get Query: ", status, returnVal)
                 # Return the value to the return address
                 # TODO : Check if client is active or not
-                client_socket = zmq.Context().socket(zmq.REQ)
+                client_socket = zmq.Context().socket(zmq.PUSH)
                 client_socket.connect(return_address)
                 return_msg = str(status) + " " + str(returnVal)
                 encoded_msg = return_msg.encode()
@@ -200,13 +200,17 @@ class RaftNode:
 
     def get_query(self, key):
         if self.current_role == "Leader":
+            print("Leader Get")
+            print(self.data_truths)
+            print(self.log)
+            print(self.commit_length)
             if key in self.data_truths:
                 return 1, self.data_truths[key]
             else:
                 return 2, ""
         else:
             if self.current_leader is None:
-                return 0, ""
+                return 0, "None"
             else:
                 return 0, self.current_leader
         
@@ -214,14 +218,14 @@ class RaftNode:
         if self.current_role == "Leader":
             # don't we need to send some success or failure message to the client
             status = "1"
-            client_socket = zmq.Context().socket(zmq.REQ)
+            client_socket = zmq.Context().socket(zmq.PUSH)
             client_socket.connect(return_address)
             client_socket.send(f"{status}".encode())
             self.broadcast_messages("SET " + key + " " + value)
         else:
             status = "0"
             returnVal = self.current_leader
-            client_socket = zmq.Context().socket(zmq.REQ)
+            client_socket = zmq.Context().socket(zmq.PUSH)
             client_socket.connect(return_address)
             client_socket.send(f"{status} {returnVal}".encode())
             # return self.current_leader
@@ -260,7 +264,7 @@ class RaftNode:
             print("Sending Vote Request to Node "+str(n_id))
             context = zmq.Context()
             print("Context Created")
-            socket = context.socket(zmq.REQ)
+            socket = context.socket(zmq.PUSH)
             print("Socket Created")
             monitor = socket.get_monitor_socket()
             print("Monitor Created")
@@ -298,7 +302,7 @@ class RaftNode:
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(True)  + " " + str(time_left_in_leader_lease)
             candidate_socket_addr = self.connections[str(cId)]
             context = zmq.Context()
-            candidate_socket = context.socket(zmq.REQ)
+            candidate_socket = context.socket(zmq.PUSH)
             monitor = candidate_socket.get_monitor_socket()
             print("Monitor Created")
             t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,cId))
@@ -317,7 +321,7 @@ class RaftNode:
             message = "VoteResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(False) + " " + str(time_left_in_leader_lease)
             candidate_socket_addr = self.connections[str(cId)]
             context = zmq.Context()
-            candidate_socket = context.socket(zmq.REQ)
+            candidate_socket = context.socket(zmq.PUSH)
             monitor = candidate_socket.get_monitor_socket()
             print("Monitor Created")
             t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,cId))
@@ -383,7 +387,7 @@ class RaftNode:
         else:
             # Forward to Leader
             context = zmq.Context()
-            socket = context.socket(zmq.REQ)
+            socket = context.socket(zmq.PUSH)
             socket.connect(self.connections[self.current_leader])
             monitor = socket.get_monitor_socket()
             t = threading.Thread(target=event_monitor, args=(monitor,1,0))
@@ -420,7 +424,7 @@ class RaftNode:
         lease_timer_left = self.lease_timer.remaining()
         message = "LogRequest " + str(leader_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(prefix_term) + " " + str(self.commit_length) + " " + str(suffix) + " " + str(lease_timer_left)
         context = zmq.Context()
-        socket = context.socket(zmq.REQ)
+        socket = context.socket(zmq.PUSH)
         monitor = socket.get_monitor_socket()
         t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,follower_id))
         t.start()
@@ -454,7 +458,7 @@ class RaftNode:
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(False)
         candidate_socket_addr = self.connections[str(leader_id)]
         context = zmq.Context()
-        candidate_socket = context.socket(zmq.REQ)
+        candidate_socket = context.socket(zmq.PUSH)
         monitor = candidate_socket.get_monitor_socket()
         print("Monitor Created")
         t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,leader_id))
@@ -534,8 +538,10 @@ class RaftNode:
         """
         min_acks = math.ceil((len(self.connections) + 1) / 2)
         ready = {i for i in range(len(self.log)) if self.acks(i) >= min_acks}
-        if len(ready) != 0 and max(ready) > self.commit_length and self.log[max(ready) - 1]["term"] == self.current_term:
-            for i in range(self.commit_length, max(ready)):
+        print(self.acked_length, self.sent_length, self.log, self.commit_length, ready)
+        max_ready_index_offset_handled = max(ready) + 1
+        if len(ready) != 0 and max_ready_index_offset_handled + 1 > self.commit_length and self.log[max_ready_index_offset_handled - 1]["term"] == self.current_term:
+            for i in range(self.commit_length, max_ready_index_offset_handled):
                 last_message = self.log[i]["message"]
                 # TODO why do we need to see SET - Update NVM
                 if last_message.startswith("SET"):
@@ -553,7 +559,7 @@ class RaftNode:
 
 
 
-            self.commit_length = max(ready)
+            self.commit_length = max_ready_index_offset_handled
             if os.path.isfile("logs_node_"+str(self.node_id)+"/metadata.txt"):
                 os.remove("logs_node_"+str(self.node_id)+"/metadata.txt")
             with open("logs_node_"+str(self.node_id)+"/metadata.txt", "w") as file:
@@ -569,7 +575,7 @@ if __name__=='__main__':
     try:
         node.main()
         # context = zmq.Context()
-        # socket = context.socket(zmq.REQ)
+        # socket = context.socket(zmq.PUSH)
     # Our event handling part
         # monitor = socket.get_monitor_socket()
         # t = threading.Thread(target=event_monitor, args=(monitor,1,0))
