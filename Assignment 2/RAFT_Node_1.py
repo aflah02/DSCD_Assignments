@@ -29,7 +29,7 @@ class MyTimer:
         return time.time() - self.start_time
 
 EVENT_MAP = {}
-print("Event names:")
+# print("Event names:")
 for name in dir(zmq):
     if name.startswith('EVENT_'):
         value = getattr(zmq, name)
@@ -44,7 +44,7 @@ def event_monitor(monitor: zmq.Socket,node_id,follower_id) -> None:
         evt['description'] = EVENT_MAP[evt['event']]
         # print(f"Event: {evt}") 
         if evt['event'] == zmq.EVENT_CONNECT_RETRIED:
-            print("Connection to Node "+str(id)+" failed. Retrying...")
+            # print("Connection to Node "+str(id)+" failed. Retrying...")
             with open("logs_node_"+str(node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Error occurred while sending RPC to Node "+str(follower_id)+"\n")
             print("Error occurred while sending RPC to Node "+str(follower_id))
@@ -133,6 +133,8 @@ class RaftNode:
 
     def step_down(self):
         if self.current_role == "Leader":
+            with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+                file.write("Leader "+str(self.node_id)+" lease timer timed out. Stepping down. \n")
             print("Leader "+str(self.node_id)+" lease timer timed out. Stepping down.")
             self.current_role = "Follower"
             self.voted_for = None
@@ -142,7 +144,7 @@ class RaftNode:
     def main(self):
         iteration = 0
         while True:
-            print("Iteration: ", iteration)
+            # print("Iteration: ", iteration)
             try:
                 message = self.global_zmq_socket.recv().decode()
             except Exception as e:
@@ -159,15 +161,15 @@ class RaftNode:
                 voterId, term, granted, lease_timer_left_according_to_voter = message_parts[1:]
                 self.handle_vote_response(int(voterId), int(term), granted == "True", float(lease_timer_left_according_to_voter))
             elif message_parts[0] == "LogRequest":
-                print(message_parts)
-                print("Length of message parts: ", len(message_parts))
+                # print(message_parts)
+                # print("Length of message parts: ", len(message_parts))
                 leader_id, term, prefix_len, prefix_term, leader_commit = message_parts[1:6]
                 lease_timer_left_according_to_leader = message_parts[-1]
                 suffix = message_parts[6:-1]
                 suffix = " ".join(suffix)
-                print(suffix)
+                # print(suffix)
                 suffix = eval(suffix)
-                print("Suffix: ", suffix)
+                # print("Suffix: ", suffix)
                 lease_timer_left_according_to_leader = float(lease_timer_left_according_to_leader)
                 self.handle_log_request(int(leader_id), int(term), int(prefix_len), int(prefix_term), int(leader_commit), suffix, lease_timer_left_according_to_leader)
             elif message_parts[0] == "LogResponse":
@@ -184,7 +186,7 @@ class RaftNode:
                 key = message_parts[1]
                 return_address = message_parts[2]
                 status, returnVal = self.get_query(key)
-                print("Get Query: ", status, returnVal)
+                # print("Get Query: ", status, returnVal)
                 # Return the value to the return address
                 # TODO : Check if client is active or not
                 client_socket = zmq.Context().socket(zmq.PUSH)
@@ -200,10 +202,10 @@ class RaftNode:
 
     def get_query(self, key):
         if self.current_role == "Leader":
-            print("Leader Get")
-            print(self.data_truths)
-            print(self.log)
-            print(self.commit_length)
+            # print("Leader Get")
+            # print(self.data_truths)
+            # print(self.log)
+            # print(self.commit_length)
             if key in self.data_truths:
                 return 1, self.data_truths[key]
             else:
@@ -261,21 +263,21 @@ class RaftNode:
             last_term = self.log[-1]["term"]
         message = "VoteRequest " + str(self.node_id) + " " + str(self.current_term) + " " + str(len(self.log)) + " " + str(last_term)
         for n_id, connection in self.connections.items():
-            print("Sending Vote Request to Node "+str(n_id))
+            # print("Sending Vote Request to Node "+str(n_id))
             context = zmq.Context()
-            print("Context Created")
+            # print("Context Created")
             socket = context.socket(zmq.PUSH)
-            print("Socket Created")
+            # print("Socket Created")
             monitor = socket.get_monitor_socket()
-            print("Monitor Created")
+            # print("Monitor Created")
             t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,n_id))
-            print("Thread Created")
+            # print("Thread Created")
             t.start()
-            print("Thread Started")
+            # print("Thread Started")
             socket.connect(connection)
-            print("Connected")
+            # print("Connected")
             socket.send(message.encode())
-            print("Message Sent")
+            # print("Message Sent")
             # response = socket.recv().decode()
             # reply_type, voterId, voter_term, granted = response.split(" ")
             # if granted == "True":
@@ -304,14 +306,15 @@ class RaftNode:
             context = zmq.Context()
             candidate_socket = context.socket(zmq.PUSH)
             monitor = candidate_socket.get_monitor_socket()
-            print("Monitor Created")
+            # print("Monitor Created")
             t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,cId))
-            print("Thread Created")
+            # print("Thread Created")
             t.start()
             candidate_socket.connect(candidate_socket_addr)
             candidate_socket.send(message.encode())
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Vote Granted for Node "+str(cId)+" in term."+str(cTerm) +"\n")
+            print("Vote Granted for Node "+str(cId)+" in term."+str(cTerm))
             # Even if the one you vote for doesn't wins, you'll recieve heartbeat so no need to handle response 
             # response = self.global_zmq_socket.recv().decode()
             # # Handle response
@@ -323,14 +326,15 @@ class RaftNode:
             context = zmq.Context()
             candidate_socket = context.socket(zmq.PUSH)
             monitor = candidate_socket.get_monitor_socket()
-            print("Monitor Created")
+            # print("Monitor Created")
             t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,cId))
-            print("Thread Created")
+            # print("Thread Created")
             t.start()
             candidate_socket.connect(candidate_socket_addr)
             candidate_socket.send(message.encode())
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Vote denied for Node "+str(cId)+" in term."+str(cTerm) +"\n")
+            print("Vote denied for Node "+str(cId)+" in term."+str(cTerm))
             # response = self.global_zmq_socket.recv().decode()
             # # Handle response
         self.handle_timers()
@@ -404,6 +408,7 @@ class RaftNode:
             # TODO = "Leader {NodeID of Leader} lease renewal failed. Stepping Down."
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Leader "+str(self.node_id)+" sending heartbeat & Renewing Lease \n")
+            print("Leader "+str(self.node_id)+" sending heartbeat & Renewing Lease ")
             self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
             # self.cancel_timers()
             # self.handle_timers()
@@ -449,21 +454,24 @@ class RaftNode:
         if term == self.current_term:
             self.current_role = "Follower"
             self.current_leader = leader_id
-        print(self.log, prefix_len)
+        # print(self.log, prefix_len)
         logOk = len(self.log) >= prefix_len and (prefix_len == 0 or self.log[prefix_len-1]["term"] == prefix_term)
         if term == self.current_term and logOk:
             self.append_entries(prefix_len, leader_commit, suffix)
             ack = prefix_len + len(suffix)
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(ack) + " " + str(True)
         else:
+            with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+                    file.write("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(self.current_leader)+ "\n")
+            print("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(self.current_leader))
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(False)
         candidate_socket_addr = self.connections[str(leader_id)]
         context = zmq.Context()
         candidate_socket = context.socket(zmq.PUSH)
         monitor = candidate_socket.get_monitor_socket()
-        print("Monitor Created")
+        # print("Monitor Created")
         t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,leader_id))
-        print("Thread Created")
+        # print("Thread Created")
         t.start()
         candidate_socket.connect(candidate_socket_addr)
         candidate_socket.send(log_response_message.encode())
@@ -483,6 +491,7 @@ class RaftNode:
                 self.log.append(suffix[i])
                 with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                     file.write("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader)+ "\n")
+                print("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader))
 
         if leader_commit > self.commit_length:
             for i in range(self.commit_length, leader_commit):
@@ -493,6 +502,10 @@ class RaftNode:
                 if message.startswith("SET"):
                     _, key, value = message.split(" ")
                     self.data_truths[key] = value
+                    with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+                       file.write(" Node"+str(self.node_id) +" (follower) committed the entry "+message+" to the state machine \n")
+                    print(" Node"+str(self.node_id) +" (follower) committed the entry "+message+" to the state machine ")
+                    
             self.commit_length = leader_commit
 
             if os.path.isfile("logs_node_"+str(self.node_id)+"/metadata.txt"):
@@ -539,7 +552,7 @@ class RaftNode:
         """
         min_acks = math.ceil((len(self.connections) + 1) / 2)
         ready = {i for i in range(len(self.log)) if self.acks(i) >= min_acks}
-        print(self.acked_length, self.sent_length, self.log, self.commit_length, ready)
+        # print(self.acked_length, self.sent_length, self.log, self.commit_length, ready)
         max_ready_index_offset_handled = max(ready) + 1
         if len(ready) != 0 and max_ready_index_offset_handled + 1 > self.commit_length and self.log[max_ready_index_offset_handled - 1]["term"] == self.current_term:
             for i in range(self.commit_length, max_ready_index_offset_handled):
@@ -551,7 +564,9 @@ class RaftNode:
                     with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                         file.write("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine \n")
                     print("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine ")
-                
+                    with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
+                        file.write(last_message +" "+self.current_term +" \n")
+                    
                 # deliver log[i].message to application
                 # self.broadcast_messages(self.log[i]["message"])
 
