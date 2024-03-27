@@ -1,6 +1,9 @@
 Node 1 election timer timed out, Starting election. 
 Node 1 became the leader for term 1
 Node 1  rejected AppendEntries RPC from 2hence reducing the sent length 
+Node 1  rejected AppendEntries RPC from 3hence reducing the sent length 
+Node 1  rejected AppendEntries RPC from 4hence reducing the sent length 
+Node 1  rejected AppendEntries RPC from 5hence reducing the sent length 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
@@ -27,6 +30,8 @@ Leader 1 sending heartbeat & Renewing Lease
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
+Leader Node 1 received an entry request SET x 2
+Leader Node 1 committed the entry SET x 2 to the state machine 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
@@ -62,99 +67,15 @@ Leader 1 sending heartbeat & Renewing Lease
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
+Leader Node 1 received an entry request SET y 7
+Leader Node 1 committed the entry SET y 7 to the state machine 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 sending heartbeat & Renewing Lease 
+Leader Node 1 received an entry request SET x 5
+Leader Node 1 committed the entry SET x 5 to the state machine 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 
 Leader 1 sending heartbeat & Renewing Lease 

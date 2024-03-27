@@ -6,8 +6,8 @@ import json
 with open('connections.json') as f:
     connections = json.load(f)
 
-self_ip = "tcp://*:5558"
-self_send_ip = "tcp://localhost:5558"
+self_ip = "tcp://*:5561"
+self_send_ip = "tcp://localhost:5561"
 context = zmq.Context()
 socket = context.socket(zmq.PUSH)
 

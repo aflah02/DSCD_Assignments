@@ -106,6 +106,11 @@ class RaftNode:
         else:
             self.restarting_node()
 
+        # if dump.txt doesn't exist create it and don't write anything
+        if not os.path.isfile("logs_node_"+str(node_id)+"/dump.txt"):
+            with open("logs_node_"+str(node_id)+"/dump.txt", "w") as file:
+                pass
+
         self.MAX_LEASE_TIMER_LEFT = 7
         self.HEARTBEAT_TIMEOUT = 1
         self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
@@ -535,8 +540,10 @@ class RaftNode:
                     file.write("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader)+ "\n")
                 print("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader))
                 last_message = suffix[i]
+                print("Last Message: ", last_message)
+                last_message = last_message["message"]
                 with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
-                    file.write(last_message +" "+self.current_term +" \n")
+                    file.write(last_message +" "+str(self.current_term) +" \n")
 
         if leader_commit > self.commit_length:
             for i in range(self.commit_length, leader_commit):
@@ -615,7 +622,7 @@ class RaftNode:
                         file.write("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine \n")
                     print("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine ")
                     with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
-                        file.write(last_message +" "+self.current_term +" \n")
+                        file.write(last_message +" "+str(self.current_term) +" \n")
                     
                 # deliver log[i].message to application
                 # self.broadcast_messages(self.log[i]["message"])

@@ -1,3 +1,9 @@
 Vote Granted for Node 1 in term.1
 Node 2  rejected AppendEntries RPC from 1
 Node 2  accepted AppendEntries RPC from 1
+Node 2  accepted AppendEntries RPC from 1
+ Node2 (follower) committed the entry SET x 2 to the state machine 
+Node 2  accepted AppendEntries RPC from 1
+ Node2 (follower) committed the entry SET y 7 to the state machine 
+Node 2  accepted AppendEntries RPC from 1
+ Node2 (follower) committed the entry SET x 5 to the state machine 
