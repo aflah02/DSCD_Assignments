@@ -204,12 +204,19 @@ class RaftNode:
     def set_query(self, key, value,return_address):
         if self.current_role == "Leader":
             # don't we need to send some success or failure message to the client
+            status = "1"
+            client_socket = zmq.Context().socket(zmq.REQ)
+            client_socket.connect(return_address)
+            client_socket.send(f"{status}".encode())
             self.broadcast_messages("SET " + key + " " + value)
         else:
-            return self.current_leader
-                # client_socket = zmq.Context().socket(zmq.REQ)
-                # client_socket.connect(return_address)
-                # client_socket.send(f"{status} {returnVal}".encode())
+            status = "0"
+            returnVal = self.current_leader
+            client_socket = zmq.Context().socket(zmq.REQ)
+            client_socket.connect(return_address)
+            client_socket.send(f"{status} {returnVal}".encode())
+            # return self.current_leader
+
 
     def recovery_from_crash(self):
         """
