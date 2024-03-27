@@ -118,8 +118,8 @@ class RaftNode:
             self.lease_timer = MyTimer(self.MAX_LEASE_TIMER_LEFT, self.step_down)
             self.lease_timer.start()
         else:
-            MIN_TIMEOUT = 5
-            MAX_TIMEOUT = 10
+            MIN_TIMEOUT = 10
+            MAX_TIMEOUT = 20
             self.timer = MyTimer(random.randint(MIN_TIMEOUT, MAX_TIMEOUT), self.leader_failed_or_election_timeout)
             self.timer.start()
             self.lease_timer = MyTimer(self.MAX_LEASE_TIMER_LEFT, None)
@@ -183,12 +183,15 @@ class RaftNode:
                 # TODO: Need to change get_query to return only if reader
                 key = message_parts[1]
                 return_address = message_parts[2]
-                status, returnVal = self.get_query(key, return_address)
+                status, returnVal = self.get_query(key)
+                print("Get Query: ", status, returnVal)
                 # Return the value to the return address
                 # TODO : Check if client is active or not
                 client_socket = zmq.Context().socket(zmq.REQ)
                 client_socket.connect(return_address)
-                client_socket.send(f"{status} {returnVal}".encode())
+                return_msg = str(status) + " " + str(returnVal)
+                encoded_msg = return_msg.encode()
+                client_socket.send(encoded_msg)
             elif message_parts[0] == "SET":
                 # TODO  
                 key, value,return_address = message_parts[1:]
@@ -197,9 +200,15 @@ class RaftNode:
 
     def get_query(self, key):
         if self.current_role == "Leader":
-            return 1, self.data_truths[key] if key in self.data_truths else 2, ""
+            if key in self.data_truths:
+                return 1, self.data_truths[key]
+            else:
+                return 2, ""
         else:
-            return 0, self.current_leader
+            if self.current_leader is None:
+                return 0, ""
+            else:
+                return 0, self.current_leader
         
     def set_query(self, key, value,return_address):
         if self.current_role == "Leader":
@@ -391,6 +400,8 @@ class RaftNode:
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Leader "+str(self.node_id)+" sending heartbeat & Renewing Lease \n")
             self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 0
+            # self.cancel_timers()
+            # self.handle_timers()
             for follower, _ in self.connections.items():
                 self.replicate_log(self.node_id, follower)
 
@@ -398,6 +409,7 @@ class RaftNode:
         """
         From Pseudocode 5/9
         """
+        # Cancelling and restarting the timers otherwise the leader keeps getting timed out
         print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
         prefix_len = self.sent_length[follower_id]
         # [1,2,3,4,5]
