@@ -31,4 +31,6 @@ def test():
     print("Elapsed time: ", timer.elapsed())
 
 if __name__ == "__main__":
-    test()
+    # test()
+    ls = [1]
+    print(ls[1:])

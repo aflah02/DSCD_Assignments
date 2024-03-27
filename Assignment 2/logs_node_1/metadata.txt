@@ -1,1 +1,1 @@
-Commit length 2 Term 2 Node ID 1
+Commit length 1 Term 1 Node ID 1

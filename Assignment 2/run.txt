@@ -1,3 +1,5 @@
-python .\RAFT_Node_1.py --nodeId 1
+python .\RAFT_Node.py --nodeId 1
+
+python .\RAFT_Node.py --nodeId 1 --restart True
 
 // {"1": "tcp://localhost:5555", "2": "tcp://localhost:5556", "3": "tcp://localhost:5557"}
