@@ -94,6 +94,10 @@ class RaftNode:
         # self.connections = {int(k): v for k, v in self.connections.items()}
         # {1: IP, 2: IP}
 
+        # Check if folder exists else create it
+        if not os.path.exists("logs_node_"+str(node_id)):
+            os.makedirs("logs_node_"+str(node_id))
+
         # self.log_file =  open("logs_node_0/logs.txt", "w")
         # TODO change the reconntruction of log file
         if restarting == False:
@@ -105,6 +109,8 @@ class RaftNode:
                 os.remove("logs_node_"+str(node_id)+"/dump.txt")
         else:
             self.restarting_node()
+
+        
 
         # if dump.txt doesn't exist create it and don't write anything
         if not os.path.isfile("logs_node_"+str(node_id)+"/dump.txt"):
@@ -420,16 +426,19 @@ class RaftNode:
                 # Send AppendEntries to all other nodes
                 # TODO: Check if this is correct
 
-                with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
-                    file.write("No-OP "+str(self.current_term) +"\n")
-                print("No-OP "+str(self.current_term) )
-                self.log.append({"term": self.current_term, "message": "No-OP"})
+                # with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
+                #     file.write("No-OP "+str(self.current_term) +"\n")
+                # print("No-OP "+str(self.current_term) )
+                # self.log.append({"term": self.current_term, "message": "No-OP"})
+                # self.acked_length[str(self.node_id)] = len(self.log)
                 # when it will be restarted it will reload logs
 
                 for follower, _ in self.connections.items():
                     self.sent_length[follower] = len(self.log)
                     self.acked_length[follower] = 0
                     self.replicate_log(self.node_id, follower)
+
+                self.broadcast_messages("No-OP")
         elif term > self.current_term:
             self.current_role = "Follower"
             self.current_term = term
@@ -446,7 +455,7 @@ class RaftNode:
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
             print("Leader Node "+str(self.node_id)+" received an entry request "+message+"\n")
-            self.acked_length[self.node_id] = len(self.log)
+            self.acked_length[str(self.node_id)] = len(self.log)
             self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS = 1
             for follower, _ in self.connections.items():
                 self.replicate_log(self.node_id, follower)
@@ -581,10 +590,10 @@ class RaftNode:
                     
             self.commit_length = leader_commit
 
-            if os.path.isfile("logs_node_"+str(self.node_id)+"/metadata.txt"):
-                os.remove("logs_node_"+str(self.node_id)+"/metadata.txt")
-            with open("logs_node_"+str(self.node_id)+"/metadata.txt", "w") as file:
-                file.write("Commit length "+str(self.commit_length)+" Term "+str(self.current_term)+" Node Voted For ID "+str(self.voted_for))
+        if os.path.isfile("logs_node_"+str(self.node_id)+"/metadata.txt"):
+            os.remove("logs_node_"+str(self.node_id)+"/metadata.txt")
+        with open("logs_node_"+str(self.node_id)+"/metadata.txt", "w") as file:
+            file.write("Commit length "+str(self.commit_length)+" Term "+str(self.current_term)+" Node Voted For ID "+str(self.voted_for))
 
     def handle_log_response(self, follower_id, term, ack, success):
         """
@@ -598,17 +607,17 @@ class RaftNode:
                 self.cancel_timers()
                 self.handle_timers()
         if term == self.current_term and self.current_role == "Leader":
-            if success and ack >= self.acked_length[follower_id]:
+            if success and ack >= self.acked_length[str(follower_id)]:
                 print("Success and ack >= acked_length")
-                self.acked_length[follower_id] = ack
-                self.sent_length[follower_id] = ack
+                self.acked_length[str(follower_id)] = ack
+                self.sent_length[str(follower_id)] = ack
                 self.commit_log_entries()
-            elif self.sent_length[follower_id] > 0:
+            elif self.sent_length[str(follower_id)] > 0:
                 # open dump
                 with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                     file.write("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(follower_id)+ "hence reducing the sent length \n")
-                self.sent_length[follower_id] -= 1
-                self.replicate_log(self.node_id, follower_id)
+                self.sent_length[str(follower_id)] -= 1
+                self.replicate_log(self.node_id, str(follower_id))
         elif term > self.current_term:
             self.current_role = "Follower"
             self.current_term = term
@@ -624,26 +633,35 @@ class RaftNode:
         return sum(1 for ack in self.acked_length if int(ack) >= length)
     
 
+
     def commit_log_entries(self):
         """
         From Pseudocode 9/9
         """
+        print("In commit log entries")
         min_acks = math.ceil((len(self.connections) + 1) / 2)
         ready = {i for i in range(len(self.log)) if self.acks(i) >= min_acks}
-        # print(self.acked_length, self.sent_length, self.log, self.commit_length, ready)
+        print("WORK CHECK", self.acked_length, self.sent_length, self.log, self.commit_length, ready)
+        # Write to disk
+        with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+            file.write("WORK CHECK "+str(self.acked_length)+" "+str(self.sent_length)+" "+str(self.log)+" "+str(self.commit_length)+" "+str(ready)+"\n")
         max_ready_index_offset_handled = max(ready) + 1
+        [1,2,3,4]
         if len(ready) != 0 and max_ready_index_offset_handled + 1 > self.commit_length and self.log[max_ready_index_offset_handled - 1]["term"] == self.current_term:
             for i in range(self.commit_length, max_ready_index_offset_handled):
+                if i >= len(self.log):
+                    continue
                 last_message = self.log[i]["message"]
+                print("Committing message: ", last_message)
                 # TODO why do we need to see SET - Update NVM
                 if last_message.startswith("SET"):
                     _, key, value = last_message.split(" ")
                     self.data_truths[key] = value
-                    with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
-                        file.write("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine \n")
-                    print("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine ")
-                    with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
-                        file.write(last_message +" "+str(self.current_term) +" \n")
+                with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+                    file.write("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine \n")
+                print("Leader Node "+str(self.node_id)+" committed the entry "+last_message+" to the state machine ")
+                with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
+                    file.write(last_message +" "+str(self.current_term) +" \n")
                     
                 # deliver log[i].message to application
                 # self.broadcast_messages(self.log[i]["message"])
@@ -654,10 +672,10 @@ class RaftNode:
 
 
             self.commit_length = max_ready_index_offset_handled
-            if os.path.isfile("logs_node_"+str(self.node_id)+"/metadata.txt"):
-                os.remove("logs_node_"+str(self.node_id)+"/metadata.txt")
-            with open("logs_node_"+str(self.node_id)+"/metadata.txt", "w") as file:
-                file.write("Commit length "+str(self.commit_length)+" Term "+str(self.current_term)+" Node ID "+str(self.voted_for))
+        if os.path.isfile("logs_node_"+str(self.node_id)+"/metadata.txt"):
+            os.remove("logs_node_"+str(self.node_id)+"/metadata.txt")
+        with open("logs_node_"+str(self.node_id)+"/metadata.txt", "w") as file:
+            file.write("Commit length "+str(self.commit_length)+" Term "+str(self.current_term)+" Node ID "+str(self.voted_for))
         
 
 if __name__=='__main__':
