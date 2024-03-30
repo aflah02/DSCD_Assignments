@@ -145,7 +145,10 @@ class RaftNode:
         with open("logs_node_"+str(self.node_id)+"/logs.txt", "r") as file:
             logs = file.readlines()
             for idx, log in enumerate(logs):
-                term, message = log.split(" ")
+                log = log.strip()
+                chunks = log.split(" ")
+                term = int(chunks[-1])
+                message = " ".join(chunks[:-1])
                 self.log.append({"term": term, "message": message})
                 if idx <= self.commit_length:
                     if message.startswith("SET"):
@@ -542,12 +545,12 @@ class RaftNode:
                     file.write("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(self.current_leader)+ "\n")
             print("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(self.current_leader))
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + "0" + " " + str(False)
-        candidate_socket_addr = self.connections[str(leader_id)]
+        candidate_socket_addr = self.connections[str(self.current_leader)]
         context = zmq.Context()
         candidate_socket = context.socket(zmq.PUSH)
         monitor = candidate_socket.get_monitor_socket()
         # print("Monitor Created")
-        t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,leader_id))
+        t = threading.Thread(target=event_monitor, args=(monitor,self.node_id,self.current_leader))
         # print("Thread Created")
         t.start()
         candidate_socket.connect(candidate_socket_addr)
@@ -599,6 +602,9 @@ class RaftNode:
         """
         From Pseudocode 8/9
         """
+        # Write to disk
+        with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+            file.write("Handling Log Response from Follower "+ str(follower_id) + " for term "+str(term) + " ack "+str(ack) + " success "+str(success) + "\n")
         print("Handling Log Response from Follower "+ str(follower_id) + " for term "+str(term) + " ack "+str(ack) + " success "+str(success))
         follower_id = str(follower_id)
         if success:
@@ -630,7 +636,7 @@ class RaftNode:
         """
         From Pseudocode 9/9
         """
-        return sum(1 for ack in self.acked_length if int(ack) >= length)
+        return sum(1 for node_id, acks_from_that_node_id in self.acked_length.items() if int(acks_from_that_node_id) >= length)
     
 
 
@@ -641,6 +647,7 @@ class RaftNode:
         print("In commit log entries")
         min_acks = math.ceil((len(self.connections) + 1) / 2)
         ready = {i for i in range(len(self.log)) if self.acks(i) >= min_acks}
+        # {'1': 5, '2': 0, '3': 5, '4': 5, '5': 5}
         print("WORK CHECK", self.acked_length, self.sent_length, self.log, self.commit_length, ready)
         # Write to disk
         with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:

@@ -1,1 +1,8 @@
 No-OP 1 
+SET x 10 1 
+SET p 11 1 
+No-OP 2 
+SET shivi 69 2 
+SET uv 11 2 
+SET pt 77 2 
+SET i 9 2 
