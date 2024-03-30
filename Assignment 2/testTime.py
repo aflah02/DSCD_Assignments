@@ -21,5 +21,5 @@ def tcp_ping(host, port):
 
 if __name__ == "__main__":
     host = 'localhost'
-    port = 5558
+    port = 5556
     tcp_ping(host, port)

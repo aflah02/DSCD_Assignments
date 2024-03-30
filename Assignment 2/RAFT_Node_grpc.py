@@ -74,8 +74,8 @@ class RaftNode(node_pb2_grpc.NodeServicer):
         self.sent_length = {}
         self.acked_length = {}
 
-        # Read connections.json
-        with open('connections.json') as f:
+        # Read connections_grpc.json
+        with open('connections_grpc.json') as f:
             self.connections = json.load(f)
 
         self_addr = self.connections[str(node_id)]
@@ -607,9 +607,9 @@ class RaftNode(node_pb2_grpc.NodeServicer):
                     file.write("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader)+ "\n")
                 print("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader))
                 # TODO: check if writing to log is correct
-                last_message = suffix[i]
+                last_message = suffix[i]["message"]   
                 with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
-                    file.write(last_message +" "+self.current_term +" \n")
+                    file.write(last_message +" "+str(self.current_term) +" \n")
 
 
                 # write to log file
@@ -722,7 +722,7 @@ if __name__=='__main__':
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=max_client))
         node_pb2_grpc.add_NodeServicer_to_server(RaftNode(nodeId,restarting), server)
 
-        with open('connections.json') as f:
+        with open('connections_grpc.json') as f:
             connections = json.load(f)
 
         self_addr = connections[str(nodeId)]

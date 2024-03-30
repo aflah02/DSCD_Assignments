@@ -3,13 +3,1847 @@ Node 1 became the leader for term 1
 Leader Node 1 received an entry request No-OP
 WORK CHECK {'2': 0, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 0, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 0 {0}
 Leader Node 1 committed the entry No-OP to the state machine 
-WORK CHECK {'2': 0, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 0, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 2 {0}
-WORK CHECK {'2': 0, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 0, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 2 {0}
-WORK CHECK {'2': 1, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 2 {0}
-WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 2 {0}
-WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 2 {0}
+WORK CHECK {'2': 0, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 0, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
 Leader 1 sending heartbeat & Renewing Lease 
-WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 2 {0}
-WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 2 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
 Leader 1 sending heartbeat & Renewing Lease 
-Leader 1 lease timer timed out. Stepping down. 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 5
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader Node 1 received an entry request SET y 5
+WORK CHECK {'2': 2, '3': 1, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 1 {0, 1}
+Leader Node 1 committed the entry SET y 5 to the state machine 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Error occurred while sending RPC to Node 3
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 3
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+WORK CHECK {'2': 2, '3': 2, '4': 0, '5': 0, '1': 2} {'2': 2, '3': 2, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET y 5'}] 2 {0, 1}
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 5

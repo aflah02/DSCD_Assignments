@@ -1,2 +1,9 @@
 Vote Granted for Node 1 in term.1
 Node 3  accepted AppendEntries RPC from 1
+Node 3  accepted AppendEntries RPC from 1
+ Node3 (follower) committed the entry SET y 5 to the state machine 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 1
