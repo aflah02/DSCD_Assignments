@@ -71,7 +71,7 @@ class RaftNode:
         self.acked_length = {}
 
         # Read connections.json
-        with open('connections.json') as f:
+        with open('connections_gcloud.json') as f:
             self.connections = json.load(f)
 
         self_addr = self.connections[str(node_id)]
@@ -498,7 +498,7 @@ class RaftNode:
         From Pseudocode 5/9
         """
         # Cancelling and restarting the timers otherwise the leader keeps getting timed out
-        print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
+        # print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
         prefix_len = self.sent_length[follower_id]
         # print("Leader Debug", self.log, prefix_len, self.sent_length, self.acked_length, self.commit_length)
         # [1,2,3,4,5]
@@ -516,7 +516,7 @@ class RaftNode:
         t.start()
         socket.connect(self.connections[follower_id])
         socket.send(message.encode())
-        print("Replicated log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
+        # print("Replicated log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
 
     def handle_log_request(self, leader_id, term, prefix_len, prefix_term, leader_commit, suffix, lease_timer_left_according_to_leader):
         """
@@ -608,9 +608,9 @@ class RaftNode:
         From Pseudocode 8/9
         """
         # Write to disk
-        with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
-            file.write("Handling Log Response from Follower "+ str(follower_id) + " for term "+str(term) + " ack "+str(ack) + " success "+str(success) + "\n")
-        print("Handling Log Response from Follower "+ str(follower_id) + " for term "+str(term) + " ack "+str(ack) + " success "+str(success))
+        # with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+        #     file.write("Handling Log Response from Follower "+ str(follower_id) + " for term "+str(term) + " ack "+str(ack) + " success "+str(success) + "\n")
+        # print("Handling Log Response from Follower "+ str(follower_id) + " for term "+str(term) + " ack "+str(ack) + " success "+str(success))
         follower_id = str(follower_id)
         if success:
             self.COUNT_OF_SUCCESSFUL_LEASE_RENEWALS += 1
