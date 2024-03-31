@@ -1,18 +1,541 @@
-Vote Granted for Node 3 in term.1
-Node 1  accepted AppendEntries RPC from 3
-Node 1  accepted AppendEntries RPC from 3
- Node1 (follower) committed the entry SET x 10 to the state machine 
-Node 1  accepted AppendEntries RPC from 3
- Node1 (follower) committed the entry SET p 11 to the state machine 
-Vote Granted for Node 2 in term.2
-Node 1  accepted AppendEntries RPC from 2
-Node 1  accepted AppendEntries RPC from 2
- Node1 (follower) committed the entry SET shivi 69 to the state machine 
-Node 1  accepted AppendEntries RPC from 2
- Node1 (follower) committed the entry SET uv 11 to the state machine 
-Node 1  accepted AppendEntries RPC from 2
- Node1 (follower) committed the entry SET pt 77 to the state machine 
-Node 1  accepted AppendEntries RPC from 2
- Node1 (follower) committed the entry SET i 9 to the state machine 
-Error occurred while sending RPC to Node 2
-Error occurred while sending RPC to Node 2
+Node 1 election timer timed out, Starting election. 
+Node 1 became the leader for term 1
+Leader Node 1 received an entry request No-OP
+Handling Log Response from Follower 2 for term 1 ack 0 success True
+WORK CHECK {'2': 0, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 0, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 0 {0}
+Leader Node 1 committed the entry No-OP to the state machine 
+Handling Log Response from Follower 3 for term 1 ack 0 success True
+WORK CHECK {'2': 0, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 0, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 0, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 0, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Error occurred while sending RPC to Node 4
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 0, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 0, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 0 success True
+Node 1  rejected AppendEntries RPC from 4hence reducing the sent length 
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Error occurred while sending RPC to Node 5
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 0, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 0} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 0 success True
+Node 1  rejected AppendEntries RPC from 5hence reducing the sent length 
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 3 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 4 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Handling Log Response from Follower 5 for term 1 ack 1 success True
+WORK CHECK {'2': 1, '3': 1, '4': 1, '5': 1, '1': 1} {'2': 1, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}] 1 {0}
+Leader Node 1 received an entry request SET x 55
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 1, '4': 1, '5': 1, '1': 2} {'2': 2, '3': 1, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 1 {0, 1}
+Leader Node 1 committed the entry SET x 55 to the state machine 
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 1, '5': 1, '1': 2} {'2': 2, '3': 2, '4': 1, '5': 1} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 1, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 1} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Leader 1 sending heartbeat & Renewing Lease 
+Handling Log Response from Follower 2 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 3 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 4 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}
+Handling Log Response from Follower 5 for term 1 ack 2 success True
+WORK CHECK {'2': 2, '3': 2, '4': 2, '5': 2, '1': 2} {'2': 2, '3': 2, '4': 2, '5': 2} [{'term': 1, 'message': 'No-OP'}, {'term': 1, 'message': 'SET x 55'}] 2 {0, 1}

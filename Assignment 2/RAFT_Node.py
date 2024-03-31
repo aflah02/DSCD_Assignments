@@ -169,7 +169,7 @@ class RaftNode:
         self.current_leader = None
 
     def handle_timers(self, converting_to_leader=False, term=None):
-        print("handle timers called", self.current_role)
+        # print("handle timers called", self.current_role)
         if self.current_role == 'Leader':
             self.timer = MyTimer(self.HEARTBEAT_TIMEOUT, self.periodic_heartbeat)
             self.timer.start()
@@ -211,6 +211,7 @@ class RaftNode:
             print("Leader "+str(self.node_id)+" lease timer timed out. Stepping down.")
             self.current_role = "Follower"
             self.voted_for = None
+            self.current_leader = "None"
             self.cancel_timers()
             self.handle_timers()
 
@@ -225,7 +226,7 @@ class RaftNode:
                 self.global_zmq_socket = zmq.Context().socket(zmq.PULL)
                 self.global_zmq_socket.bind(self.self_addr)
                 continue
-            print("Received message: ", message , " at " , time.time())
+            # print("Received message: ", message , " at " , time.time())
             message_parts = message.split(" ")
             if message_parts[0] == "VoteRequest":
                 cId, cTerm, cLogLength, cLogTerm = message_parts[1:]
@@ -319,6 +320,7 @@ class RaftNode:
         self.voted_for = self.node_id
         self.votes_received = {self.node_id}
         last_term = 0
+        self.current_leader = "None"
         if len(self.log) > 0:
             last_term = self.log[-1]["term"]
         message = "VoteRequest " + str(self.node_id) + " " + str(self.current_term) + " " + str(len(self.log)) + " " + str(last_term)
@@ -495,7 +497,7 @@ class RaftNode:
         # Cancelling and restarting the timers otherwise the leader keeps getting timed out
         print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
         prefix_len = self.sent_length[follower_id]
-        print("Leader Debug", self.log, prefix_len, self.sent_length, self.acked_length, self.commit_length)
+        # print("Leader Debug", self.log, prefix_len, self.sent_length, self.acked_length, self.commit_length)
         # [1,2,3,4,5]
         suffix = self.log[prefix_len:]
         prefix_term = 0
@@ -503,7 +505,7 @@ class RaftNode:
             prefix_term = self.log[prefix_len - 1]["term"]
         lease_timer_left = self.lease_timer.remaining()
         message = "LogRequest " + str(leader_id) + " " + str(self.current_term) + " " + str(prefix_len) + " " + str(prefix_term) + " " + str(self.commit_length) + " " + str(suffix) + " " + str(lease_timer_left)
-        print("Replicate Log Message: ", message)
+        # print("Replicate Log Message: ", message)
         context = zmq.Context()
         socket = context.socket(zmq.PUSH)
         monitor = socket.get_monitor_socket()
@@ -533,14 +535,14 @@ class RaftNode:
             self.cancel_timers()
             self.handle_timers()
         # print(self.log, prefix_len)
-        print("DEBUG", self.log, prefix_len, prefix_term, term, self.current_term, leader_commit, suffix, self.sent_length)
+        # print("DEBUG", self.log, prefix_len, prefix_term, term, self.current_term, leader_commit, suffix, self.sent_length)
         logOk = len(self.log) >= prefix_len and (prefix_len == 0 or self.log[prefix_len-1]["term"] == prefix_term)
         if term == self.current_term and logOk:
             self.append_entries(prefix_len, leader_commit, suffix)
             ack = prefix_len + len(suffix)
             log_response_message = "LogResponse " + str(self.node_id) + " " + str(self.current_term) + " " + str(ack) + " " + str(True)
         else:
-            print("Rejected Append E")
+            # print("Rejected Append E")
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                     file.write("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(self.current_leader)+ "\n")
             print("Node "+str(self.node_id)+"  rejected AppendEntries RPC from "+str(self.current_leader))
@@ -573,7 +575,7 @@ class RaftNode:
                     file.write("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader)+ "\n")
                 print("Node "+str(self.node_id)+"  accepted AppendEntries RPC from "+str(self.current_leader))
                 last_message = suffix[i]
-                print("Last Message: ", last_message)
+                # print("Last Message: ", last_message)
                 last_message = last_message["message"]
                 with open("logs_node_"+str(self.node_id)+"/logs.txt", "a", newline="") as file:
                     file.write(last_message +" "+str(self.current_term) +" \n")
@@ -614,7 +616,7 @@ class RaftNode:
                 self.handle_timers()
         if term == self.current_term and self.current_role == "Leader":
             if success and ack >= self.acked_length[str(follower_id)]:
-                print("Success and ack >= acked_length")
+                # print("Success and ack >= acked_length")
                 self.acked_length[str(follower_id)] = ack
                 self.sent_length[str(follower_id)] = ack
                 self.commit_log_entries()
@@ -644,14 +646,14 @@ class RaftNode:
         """
         From Pseudocode 9/9
         """
-        print("In commit log entries")
+        # print("In commit log entries")
         min_acks = math.ceil((len(self.connections) + 1) / 2)
         ready = {i for i in range(len(self.log)) if self.acks(i) >= min_acks}
         # {'1': 5, '2': 0, '3': 5, '4': 5, '5': 5}
-        print("WORK CHECK", self.acked_length, self.sent_length, self.log, self.commit_length, ready)
+        # print("WORK CHECK", self.acked_length, self.sent_length, self.log, self.commit_length, ready)
         # Write to disk
-        with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
-            file.write("WORK CHECK "+str(self.acked_length)+" "+str(self.sent_length)+" "+str(self.log)+" "+str(self.commit_length)+" "+str(ready)+"\n")
+        # with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
+        #     file.write("WORK CHECK "+str(self.acked_length)+" "+str(self.sent_length)+" "+str(self.log)+" "+str(self.commit_length)+" "+str(ready)+"\n")
         max_ready_index_offset_handled = max(ready) + 1
         [1,2,3,4]
         if len(ready) != 0 and max_ready_index_offset_handled + 1 > self.commit_length and self.log[max_ready_index_offset_handled - 1]["term"] == self.current_term:

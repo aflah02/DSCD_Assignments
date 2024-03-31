@@ -85,15 +85,19 @@ checkPrevQuery = True
 
 leader_id = None
 # used as a check to see if the previous query was a completed
+no_of_times_same_query = 0
 while True:
     try:
+        no_of_times_same_query += 1
+        # print("Number of times same query: ", no_of_times_same_query)
         if leader_id == "None":
             leaderknown = False
         # write a zmq client which sends a message
-        if checkPrevQuery:
+        if checkPrevQuery or (no_of_times_same_query > 10):
             query = input("Enter type of query: Get or Set: ")
             print("Query: ", query)
             checkPrevQuery = False
+            num_of_times_same_query = 0
         if not leaderknown or leader_id==None:
             leader_id = random.choice(list(connections.keys()))
             print("Sampled node : ", leader_id)
