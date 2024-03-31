@@ -271,6 +271,8 @@ class RaftNode:
                 return_msg = str(status) + " " + str(returnVal)
                 encoded_msg = return_msg.encode()
                 client_socket.send(encoded_msg)
+                # close the socket
+                client_socket.close()
             elif message_parts[0] == "SET":
                 # TODO  
                 key, value,return_address = message_parts[1:]
@@ -300,6 +302,7 @@ class RaftNode:
             client_socket = zmq.Context().socket(zmq.PUSH)
             client_socket.connect(return_address)
             client_socket.send(f"{status}".encode())
+            client_socket.close()
             self.broadcast_messages("SET " + key + " " + value)
         else:
             status = "0"
@@ -308,6 +311,7 @@ class RaftNode:
             client_socket.connect(return_address)
             client_socket.send(f"{status} {returnVal}".encode())
             # return self.current_leader
+            client_socket.close()
 
 
     def leader_failed_or_election_timeout(self):
@@ -342,6 +346,7 @@ class RaftNode:
             socket.connect(connection)
             # print("Connected")
             socket.send(message.encode())
+            socket.close()
             # print("Message Sent")
             # response = socket.recv().decode()
             # reply_type, voterId, voter_term, granted = response.split(" ")
@@ -377,6 +382,7 @@ class RaftNode:
             t.start()
             candidate_socket.connect(candidate_socket_addr)
             candidate_socket.send(message.encode())
+            candidate_socket.close()
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Vote Granted for Node "+str(cId)+" in term."+str(cTerm) +"\n")
             print("Vote Granted for Node "+str(cId)+" in term."+str(cTerm))
@@ -397,6 +403,7 @@ class RaftNode:
             t.start()
             candidate_socket.connect(candidate_socket_addr)
             candidate_socket.send(message.encode())
+            candidate_socket.close()
             with open("logs_node_"+str(self.node_id)+"/dump.txt", "a", newline="") as file:
                 file.write("Vote denied for Node "+str(cId)+" in term."+str(cTerm) +"\n")
             print("Vote denied for Node "+str(cId)+" in term."+str(cTerm))
@@ -477,6 +484,7 @@ class RaftNode:
             t.start()
             message = "Forward " + str(self.node_id) + " " + str(self.current_term) + " " + message
             socket.send(message.encode())
+            socket.close()
 
     def periodic_heartbeat(self):
         """
@@ -499,7 +507,7 @@ class RaftNode:
         """
         # Cancelling and restarting the timers otherwise the leader keeps getting timed out
         # print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
-        prefix_len = self.sent_length[follower_id]
+        prefix_len = self.sent_lengt[follower_id]
         # print("Leader Debug", self.log, prefix_len, self.sent_length, self.acked_length, self.commit_length)
         # [1,2,3,4,5]
         suffix = self.log[prefix_len:]
@@ -516,6 +524,7 @@ class RaftNode:
         t.start()
         socket.connect(self.connections[follower_id])
         socket.send(message.encode())
+        socket.close()
         # print("Replicated log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
 
     def handle_log_request(self, leader_id, term, prefix_len, prefix_term, leader_commit, suffix, lease_timer_left_according_to_leader):
@@ -560,6 +569,7 @@ class RaftNode:
         t.start()
         candidate_socket.connect(candidate_socket_addr)
         candidate_socket.send(log_response_message.encode())
+        candidate_socket.close()
 
 
     def append_entries(self, prefix_len, leader_commit, suffix):

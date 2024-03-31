@@ -70,11 +70,12 @@ def tcp_ping(address):
  
 
 
-with open('connections.json') as f:
+with open('connections_gcloud.json') as f:
     connections = json.load(f)
 
-self_ip = "tcp://*:5562"
-self_send_ip = "tcp://localhost:5562"
+self_ip = "tcp://*:3359"
+# self_send_ip = "tcp://localhost:5562"
+self_send_ip = "tcp://34.173.214.75:3359"
 context = zmq.Context()
 socket = context.socket(zmq.PUSH)
 
