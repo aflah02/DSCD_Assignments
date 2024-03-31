@@ -260,22 +260,26 @@ class RaftNode:
                 self.broadcast_messages(message)
             elif message_parts[0] == "GET":
                 # TODO: Need to change get_query to return only if reader
-                print("Get Query: ", message_parts)
+                # print("Get Query: ", message_parts)
                 key = message_parts[1]
                 return_address = message_parts[2]
                 status, returnVal = self.get_query(key)
                 # print("Get Query: ", status, returnVal)
                 # Return the value to the return address
                 # TODO : Check if client is active or not
+                # print("Building Socket")
                 client_socket = zmq.Context().socket(zmq.PUSH)
+                # print("Connecting to ", return_address)
                 client_socket.connect(return_address)
+                # print("Sending message")
                 return_msg = str(status) + " " + str(returnVal)
                 encoded_msg = return_msg.encode()
                 client_socket.send(encoded_msg)
+                # print("Message Sent")
                 # close the socket
                 client_socket.close()
             elif message_parts[0] == "SET":
-                print("Set Query: ", message_parts)
+                # print("Set Query: ", message_parts)
                 # TODO  
                 key, value,return_address = message_parts[1:]
                 self.set_query(key, value,return_address)
@@ -509,7 +513,7 @@ class RaftNode:
         """
         # Cancelling and restarting the timers otherwise the leader keeps getting timed out
         # print("Replicating log from Leader "+str(leader_id)+" to Follower "+str(follower_id))
-        prefix_len = self.sent_lengt[follower_id]
+        prefix_len = self.sent_length[follower_id]
         # print("Leader Debug", self.log, prefix_len, self.sent_length, self.acked_length, self.commit_length)
         # [1,2,3,4,5]
         suffix = self.log[prefix_len:]
