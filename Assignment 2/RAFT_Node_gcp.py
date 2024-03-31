@@ -260,6 +260,7 @@ class RaftNode:
                 self.broadcast_messages(message)
             elif message_parts[0] == "GET":
                 # TODO: Need to change get_query to return only if reader
+                print("Get Query: ", message_parts)
                 key = message_parts[1]
                 return_address = message_parts[2]
                 status, returnVal = self.get_query(key)
@@ -274,6 +275,7 @@ class RaftNode:
                 # close the socket
                 client_socket.close()
             elif message_parts[0] == "SET":
+                print("Set Query: ", message_parts)
                 # TODO  
                 key, value,return_address = message_parts[1:]
                 self.set_query(key, value,return_address)
