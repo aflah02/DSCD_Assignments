@@ -1,0 +1,4 @@
+Vote Granted for Node 1 in term.1
+Node 3  accepted AppendEntries RPC from 1
+Node 3  accepted AppendEntries RPC from 1
+ Node3 (follower) committed the entry SET x 55 to the state machine 

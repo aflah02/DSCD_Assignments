@@ -1,0 +1,57 @@
+Node 4  accepted AppendEntries RPC from 1
+Vote denied for Node 1 in term.1
+Node 4  accepted AppendEntries RPC from 1
+ Node4 (follower) committed the entry SET x 55 to the state machine 
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 5 in term.5
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 5 in term.9
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 1
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 5 in term.12
+Vote Granted for Node 5 in term.13
+Node 4 election timer timed out, Starting election. 
+Vote denied for Node 5 in term.14
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
+Vote Granted for Node 5 in term.15
+Vote Granted for Node 5 in term.16
+Node 4 election timer timed out, Starting election. 
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 3
+Error occurred while sending RPC to Node 2
+Vote Granted for Node 5 in term.18
+Vote Granted for Node 5 in term.19
+Node 4 election timer timed out, Starting election. 
+Vote denied for Node 5 in term.20
+Error occurred while sending RPC to Node 1
+Error occurred while sending RPC to Node 2
+Error occurred while sending RPC to Node 3
