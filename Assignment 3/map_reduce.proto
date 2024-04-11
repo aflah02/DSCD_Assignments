@@ -8,7 +8,7 @@ service MasterService {
 
 // The mapper service definition.
 service MapperService {
-  rpc SendDataPoint(DataPointRequest) returns (DataPointResponse) {}
+  rpc SendKeyValuePair(KeyValueRequest) returns (KeyValueResponse) {}
 }
 
 // The reducer service definition.
@@ -50,13 +50,13 @@ message MapperDataResponse {
 }
 
 // The message containing a data point.
-message DataPointRequest {
-  required float data_point = 1;
+message KeyValueRequest {
+  required int32 reducerId = 1;
   required string ip = 6;
 }
 
-message DataPointResponse {
-  required int32 centroid_index = 1;
+message KeyValueResponse {
+  repeated KeyValue key_value_pairs = 1;
 }
 
 // The message containing a partition.
@@ -72,6 +72,6 @@ message PartitionResponse {
 
 // A key-value pair.
 message KeyValue {
-  required float key = 1;
-  repeated float value = 2;
+  required int32 key = 1;
+  required Point value = 2;
 }

@@ -9,26 +9,28 @@ import os
 import shutil
 
 class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
-    def __init__(self, portNo, numReducers):
+    def __init__(self, mapperId, portNo, numReducers):
+        self.mapperId = mapperId
         self.indices = None
         self.centroids = None
         self.portNo = portNo
         self.numReducers = numReducers
-        if os.path.exists(f"./Mappers/M{self.portNo-50051}"):
+        if os.path.exists(f"./Mappers/M{self.mapperId}"):
             # os.rmdir(f"./Mappers/M{portNo-50051}")
-            shutil.rmtree(f"./Mappers/M{self.portNo-50051}")
-        os.mkdir(f"./Mappers/M{self.portNo-50051}")
+            shutil.rmtree(f"./Mappers/M{self.mapperId}")
+        os.mkdir(f"./Mappers/M{self.mapperId}")
         self.ip = socket.gethostbyname(socket.gethostname())
         self.input_path = ""
         self.input = []
+        self.partitions = []
 
     def get_distance(self, point1, point2):
         return math.sqrt(math.pow(point1.x - point2.x, 2) + math.pow(point1.y-point2.y, 2))
 
-    def GetData(self):
+    def GetDataFromMaster(self):
         channel = grpc.insecure_channel(self.ip+":50051")
         stub = map_reduce_pb2_grpc.MasterServiceStub(channel)
-        request = map_reduce_pb2.MapDataRequest(ip="[::]:"+str(portNo), mapper_id=portNo)
+        request = map_reduce_pb2.MapDataRequest(ip="[::]:"+str(portNo), mapper_id=self.mapperId)
         response = stub.SendMapperData(request)
         self.indices = response.input_split
         self.centroids = response.centroids
@@ -36,8 +38,12 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         self.input_path = response.input_path
         self.Map(self.indices, self.centroids)
 
-    def SendDataPoint(self, request, context):
-        pass
+    def SendKeyValuePair(self, request, context):
+        reducerId = request.reducerId
+        partition = self.partitions[reducerId]
+        for i in range(len(partition)):
+            partition[i] = map_reduce_pb2.KeyValue(key=partition[i][0], value=partition[i][1])
+        return map_reduce_pb2.KeyValueResponse(key_value_pairs=partition)
 
     def Map(self, indices, centroids):
         file = open(self.input_path, "r")
@@ -47,7 +53,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         file.close()
         mapper_output = []
         self.input = data_points
-        map = open(f"./Mappers/M{self.portNo-50051}/map.txt", "a")
+        map = open(f"./Mappers/M{self.mapperId}/map.txt", "a")
         for point in self.input:
             min_dist = math.inf
             min_centroid = 0
@@ -61,31 +67,38 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         self.Partition(mapper_output)
 
     def Partition(self, mapper_output):
+        partitions = []
         for i in range(self.numReducers):
-            if not os.path.exists(f"./Mappers/M{self.portNo-50051}/partition_{i+1}.txt"):
-                partition = open(f"./Mappers/M{self.portNo-50051}/partition_{i+1}.txt", "a")
+            if not os.path.exists(f"./Mappers/M{self.mapperId}/partition_{i+1}.txt"):
+                partition = open(f"./Mappers/M{self.mapperId}/partition_{i+1}.txt", "a")
+                partitions.append([])
                 partition.close()
 
         for key, value in mapper_output:
             # Use a hash function to determine the reducer for this key
             reducer_id = key % self.numReducers
-            partition = open(f"./Mappers/M{self.portNo-50051}/partition_{reducer_id+1}.txt", "a")
+            partition = open(f"./Mappers/M{self.mapperId}/partition_{reducer_id+1}.txt", "a")
             partition.write(f'({key}, {(value.x, value.y)})\n')
             partition.close()
+            partitions[reducer_id].append((key, value))
+        self.partitions = partitions
 
 
 if __name__=='__main__':
     argparser = argparse.ArgumentParser()
+    argparser.add_argument("--mapperId", type=int)
     argparser.add_argument("--portNo", type=int)
     argparser.add_argument("--numReducers", type=int)
+    
+    mapperId = argparser.parse_args().mapperId
     portNo = argparser.parse_args().portNo
     numReducers = argparser.parse_args().numReducers
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
-    mapper = Mapper(portNo, numReducers)
+    mapper = Mapper(mapperId, portNo, numReducers)
     map_reduce_pb2_grpc.add_MapperServiceServicer_to_server(mapper, server)
 
     server.add_insecure_port("[::]:"+str(portNo))
     server.start()
-    mapper.GetData()
+    mapper.GetDataFromMaster()
     server.wait_for_termination()

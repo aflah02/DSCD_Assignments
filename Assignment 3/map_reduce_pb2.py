@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10map_reduce.proto\"/\n\x0eMapDataRequest\x12\x11\n\tmapper_id\x18\x01 \x02(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\"U\n\x0fMapDataResponse\x12\x13\n\x0binput_split\x18\x01 \x03(\x05\x12\x19\n\tcentroids\x18\x02 \x03(\x0b\x32\x06.Point\x12\x12\n\ninput_path\x18\x03 \x02(\t\"\x1d\n\x05Point\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\"1\n\x11ReduceDataRequest\x12\x10\n\x08reducers\x18\x01 \x01(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\"%\n\x12ReduceDataResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"2\n\x11MapperDataRequest\x12\x11\n\tmapper_id\x18\x01 \x02(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\")\n\x12MapperDataResponse\x12\x13\n\x0b\x64\x61ta_points\x18\x01 \x03(\x02\"2\n\x10\x44\x61taPointRequest\x12\x12\n\ndata_point\x18\x01 \x02(\x02\x12\n\n\x02ip\x18\x06 \x02(\t\"+\n\x11\x44\x61taPointResponse\x12\x16\n\x0e\x63\x65ntroid_index\x18\x01 \x02(\x05\"L\n\x10PartitionRequest\x12\x12\n\nreducer_id\x18\x01 \x02(\x05\x12\x18\n\x05pairs\x18\x02 \x03(\x0b\x32\t.KeyValue\x12\n\n\x02ip\x18\x06 \x02(\t\"$\n\x11PartitionResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"&\n\x08KeyValue\x12\x0b\n\x03key\x18\x01 \x02(\x02\x12\r\n\x05value\x18\x02 \x03(\x02\x32\x83\x01\n\rMasterService\x12\x35\n\x0eSendMapperData\x12\x0f.MapDataRequest\x1a\x10.MapDataResponse\"\x00\x12;\n\x0eInvokeReducers\x12\x12.ReduceDataRequest\x1a\x13.ReduceDataResponse\"\x00\x32I\n\rMapperService\x12\x38\n\rSendDataPoint\x12\x11.DataPointRequest\x1a\x12.DataPointResponse\"\x00\x32J\n\x0eReducerService\x12\x38\n\rSendPartition\x12\x11.PartitionRequest\x1a\x12.PartitionResponse\"\x00')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10map_reduce.proto\"/\n\x0eMapDataRequest\x12\x11\n\tmapper_id\x18\x01 \x02(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\"U\n\x0fMapDataResponse\x12\x13\n\x0binput_split\x18\x01 \x03(\x05\x12\x19\n\tcentroids\x18\x02 \x03(\x0b\x32\x06.Point\x12\x12\n\ninput_path\x18\x03 \x02(\t\"\x1d\n\x05Point\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\"1\n\x11ReduceDataRequest\x12\x10\n\x08reducers\x18\x01 \x01(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\"%\n\x12ReduceDataResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"2\n\x11MapperDataRequest\x12\x11\n\tmapper_id\x18\x01 \x02(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\")\n\x12MapperDataResponse\x12\x13\n\x0b\x64\x61ta_points\x18\x01 \x03(\x02\"0\n\x0fKeyValueRequest\x12\x11\n\treducerId\x18\x01 \x02(\x05\x12\n\n\x02ip\x18\x06 \x02(\t\"6\n\x10KeyValueResponse\x12\"\n\x0fkey_value_pairs\x18\x01 \x03(\x0b\x32\t.KeyValue\"L\n\x10PartitionRequest\x12\x12\n\nreducer_id\x18\x01 \x02(\x05\x12\x18\n\x05pairs\x18\x02 \x03(\x0b\x32\t.KeyValue\x12\n\n\x02ip\x18\x06 \x02(\t\"$\n\x11PartitionResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\".\n\x08KeyValue\x12\x0b\n\x03key\x18\x01 \x02(\x05\x12\x15\n\x05value\x18\x02 \x02(\x0b\x32\x06.Point2\x83\x01\n\rMasterService\x12\x35\n\x0eSendMapperData\x12\x0f.MapDataRequest\x1a\x10.MapDataResponse\"\x00\x12;\n\x0eInvokeReducers\x12\x12.ReduceDataRequest\x1a\x13.ReduceDataResponse\"\x00\x32J\n\rMapperService\x12\x39\n\x10SendKeyValuePair\x12\x10.KeyValueRequest\x1a\x11.KeyValueResponse\"\x00\x32J\n\x0eReducerService\x12\x38\n\rSendPartition\x12\x11.PartitionRequest\x1a\x12.PartitionResponse\"\x00')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,20 +35,20 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_MAPPERDATAREQUEST']._serialized_end=327
   _globals['_MAPPERDATARESPONSE']._serialized_start=329
   _globals['_MAPPERDATARESPONSE']._serialized_end=370
-  _globals['_DATAPOINTREQUEST']._serialized_start=372
-  _globals['_DATAPOINTREQUEST']._serialized_end=422
-  _globals['_DATAPOINTRESPONSE']._serialized_start=424
-  _globals['_DATAPOINTRESPONSE']._serialized_end=467
-  _globals['_PARTITIONREQUEST']._serialized_start=469
-  _globals['_PARTITIONREQUEST']._serialized_end=545
-  _globals['_PARTITIONRESPONSE']._serialized_start=547
-  _globals['_PARTITIONRESPONSE']._serialized_end=583
-  _globals['_KEYVALUE']._serialized_start=585
-  _globals['_KEYVALUE']._serialized_end=623
-  _globals['_MASTERSERVICE']._serialized_start=626
-  _globals['_MASTERSERVICE']._serialized_end=757
-  _globals['_MAPPERSERVICE']._serialized_start=759
-  _globals['_MAPPERSERVICE']._serialized_end=832
-  _globals['_REDUCERSERVICE']._serialized_start=834
-  _globals['_REDUCERSERVICE']._serialized_end=908
+  _globals['_KEYVALUEREQUEST']._serialized_start=372
+  _globals['_KEYVALUEREQUEST']._serialized_end=420
+  _globals['_KEYVALUERESPONSE']._serialized_start=422
+  _globals['_KEYVALUERESPONSE']._serialized_end=476
+  _globals['_PARTITIONREQUEST']._serialized_start=478
+  _globals['_PARTITIONREQUEST']._serialized_end=554
+  _globals['_PARTITIONRESPONSE']._serialized_start=556
+  _globals['_PARTITIONRESPONSE']._serialized_end=592
+  _globals['_KEYVALUE']._serialized_start=594
+  _globals['_KEYVALUE']._serialized_end=640
+  _globals['_MASTERSERVICE']._serialized_start=643
+  _globals['_MASTERSERVICE']._serialized_end=774
+  _globals['_MAPPERSERVICE']._serialized_start=776
+  _globals['_MAPPERSERVICE']._serialized_end=850
+  _globals['_REDUCERSERVICE']._serialized_start=852
+  _globals['_REDUCERSERVICE']._serialized_end=926
 # @@protoc_insertion_point(module_scope)

@@ -13,12 +13,27 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         self.num_centroids = centroids
         self.max_iterations = max_iterations
         self.indices_per_mapper = {}
+        self.mapper_ports = []
+        self.reducer_ports = []
         self.centroids = []
         self.data_path = data_path
 
+        for i in range(self.num_mappers):
+            self.mapper_ports.append(50051+i+1)
+        for i in range(self.num_reducers):
+            self.reducer_ports.append(self.mapper_ports[-1]+i+1)
+
     def invoke_mappers(self):
-        for i in self.indices_per_mapper.keys():
-            subprocess.Popen(["python3", "Mapper.py", "--portNo", f"{i}", "--numReducers", f'{self.num_reducers}'])
+        mapper_id = 0
+        for i in self.mapper_ports:
+            subprocess.Popen(["python3", "Mapper.py", "--mapperId", f"{mapper_id}", "--portNo", f"{i}", "--numReducers", f'{self.num_reducers}'])
+            mapper_id += 1
+    def invoke_reducers(self):
+        reducer_id = 0
+        print(' '.join(str(x) for x in self.mapper_ports))
+        for i in self.reducer_ports:
+            subprocess.Popen(["python3", "Reducer.py", "--reducerId", f"{reducer_id}", "--portNo", f"{i}", "--mappers", f"{' '.join(str(x) for x in self.mapper_ports)}"])
+            reducer_id += 1
 
     def input_split(self):
         file = open(self.data_path, "r")
@@ -28,10 +43,10 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         file.close()
         indices_per_mapper = {}
         for i in range(self.num_mappers):
-            indices_per_mapper[50052+i] = []
+            indices_per_mapper[i] = []
         for i in range(len(data_points)):
             index = i%self.num_mappers
-            indices_per_mapper.get(50052+index).append(i)
+            indices_per_mapper.get(index).append(i)
 
         self.indices_per_mapper = indices_per_mapper
         self.centroids = random.sample(data_points, self.num_centroids)
@@ -58,7 +73,11 @@ if __name__=='__main__':
     print('Starting server. Listening on port 50051.')
     server.add_insecure_port('[::]:50051')
     server.start()
+    print("Splitting Input Data...")
     master.input_split()
+    print("Invoking Mappers...")
     master.invoke_mappers()
+    print("Invoking Reducers...")
+    master.invoke_reducers()
     server.wait_for_termination()
 

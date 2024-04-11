@@ -59,19 +59,19 @@ class MapperDataResponse(_message.Message):
     data_points: _containers.RepeatedScalarFieldContainer[float]
     def __init__(self, data_points: _Optional[_Iterable[float]] = ...) -> None: ...
 
-class DataPointRequest(_message.Message):
-    __slots__ = ("data_point", "ip")
-    DATA_POINT_FIELD_NUMBER: _ClassVar[int]
+class KeyValueRequest(_message.Message):
+    __slots__ = ("reducerId", "ip")
+    REDUCERID_FIELD_NUMBER: _ClassVar[int]
     IP_FIELD_NUMBER: _ClassVar[int]
-    data_point: float
+    reducerId: int
     ip: str
-    def __init__(self, data_point: _Optional[float] = ..., ip: _Optional[str] = ...) -> None: ...
+    def __init__(self, reducerId: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
-class DataPointResponse(_message.Message):
-    __slots__ = ("centroid_index",)
-    CENTROID_INDEX_FIELD_NUMBER: _ClassVar[int]
-    centroid_index: int
-    def __init__(self, centroid_index: _Optional[int] = ...) -> None: ...
+class KeyValueResponse(_message.Message):
+    __slots__ = ("key_value_pairs",)
+    KEY_VALUE_PAIRS_FIELD_NUMBER: _ClassVar[int]
+    key_value_pairs: _containers.RepeatedCompositeFieldContainer[KeyValue]
+    def __init__(self, key_value_pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
 
 class PartitionRequest(_message.Message):
     __slots__ = ("reducer_id", "pairs", "ip")
@@ -93,6 +93,6 @@ class KeyValue(_message.Message):
     __slots__ = ("key", "value")
     KEY_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
-    key: float
-    value: _containers.RepeatedScalarFieldContainer[float]
-    def __init__(self, key: _Optional[float] = ..., value: _Optional[_Iterable[float]] = ...) -> None: ...
+    key: int
+    value: Point
+    def __init__(self, key: _Optional[int] = ..., value: _Optional[_Union[Point, _Mapping]] = ...) -> None: ...

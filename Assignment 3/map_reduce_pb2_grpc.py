@@ -112,10 +112,10 @@ class MapperServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SendDataPoint = channel.unary_unary(
-                '/MapperService/SendDataPoint',
-                request_serializer=map__reduce__pb2.DataPointRequest.SerializeToString,
-                response_deserializer=map__reduce__pb2.DataPointResponse.FromString,
+        self.SendKeyValuePair = channel.unary_unary(
+                '/MapperService/SendKeyValuePair',
+                request_serializer=map__reduce__pb2.KeyValueRequest.SerializeToString,
+                response_deserializer=map__reduce__pb2.KeyValueResponse.FromString,
                 )
 
 
@@ -123,7 +123,7 @@ class MapperServiceServicer(object):
     """The mapper service definition.
     """
 
-    def SendDataPoint(self, request, context):
+    def SendKeyValuePair(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -132,10 +132,10 @@ class MapperServiceServicer(object):
 
 def add_MapperServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SendDataPoint': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendDataPoint,
-                    request_deserializer=map__reduce__pb2.DataPointRequest.FromString,
-                    response_serializer=map__reduce__pb2.DataPointResponse.SerializeToString,
+            'SendKeyValuePair': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendKeyValuePair,
+                    request_deserializer=map__reduce__pb2.KeyValueRequest.FromString,
+                    response_serializer=map__reduce__pb2.KeyValueResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -149,7 +149,7 @@ class MapperService(object):
     """
 
     @staticmethod
-    def SendDataPoint(request,
+    def SendKeyValuePair(request,
             target,
             options=(),
             channel_credentials=None,
@@ -159,9 +159,9 @@ class MapperService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/MapperService/SendDataPoint',
-            map__reduce__pb2.DataPointRequest.SerializeToString,
-            map__reduce__pb2.DataPointResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/MapperService/SendKeyValuePair',
+            map__reduce__pb2.KeyValueRequest.SerializeToString,
+            map__reduce__pb2.KeyValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
