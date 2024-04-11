@@ -17,16 +17,23 @@ service ReducerService {
 }
 
 message MapDataRequest {
-  repeated float input_split = 1;
-  repeated float centroids = 2;
+  required int32 mapper_id = 1;
+  required string ip = 6;
 }
 
 message MapDataResponse {
-  repeated KeyValue pairs = 1;
+  repeated int32 input_split = 1;
+  repeated Point centroids = 2;
+  required string input_path = 3;
 }
 
+message Point {
+  required float x = 1;
+  required float y = 2;
+}
 message ReduceDataRequest {
   optional int32 reducers = 1;
+  required string ip = 6;
 }
 message ReduceDataResponse {
   optional string message = 1;
@@ -35,6 +42,7 @@ message ReduceDataResponse {
 // The message containing mapper data.
 message MapperDataRequest {
   required int32 mapper_id = 1;
+  required string ip = 6;
 }
 
 message MapperDataResponse {
@@ -44,6 +52,7 @@ message MapperDataResponse {
 // The message containing a data point.
 message DataPointRequest {
   required float data_point = 1;
+  required string ip = 6;
 }
 
 message DataPointResponse {
@@ -54,6 +63,7 @@ message DataPointResponse {
 message PartitionRequest {
   required int32 reducer_id = 1;
   repeated KeyValue pairs = 2;
+  required string ip = 6;
 }
 
 message PartitionResponse {

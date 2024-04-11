@@ -6,24 +6,38 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class MapDataRequest(_message.Message):
-    __slots__ = ("input_split", "centroids")
-    INPUT_SPLIT_FIELD_NUMBER: _ClassVar[int]
-    CENTROIDS_FIELD_NUMBER: _ClassVar[int]
-    input_split: _containers.RepeatedScalarFieldContainer[float]
-    centroids: _containers.RepeatedScalarFieldContainer[float]
-    def __init__(self, input_split: _Optional[_Iterable[float]] = ..., centroids: _Optional[_Iterable[float]] = ...) -> None: ...
+    __slots__ = ("mapper_id", "ip")
+    MAPPER_ID_FIELD_NUMBER: _ClassVar[int]
+    IP_FIELD_NUMBER: _ClassVar[int]
+    mapper_id: int
+    ip: str
+    def __init__(self, mapper_id: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class MapDataResponse(_message.Message):
-    __slots__ = ("pairs",)
-    PAIRS_FIELD_NUMBER: _ClassVar[int]
-    pairs: _containers.RepeatedCompositeFieldContainer[KeyValue]
-    def __init__(self, pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
+    __slots__ = ("input_split", "centroids", "input_path")
+    INPUT_SPLIT_FIELD_NUMBER: _ClassVar[int]
+    CENTROIDS_FIELD_NUMBER: _ClassVar[int]
+    INPUT_PATH_FIELD_NUMBER: _ClassVar[int]
+    input_split: _containers.RepeatedScalarFieldContainer[int]
+    centroids: _containers.RepeatedCompositeFieldContainer[Point]
+    input_path: str
+    def __init__(self, input_split: _Optional[_Iterable[int]] = ..., centroids: _Optional[_Iterable[_Union[Point, _Mapping]]] = ..., input_path: _Optional[str] = ...) -> None: ...
+
+class Point(_message.Message):
+    __slots__ = ("x", "y")
+    X_FIELD_NUMBER: _ClassVar[int]
+    Y_FIELD_NUMBER: _ClassVar[int]
+    x: float
+    y: float
+    def __init__(self, x: _Optional[float] = ..., y: _Optional[float] = ...) -> None: ...
 
 class ReduceDataRequest(_message.Message):
-    __slots__ = ("reducers",)
+    __slots__ = ("reducers", "ip")
     REDUCERS_FIELD_NUMBER: _ClassVar[int]
+    IP_FIELD_NUMBER: _ClassVar[int]
     reducers: int
-    def __init__(self, reducers: _Optional[int] = ...) -> None: ...
+    ip: str
+    def __init__(self, reducers: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class ReduceDataResponse(_message.Message):
     __slots__ = ("message",)
@@ -32,10 +46,12 @@ class ReduceDataResponse(_message.Message):
     def __init__(self, message: _Optional[str] = ...) -> None: ...
 
 class MapperDataRequest(_message.Message):
-    __slots__ = ("mapper_id",)
+    __slots__ = ("mapper_id", "ip")
     MAPPER_ID_FIELD_NUMBER: _ClassVar[int]
+    IP_FIELD_NUMBER: _ClassVar[int]
     mapper_id: int
-    def __init__(self, mapper_id: _Optional[int] = ...) -> None: ...
+    ip: str
+    def __init__(self, mapper_id: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class MapperDataResponse(_message.Message):
     __slots__ = ("data_points",)
@@ -44,10 +60,12 @@ class MapperDataResponse(_message.Message):
     def __init__(self, data_points: _Optional[_Iterable[float]] = ...) -> None: ...
 
 class DataPointRequest(_message.Message):
-    __slots__ = ("data_point",)
+    __slots__ = ("data_point", "ip")
     DATA_POINT_FIELD_NUMBER: _ClassVar[int]
+    IP_FIELD_NUMBER: _ClassVar[int]
     data_point: float
-    def __init__(self, data_point: _Optional[float] = ...) -> None: ...
+    ip: str
+    def __init__(self, data_point: _Optional[float] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class DataPointResponse(_message.Message):
     __slots__ = ("centroid_index",)
@@ -56,12 +74,14 @@ class DataPointResponse(_message.Message):
     def __init__(self, centroid_index: _Optional[int] = ...) -> None: ...
 
 class PartitionRequest(_message.Message):
-    __slots__ = ("reducer_id", "pairs")
+    __slots__ = ("reducer_id", "pairs", "ip")
     REDUCER_ID_FIELD_NUMBER: _ClassVar[int]
     PAIRS_FIELD_NUMBER: _ClassVar[int]
+    IP_FIELD_NUMBER: _ClassVar[int]
     reducer_id: int
     pairs: _containers.RepeatedCompositeFieldContainer[KeyValue]
-    def __init__(self, reducer_id: _Optional[int] = ..., pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
+    ip: str
+    def __init__(self, reducer_id: _Optional[int] = ..., pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class PartitionResponse(_message.Message):
     __slots__ = ("message",)
