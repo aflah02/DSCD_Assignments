@@ -23,18 +23,32 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         self.input_path = ""
         self.input = []
         self.partitions = []
+        self.mapper_output = []
 
     def get_distance(self, point1, point2):
         return math.sqrt(math.pow(point1.x - point2.x, 2) + math.pow(point1.y-point2.y, 2))
 
+    def GetMapperData(self, request, context):
+        self.indices = request.input_split
+        self.centroids = request.centroids
+        self.input_path = request.input_path
+        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+    
+    def Mapping(self, request, context):
+        self.Map(self.indices, self.centroids)
+        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+    
+    def Partitioning(self, request, context):
+        self.Partition(self.mapper_output)
+        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+
     def GetDataFromMaster(self):
         channel = grpc.insecure_channel(self.ip+":50051")
         stub = map_reduce_pb2_grpc.MasterServiceStub(channel)
-        request = map_reduce_pb2.MapDataRequest(ip="[::]:"+str(portNo), mapper_id=self.mapperId)
+        request = map_reduce_pb2.MapDataRequest(ip="[::]:"+str(self.portNo), mapper_id=self.mapperId)
         response = stub.SendMapperData(request)
         self.indices = response.input_split
         self.centroids = response.centroids
-        # print(self.centroids)
         self.input_path = response.input_path
         self.Map(self.indices, self.centroids)
 
@@ -42,6 +56,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         reducerId = request.reducerId
         partition = self.partitions[reducerId]
         for i in range(len(partition)):
+            # print(partition[i][0])
             partition[i] = map_reduce_pb2.KeyValue(key=partition[i][0], value=partition[i][1])
         return map_reduce_pb2.KeyValueResponse(key_value_pairs=partition)
 
@@ -53,7 +68,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         file.close()
         mapper_output = []
         self.input = data_points
-        map = open(f"./Mappers/M{self.mapperId}/map.txt", "a")
+        # map = open(f"./Mappers/M{self.mapperId}/map.txt", "a")
         for point in self.input:
             min_dist = math.inf
             min_centroid = 0
@@ -62,17 +77,18 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
                     min_centroid = i
                     min_dist = self.get_distance(point, centroids[i])
             mapper_output.append((min_centroid, point))
-            map.write(f'({min_centroid}, {(point.x, point.y)})\n')
-        map.close()
-        self.Partition(mapper_output)
+            # map.write(f'({min_centroid}, {(point.x, point.y)})\n')
+        self.mapper_output = mapper_output
+        # map.close()
+        # self.Partition(mapper_output)
 
     def Partition(self, mapper_output):
         partitions = []
         for i in range(self.numReducers):
-            if not os.path.exists(f"./Mappers/M{self.mapperId}/partition_{i+1}.txt"):
-                partition = open(f"./Mappers/M{self.mapperId}/partition_{i+1}.txt", "a")
-                partitions.append([])
-                partition.close()
+            partition = open(f"./Mappers/M{self.mapperId}/partition_{i+1}.txt", "w")
+            partitions.append([])
+            partition.close()
+            
 
         for key, value in mapper_output:
             # Use a hash function to determine the reducer for this key
@@ -100,5 +116,5 @@ if __name__=='__main__':
 
     server.add_insecure_port("[::]:"+str(portNo))
     server.start()
-    mapper.GetDataFromMaster()
-    server.wait_for_termination()
+    # mapper.GetDataFromMaster()
+    server.wait_for_termination(timeout=100000000000)

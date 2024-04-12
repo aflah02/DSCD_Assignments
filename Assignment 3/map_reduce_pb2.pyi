@@ -5,15 +5,19 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class MapDataRequest(_message.Message):
-    __slots__ = ("mapper_id", "ip")
-    MAPPER_ID_FIELD_NUMBER: _ClassVar[int]
-    IP_FIELD_NUMBER: _ClassVar[int]
-    mapper_id: int
-    ip: str
-    def __init__(self, mapper_id: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
+class Empty(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
 
 class MapDataResponse(_message.Message):
+    __slots__ = ("mapper_id", "status")
+    MAPPER_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    mapper_id: int
+    status: str
+    def __init__(self, mapper_id: _Optional[int] = ..., status: _Optional[str] = ...) -> None: ...
+
+class MapDataRequest(_message.Message):
     __slots__ = ("input_split", "centroids", "input_path")
     INPUT_SPLIT_FIELD_NUMBER: _ClassVar[int]
     CENTROIDS_FIELD_NUMBER: _ClassVar[int]
@@ -40,10 +44,12 @@ class ReduceDataRequest(_message.Message):
     def __init__(self, reducers: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class ReduceDataResponse(_message.Message):
-    __slots__ = ("message",)
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    message: str
-    def __init__(self, message: _Optional[str] = ...) -> None: ...
+    __slots__ = ("reducer_id", "status")
+    REDUCER_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    reducer_id: int
+    status: str
+    def __init__(self, reducer_id: _Optional[int] = ..., status: _Optional[str] = ...) -> None: ...
 
 class MapperDataRequest(_message.Message):
     __slots__ = ("mapper_id", "ip")
@@ -73,21 +79,17 @@ class KeyValueResponse(_message.Message):
     key_value_pairs: _containers.RepeatedCompositeFieldContainer[KeyValue]
     def __init__(self, key_value_pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
 
-class PartitionRequest(_message.Message):
-    __slots__ = ("reducer_id", "pairs", "ip")
-    REDUCER_ID_FIELD_NUMBER: _ClassVar[int]
-    PAIRS_FIELD_NUMBER: _ClassVar[int]
-    IP_FIELD_NUMBER: _ClassVar[int]
-    reducer_id: int
-    pairs: _containers.RepeatedCompositeFieldContainer[KeyValue]
-    ip: str
-    def __init__(self, reducer_id: _Optional[int] = ..., pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ..., ip: _Optional[str] = ...) -> None: ...
+class CentroidRequest(_message.Message):
+    __slots__ = ("portNo",)
+    PORTNO_FIELD_NUMBER: _ClassVar[int]
+    portNo: str
+    def __init__(self, portNo: _Optional[str] = ...) -> None: ...
 
-class PartitionResponse(_message.Message):
-    __slots__ = ("message",)
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    message: str
-    def __init__(self, message: _Optional[str] = ...) -> None: ...
+class CentroidResponse(_message.Message):
+    __slots__ = ("key_value",)
+    KEY_VALUE_FIELD_NUMBER: _ClassVar[int]
+    key_value: _containers.RepeatedCompositeFieldContainer[KeyValue]
+    def __init__(self, key_value: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
 
 class KeyValue(_message.Message):
     __slots__ = ("key", "value")

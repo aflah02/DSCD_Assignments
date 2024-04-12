@@ -3,25 +3,34 @@ syntax = "proto2";
 // The master service definition.
 service MasterService {
   rpc SendMapperData(MapDataRequest) returns (MapDataResponse) {}
-  rpc InvokeReducers(ReduceDataRequest) returns (ReduceDataResponse) {}
 }
 
 // The mapper service definition.
 service MapperService {
+  rpc Partitioning(Empty) returns (MapDataResponse) {}
+  rpc Mapping(Empty) returns (MapDataResponse) {}
+  rpc GetMapperData(MapDataRequest) returns (MapDataResponse) {}
   rpc SendKeyValuePair(KeyValueRequest) returns (KeyValueResponse) {}
 }
 
 // The reducer service definition.
 service ReducerService {
-  rpc SendPartition(PartitionRequest) returns (PartitionResponse) {}
+  rpc Reducing(Empty) returns (ReduceDataResponse) {}
+  rpc ShuffleSorting(Empty) returns (ReduceDataResponse) {}
+  rpc GetMapperData(Empty) returns (ReduceDataResponse) {}
+  rpc SendNewCentroids(CentroidRequest) returns (CentroidResponse) {}
 }
 
-message MapDataRequest {
-  required int32 mapper_id = 1;
-  required string ip = 6;
+message Empty {
+
 }
 
 message MapDataResponse {
+  required int32 mapper_id = 1;
+  required string status = 2;
+}
+
+message MapDataRequest {
   repeated int32 input_split = 1;
   repeated Point centroids = 2;
   required string input_path = 3;
@@ -36,7 +45,8 @@ message ReduceDataRequest {
   required string ip = 6;
 }
 message ReduceDataResponse {
-  optional string message = 1;
+  required int32 reducer_id = 1;
+  required string status = 2;
 }
 
 // The message containing mapper data.
@@ -60,14 +70,12 @@ message KeyValueResponse {
 }
 
 // The message containing a partition.
-message PartitionRequest {
-  required int32 reducer_id = 1;
-  repeated KeyValue pairs = 2;
-  required string ip = 6;
+message CentroidRequest {
+  required string portNo = 6;
 }
 
-message PartitionResponse {
-  optional string message = 1;
+message CentroidResponse {
+  repeated KeyValue key_value = 1;
 }
 
 // A key-value pair.

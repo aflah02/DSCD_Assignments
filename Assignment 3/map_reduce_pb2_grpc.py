@@ -20,11 +20,6 @@ class MasterServiceStub(object):
                 request_serializer=map__reduce__pb2.MapDataRequest.SerializeToString,
                 response_deserializer=map__reduce__pb2.MapDataResponse.FromString,
                 )
-        self.InvokeReducers = channel.unary_unary(
-                '/MasterService/InvokeReducers',
-                request_serializer=map__reduce__pb2.ReduceDataRequest.SerializeToString,
-                response_deserializer=map__reduce__pb2.ReduceDataResponse.FromString,
-                )
 
 
 class MasterServiceServicer(object):
@@ -37,12 +32,6 @@ class MasterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def InvokeReducers(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_MasterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -50,11 +39,6 @@ def add_MasterServiceServicer_to_server(servicer, server):
                     servicer.SendMapperData,
                     request_deserializer=map__reduce__pb2.MapDataRequest.FromString,
                     response_serializer=map__reduce__pb2.MapDataResponse.SerializeToString,
-            ),
-            'InvokeReducers': grpc.unary_unary_rpc_method_handler(
-                    servicer.InvokeReducers,
-                    request_deserializer=map__reduce__pb2.ReduceDataRequest.FromString,
-                    response_serializer=map__reduce__pb2.ReduceDataResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -84,23 +68,6 @@ class MasterService(object):
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
-    @staticmethod
-    def InvokeReducers(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/MasterService/InvokeReducers',
-            map__reduce__pb2.ReduceDataRequest.SerializeToString,
-            map__reduce__pb2.ReduceDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
 
 class MapperServiceStub(object):
     """The mapper service definition.
@@ -112,6 +79,21 @@ class MapperServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Partitioning = channel.unary_unary(
+                '/MapperService/Partitioning',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.MapDataResponse.FromString,
+                )
+        self.Mapping = channel.unary_unary(
+                '/MapperService/Mapping',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.MapDataResponse.FromString,
+                )
+        self.GetMapperData = channel.unary_unary(
+                '/MapperService/GetMapperData',
+                request_serializer=map__reduce__pb2.MapDataRequest.SerializeToString,
+                response_deserializer=map__reduce__pb2.MapDataResponse.FromString,
+                )
         self.SendKeyValuePair = channel.unary_unary(
                 '/MapperService/SendKeyValuePair',
                 request_serializer=map__reduce__pb2.KeyValueRequest.SerializeToString,
@@ -123,6 +105,24 @@ class MapperServiceServicer(object):
     """The mapper service definition.
     """
 
+    def Partitioning(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Mapping(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMapperData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SendKeyValuePair(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -132,6 +132,21 @@ class MapperServiceServicer(object):
 
 def add_MapperServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Partitioning': grpc.unary_unary_rpc_method_handler(
+                    servicer.Partitioning,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.MapDataResponse.SerializeToString,
+            ),
+            'Mapping': grpc.unary_unary_rpc_method_handler(
+                    servicer.Mapping,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.MapDataResponse.SerializeToString,
+            ),
+            'GetMapperData': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMapperData,
+                    request_deserializer=map__reduce__pb2.MapDataRequest.FromString,
+                    response_serializer=map__reduce__pb2.MapDataResponse.SerializeToString,
+            ),
             'SendKeyValuePair': grpc.unary_unary_rpc_method_handler(
                     servicer.SendKeyValuePair,
                     request_deserializer=map__reduce__pb2.KeyValueRequest.FromString,
@@ -147,6 +162,57 @@ def add_MapperServiceServicer_to_server(servicer, server):
 class MapperService(object):
     """The mapper service definition.
     """
+
+    @staticmethod
+    def Partitioning(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/MapperService/Partitioning',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.MapDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Mapping(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/MapperService/Mapping',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.MapDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMapperData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/MapperService/GetMapperData',
+            map__reduce__pb2.MapDataRequest.SerializeToString,
+            map__reduce__pb2.MapDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SendKeyValuePair(request,
@@ -176,10 +242,25 @@ class ReducerServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SendPartition = channel.unary_unary(
-                '/ReducerService/SendPartition',
-                request_serializer=map__reduce__pb2.PartitionRequest.SerializeToString,
-                response_deserializer=map__reduce__pb2.PartitionResponse.FromString,
+        self.Reducing = channel.unary_unary(
+                '/ReducerService/Reducing',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.ReduceDataResponse.FromString,
+                )
+        self.ShuffleSorting = channel.unary_unary(
+                '/ReducerService/ShuffleSorting',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.ReduceDataResponse.FromString,
+                )
+        self.GetMapperData = channel.unary_unary(
+                '/ReducerService/GetMapperData',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.ReduceDataResponse.FromString,
+                )
+        self.SendNewCentroids = channel.unary_unary(
+                '/ReducerService/SendNewCentroids',
+                request_serializer=map__reduce__pb2.CentroidRequest.SerializeToString,
+                response_deserializer=map__reduce__pb2.CentroidResponse.FromString,
                 )
 
 
@@ -187,7 +268,25 @@ class ReducerServiceServicer(object):
     """The reducer service definition.
     """
 
-    def SendPartition(self, request, context):
+    def Reducing(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ShuffleSorting(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMapperData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendNewCentroids(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -196,10 +295,25 @@ class ReducerServiceServicer(object):
 
 def add_ReducerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SendPartition': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendPartition,
-                    request_deserializer=map__reduce__pb2.PartitionRequest.FromString,
-                    response_serializer=map__reduce__pb2.PartitionResponse.SerializeToString,
+            'Reducing': grpc.unary_unary_rpc_method_handler(
+                    servicer.Reducing,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.ReduceDataResponse.SerializeToString,
+            ),
+            'ShuffleSorting': grpc.unary_unary_rpc_method_handler(
+                    servicer.ShuffleSorting,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.ReduceDataResponse.SerializeToString,
+            ),
+            'GetMapperData': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMapperData,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.ReduceDataResponse.SerializeToString,
+            ),
+            'SendNewCentroids': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendNewCentroids,
+                    request_deserializer=map__reduce__pb2.CentroidRequest.FromString,
+                    response_serializer=map__reduce__pb2.CentroidResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -213,7 +327,7 @@ class ReducerService(object):
     """
 
     @staticmethod
-    def SendPartition(request,
+    def Reducing(request,
             target,
             options=(),
             channel_credentials=None,
@@ -223,8 +337,59 @@ class ReducerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/ReducerService/SendPartition',
-            map__reduce__pb2.PartitionRequest.SerializeToString,
-            map__reduce__pb2.PartitionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/ReducerService/Reducing',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.ReduceDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ShuffleSorting(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ReducerService/ShuffleSorting',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.ReduceDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMapperData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ReducerService/GetMapperData',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.ReduceDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendNewCentroids(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ReducerService/SendNewCentroids',
+            map__reduce__pb2.CentroidRequest.SerializeToString,
+            map__reduce__pb2.CentroidResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
