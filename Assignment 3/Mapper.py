@@ -84,8 +84,8 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         file.close()
         mapper_output = []
         self.input = data_points
-        dump = open("./dump.txt", "a")
-        dump.write(f"\nMap Output for Mapper{self.mapperId}\n")
+        dump_mapper = open(f"./Mappers/M{self.mapperId}/dump_mapper_M{self.mapperId}.txt", "a")
+        dump_mapper.write(f"\nMap Output for Mapper{self.mapperId}\n")
         for point in self.input:
             min_dist = math.inf
             min_centroid = 0
@@ -94,9 +94,9 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
                     min_centroid = i
                     min_dist = self.get_distance(point, centroids[i])
             mapper_output.append((min_centroid, point))
-            dump.write(f'({min_centroid}, {(point.x, point.y)})\n')
+            dump_mapper.write(f'({min_centroid}, {(point.x, point.y)})\n')
         self.mapper_output = mapper_output
-        dump.close()
+        dump_mapper.close()
         # self.Partition(mapper_output)
 
     def Partition(self, mapper_output):
@@ -115,13 +115,13 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
             partitions[reducer_id].append((key, value))
         self.partitions = partitions
 
-        dump = open("./dump.txt", "a")
-        dump.write(f"\nPartition Output for Mapper{self.mapperId}")
+        dump_mapper = open(f"./Mappers/M{self.mapperId}/dump_mapper_M{self.mapperId}.txt", "a")
+        dump_mapper.write(f"\nPartition Output for Mapper{self.mapperId}")
         for i in range(len(partitions)):
-            dump.write(f'\nPartition {i+1}\n')
+            dump_mapper.write(f'\nPartition {i+1}\n')
             for key, value in partitions[i]:
-                dump.write(f'({key}, {(value.x, value.y)})\n')
-        dump.close()
+                dump_mapper.write(f'({key}, {(value.x, value.y)})\n')
+        dump_mapper.close()
 
 
 if __name__=='__main__':
@@ -133,7 +133,7 @@ if __name__=='__main__':
     mapperId = argparser.parse_args().mapperId
     portNo = argparser.parse_args().portNo
     numReducers = argparser.parse_args().numReducers
-
+    open(f"./Mappers/M{mapperId}/dump_mapper_M{mapperId}.txt", 'w').close()
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     mapper = Mapper(mapperId, portNo, numReducers)
     map_reduce_pb2_grpc.add_MapperServiceServicer_to_server(mapper, server)

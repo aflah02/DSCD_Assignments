@@ -1,0 +1,387 @@
+
+Mappers Started at port numbers: [50052, 50053, 50054]
+\Reducers Started at port numbers: [50055, 50056, 50057, 50058]
+
+Iteration 1
+
+Status of Data sent to Mapper1: FAILURE
+
+Status of Data sent to Mapper2: SUCCESS
+
+Status of Data sent to Mapper0: SUCCESS
+
+Status of Data sent to Mapper1: SUCCESS
+
+Status of Mapping of Mapper0: SUCCESS
+
+Status of Mapping of Mapper1: SUCCESS
+
+Status of Mapping of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer2: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer0: SUCCESS
+
+Status of Shuffle Sort of Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer2: SUCCESS
+
+Status of Reduce of Reducer0: SUCCESS
+
+Status of Reduce of Reducer1: SUCCESS
+
+Status of Reduce of Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer0: FAILURE
+
+Status of Centroids Received from Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer1: SUCCESS
+
+Status of Centroids Received from Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer3: FAILURE
+
+Status of Centroids Received from Reducer3: SUCCESS
+
+New Centroids:
+11.300000190734863, -1.7000000476837158
+11.199999809265137, -1.2000000476837158
+8.720000267028809, 2.4000000953674316
+0.8999999761581421, 9.600000381469727
+10.066666603088379, 0.0833333283662796
+
+Iteration 2
+
+Status of Data sent to Mapper0: SUCCESS
+
+Status of Data sent to Mapper1: SUCCESS
+
+Status of Data sent to Mapper2: SUCCESS
+
+Status of Mapping of Mapper0: SUCCESS
+
+Status of Mapping of Mapper1: SUCCESS
+
+Status of Mapping of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper2: FAILURE
+
+Status of Partitioning of Mapper2: FAILURE
+
+Status of Partitioning of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper0: SUCCESS
+
+Status of Partitioning of Mapper2: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer1: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer2: SUCCESS
+
+Status of Shuffle Sort of Reducer0: SUCCESS
+
+Status of Shuffle Sort of Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer2: SUCCESS
+
+Status of Reduce of Reducer0: FAILURE
+
+Status of Reduce of Reducer2: FAILURE
+
+Status of Reduce of Reducer1: SUCCESS
+
+Status of Reduce of Reducer0: SUCCESS
+
+Status of Reduce of Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer1: SUCCESS
+
+Status of Centroids Received from Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer3: SUCCESS
+
+New Centroids:
+11.300000190734863, -1.7000000476837158
+11.100000381469727, -1.0500000715255737
+8.682758331298828, 2.4413793087005615
+0.8999999761581421, 9.600000381469727
+10.01111125946045, 0.18333333730697632
+
+Iteration 3
+
+Status of Data sent to Mapper0: FAILURE
+
+Status of Data sent to Mapper1: SUCCESS
+
+Status of Data sent to Mapper2: SUCCESS
+
+Status of Data sent to Mapper0: SUCCESS
+
+Status of Mapping of Mapper2: FAILURE
+
+Status of Mapping of Mapper0: SUCCESS
+
+Status of Mapping of Mapper1: SUCCESS
+
+Status of Mapping of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper0: FAILURE
+
+Status of Partitioning of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer2: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer0: SUCCESS
+
+Status of Shuffle Sort of Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer2: FAILURE
+
+Status of Shuffle Sort of Reducer2: FAILURE
+
+Status of Shuffle Sort of Reducer2: SUCCESS
+
+Status of Reduce of Reducer0: SUCCESS
+
+Status of Reduce of Reducer1: SUCCESS
+
+Status of Reduce of Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer1: SUCCESS
+
+Status of Centroids Received from Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer3: SUCCESS
+
+New Centroids:
+11.300000190734863, -1.7000000476837158
+11.066666603088379, -1.0
+8.663158416748047, 2.463157892227173
+0.8999999761581421, 9.600000381469727
+9.983333587646484, 0.23333333432674408
+
+Iteration 4
+
+Status of Data sent to Mapper0: FAILURE
+
+Status of Data sent to Mapper1: FAILURE
+
+Status of Data sent to Mapper2: SUCCESS
+
+Status of Data sent to Mapper0: SUCCESS
+
+Status of Data sent to Mapper1: FAILURE
+
+Status of Data sent to Mapper1: SUCCESS
+
+Status of Mapping of Mapper1: FAILURE
+
+Status of Mapping of Mapper0: SUCCESS
+
+Status of Mapping of Mapper2: SUCCESS
+
+Status of Mapping of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper1: FAILURE
+
+Status of Partitioning of Mapper1: FAILURE
+
+Status of Partitioning of Mapper0: SUCCESS
+
+Status of Partitioning of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper1: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer1: FAILURE
+
+Status of Data Retrieval from Mappers by Reducer2: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer0: FAILURE
+
+Status of Shuffle Sort of Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer2: SUCCESS
+
+Status of Shuffle Sort of Reducer0: SUCCESS
+
+Status of Reduce of Reducer0: FAILURE
+
+Status of Reduce of Reducer1: SUCCESS
+
+Status of Reduce of Reducer2: SUCCESS
+
+Status of Reduce of Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer1: SUCCESS
+
+Status of Centroids Received from Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer3: FAILURE
+
+Status of Centroids Received from Reducer3: FAILURE
+
+Status of Centroids Received from Reducer3: SUCCESS
+
+New Centroids:
+11.300000190734863, -1.7000000476837158
+11.050000190734863, -0.9750000238418579
+8.651063919067383, 2.476595640182495
+0.8999999761581421, 9.600000381469727
+9.966666221618652, 0.26333335041999817
+
+Iteration 5
+
+Status of Data sent to Mapper0: SUCCESS
+
+Status of Data sent to Mapper1: FAILURE
+
+Status of Data sent to Mapper2: SUCCESS
+
+Status of Data sent to Mapper1: FAILURE
+
+Status of Data sent to Mapper1: FAILURE
+
+Status of Data sent to Mapper1: SUCCESS
+
+Status of Mapping of Mapper1: FAILURE
+
+Status of Mapping of Mapper0: SUCCESS
+
+Status of Mapping of Mapper2: SUCCESS
+
+Status of Mapping of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer2: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer0: FAILURE
+
+Status of Shuffle Sort of Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer2: FAILURE
+
+Status of Shuffle Sort of Reducer0: SUCCESS
+
+Status of Shuffle Sort of Reducer2: SUCCESS
+
+Status of Reduce of Reducer0: SUCCESS
+
+Status of Reduce of Reducer1: SUCCESS
+
+Status of Reduce of Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer0: FAILURE
+
+Status of Centroids Received from Reducer0: FAILURE
+
+Status of Centroids Received from Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer1: SUCCESS
+
+Status of Centroids Received from Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer3: SUCCESS
+
+New Centroids:
+11.300000190734863, -1.7000000476837158
+11.039999961853027, -0.9600000381469727
+8.642857551574707, 2.4857141971588135
+0.8999999761581421, 9.600000381469727
+9.95555591583252, 0.28333333134651184
+
+Iteration 6
+
+Status of Data sent to Mapper0: SUCCESS
+
+Status of Data sent to Mapper1: SUCCESS
+
+Status of Data sent to Mapper2: SUCCESS
+
+Status of Mapping of Mapper2: FAILURE
+
+Status of Mapping of Mapper0: SUCCESS
+
+Status of Mapping of Mapper1: SUCCESS
+
+Status of Mapping of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper1: SUCCESS
+
+Status of Partitioning of Mapper2: SUCCESS
+
+Status of Partitioning of Mapper0: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer2: FAILURE
+
+Status of Data Retrieval from Mappers by Reducer1: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer2: SUCCESS
+
+Status of Data Retrieval from Mappers by Reducer0: SUCCESS
+
+Status of Shuffle Sort of Reducer0: SUCCESS
+
+Status of Shuffle Sort of Reducer1: SUCCESS
+
+Status of Shuffle Sort of Reducer2: SUCCESS
+
+Status of Reduce of Reducer0: SUCCESS
+
+Status of Reduce of Reducer1: SUCCESS
+
+Status of Reduce of Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer0: SUCCESS
+
+Status of Centroids Received from Reducer1: SUCCESS
+
+Status of Centroids Received from Reducer2: SUCCESS
+
+Status of Centroids Received from Reducer3: SUCCESS
+
+New Centroids:
+11.300000190734863, -1.7000000476837158
+11.033332824707031, -0.9500000476837158
+8.632473945617676, 2.497422695159912
+0.8999999761581421, 9.600000381469727
+9.94409465789795, 0.30708661675453186

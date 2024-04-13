@@ -96,8 +96,8 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
 
     def Reduce(self, key_value):
         reducer = open(f"./Reducers/R{self.reducerId}.txt", "a")
-        dump = open("./dump.txt", "a")
-        dump.write(f"\nReduce Results for Reducer {self.reducerId}\n")
+        dump_reducer = open(f"./Reducers/dump_reducer_R{reducerId}.txt", "a")
+        dump_reducer.write(f"\nReduce Results for Reducer {self.reducerId}\n")
         for key in key_value.keys():
             mean_x = 0
             mean_y = 0
@@ -107,11 +107,11 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
             mean_x /= len(key_value[key])
             mean_y /= len(key_value[key])
             reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
-            dump.write(f"({key}, ({mean_x}, {mean_y}))\n")
+            dump_reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
             self.reducer_output[key] = map_reduce_pb2.Point(x=mean_x, y=mean_y)
         # print(self.reducer_output)
         reducer.close()
-        dump.close()
+        dump_reducer.close()
 
 if __name__=='__main__':
     argparser = argparse.ArgumentParser()
@@ -123,7 +123,8 @@ if __name__=='__main__':
     portNo = argparser.parse_args().portNo
     
     mappers = argparser.parse_args().mappers.split(" ")
-    print(mappers)
+    # print(mappers)
+    open(f"./Reducers/dump_reducer_R{reducerId}.txt", 'w').close()
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     reducer = Reducer(reducerId, portNo, mappers)
     map_reduce_pb2_grpc.add_ReducerServiceServicer_to_server(reducer, server)
