@@ -5,7 +5,7 @@ import map_reduce_pb2_grpc
 import argparse
 import socket
 import os
-import shutil
+from random import choices
 
 class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
     def __init__(self, reducerId, portNo, mappers):
@@ -22,30 +22,55 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
         self.reducer_output = {}
 
     def SendNewCentroids(self, request, context):
-        new_centroids = []
-        for key in self.reducer_output.keys():
-            new_centroids.append(map_reduce_pb2.KeyValue(key=key, value=self.reducer_output[key]))
-        return map_reduce_pb2.CentroidResponse(key_value=new_centroids)
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            new_centroids = []
+            for key in self.reducer_output.keys():
+                new_centroids.append(map_reduce_pb2.KeyValue(key=key, value=self.reducer_output[key]))
+            return map_reduce_pb2.CentroidResponse(key_value=new_centroids, status="SUCCESS")
+        return map_reduce_pb2.CentroidResponse(status="FAILURE")
 
-    def GetMapperData(self, request, context):
-        self.GetDataFromMappers()
-        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
-
-    def ShuffleSorting(self, request, context):
-        self.ShuffleSort()
-        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
-
-    def Reducing(self, request, context):
-        self.Reduce(self.key_value)
-        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
+    def Heartbeat(self, request, context):
+        return map_reduce_pb2.ReduceDataResponse(mapper_id=self.reducerId, status="SUCCESS")
     
+    def GetMapperData(self, request, context):
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            self.GetDataFromMappers()
+            return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
+        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="FAILURE")
+    
+    def ShuffleSorting(self, request, context):
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            self.ShuffleSort()
+            return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
+        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="FAILURE")
+    
+    def Reducing(self, request, context):
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            self.Reduce(self.key_value)
+            return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
+        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="FAILURE")
+
     def GetDataFromMappers(self):
-        for mapper in self.mappers:
-            channel = grpc.insecure_channel(self.ip+":"+str(mapper))
+        mapper_port_id = 0
+        while mapper_port_id < len(self.mappers):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.mappers[mapper_port_id]))
             stub = map_reduce_pb2_grpc.MapperServiceStub(channel)
             request = map_reduce_pb2.KeyValueRequest(ip="[::]:"+str(self.portNo), reducerId=self.reducerId)
-            response = stub.SendKeyValuePair(request)
-            self.key_value_pairs.extend(response.key_value_pairs)
+            try:
+                response = stub.SendKeyValuePair(request)
+                if response.status == "SUCCESS":
+                    print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
+                    self.key_value_pairs.extend(response.key_value_pairs)
+                    mapper_port_id += 1
+                else:
+                    print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
+            except:
+                print(f"Status of Data from Mapper{mapper_port_id}: FAILURE")
+                
             # print(self.key_value_pairs)
         # self.ShuffleSort()
 
@@ -71,6 +96,8 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
 
     def Reduce(self, key_value):
         reducer = open(f"./Reducers/R{self.reducerId}.txt", "a")
+        dump = open("./dump.txt", "a")
+        dump.write(f"\nReduce Results for Reducer {self.reducerId}\n")
         for key in key_value.keys():
             mean_x = 0
             mean_y = 0
@@ -80,9 +107,11 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
             mean_x /= len(key_value[key])
             mean_y /= len(key_value[key])
             reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
+            dump.write(f"({key}, ({mean_x}, {mean_y}))\n")
             self.reducer_output[key] = map_reduce_pb2.Point(x=mean_x, y=mean_y)
         # print(self.reducer_output)
         reducer.close()
+        dump.close()
 
 if __name__=='__main__':
     argparser = argparse.ArgumentParser()

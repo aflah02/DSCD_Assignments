@@ -79,6 +79,11 @@ class MapperServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Heartbeat = channel.unary_unary(
+                '/MapperService/Heartbeat',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.MapDataResponse.FromString,
+                )
         self.Partitioning = channel.unary_unary(
                 '/MapperService/Partitioning',
                 request_serializer=map__reduce__pb2.Empty.SerializeToString,
@@ -104,6 +109,12 @@ class MapperServiceStub(object):
 class MapperServiceServicer(object):
     """The mapper service definition.
     """
+
+    def Heartbeat(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Partitioning(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -132,6 +143,11 @@ class MapperServiceServicer(object):
 
 def add_MapperServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Heartbeat': grpc.unary_unary_rpc_method_handler(
+                    servicer.Heartbeat,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.MapDataResponse.SerializeToString,
+            ),
             'Partitioning': grpc.unary_unary_rpc_method_handler(
                     servicer.Partitioning,
                     request_deserializer=map__reduce__pb2.Empty.FromString,
@@ -162,6 +178,23 @@ def add_MapperServiceServicer_to_server(servicer, server):
 class MapperService(object):
     """The mapper service definition.
     """
+
+    @staticmethod
+    def Heartbeat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/MapperService/Heartbeat',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.MapDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Partitioning(request,
@@ -242,6 +275,11 @@ class ReducerServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Heartbeat = channel.unary_unary(
+                '/ReducerService/Heartbeat',
+                request_serializer=map__reduce__pb2.Empty.SerializeToString,
+                response_deserializer=map__reduce__pb2.ReduceDataResponse.FromString,
+                )
         self.Reducing = channel.unary_unary(
                 '/ReducerService/Reducing',
                 request_serializer=map__reduce__pb2.Empty.SerializeToString,
@@ -267,6 +305,12 @@ class ReducerServiceStub(object):
 class ReducerServiceServicer(object):
     """The reducer service definition.
     """
+
+    def Heartbeat(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Reducing(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -295,6 +339,11 @@ class ReducerServiceServicer(object):
 
 def add_ReducerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Heartbeat': grpc.unary_unary_rpc_method_handler(
+                    servicer.Heartbeat,
+                    request_deserializer=map__reduce__pb2.Empty.FromString,
+                    response_serializer=map__reduce__pb2.ReduceDataResponse.SerializeToString,
+            ),
             'Reducing': grpc.unary_unary_rpc_method_handler(
                     servicer.Reducing,
                     request_deserializer=map__reduce__pb2.Empty.FromString,
@@ -325,6 +374,23 @@ def add_ReducerServiceServicer_to_server(servicer, server):
 class ReducerService(object):
     """The reducer service definition.
     """
+
+    @staticmethod
+    def Heartbeat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/ReducerService/Heartbeat',
+            map__reduce__pb2.Empty.SerializeToString,
+            map__reduce__pb2.ReduceDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Reducing(request,

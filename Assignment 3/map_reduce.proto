@@ -7,6 +7,7 @@ service MasterService {
 
 // The mapper service definition.
 service MapperService {
+  rpc Heartbeat(Empty) returns (MapDataResponse) {}
   rpc Partitioning(Empty) returns (MapDataResponse) {}
   rpc Mapping(Empty) returns (MapDataResponse) {}
   rpc GetMapperData(MapDataRequest) returns (MapDataResponse) {}
@@ -15,6 +16,7 @@ service MapperService {
 
 // The reducer service definition.
 service ReducerService {
+  rpc Heartbeat(Empty) returns (ReduceDataResponse) {}
   rpc Reducing(Empty) returns (ReduceDataResponse) {}
   rpc ShuffleSorting(Empty) returns (ReduceDataResponse) {}
   rpc GetMapperData(Empty) returns (ReduceDataResponse) {}
@@ -67,6 +69,7 @@ message KeyValueRequest {
 
 message KeyValueResponse {
   repeated KeyValue key_value_pairs = 1;
+  required string status = 2;
 }
 
 // The message containing a partition.
@@ -76,6 +79,7 @@ message CentroidRequest {
 
 message CentroidResponse {
   repeated KeyValue key_value = 1;
+  required string status = 2;
 }
 
 // A key-value pair.

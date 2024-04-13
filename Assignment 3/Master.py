@@ -8,6 +8,20 @@ import random
 import socket
 import time
 import os
+import threading
+
+class MyTimer:
+    def __init__(self, interval, onEndCallback) -> None:
+        self.interval = interval
+        self.onEndCallback = onEndCallback
+
+    def start(self, ):
+        self.start_time = time.time()
+        self._timer = threading.Timer(self.interval, self.onEndCallback if self.onEndCallback is not None else lambda: None)
+        self._timer.start()
+
+    def cancel(self):
+        self._timer.cancel()
 class Master(map_reduce_pb2_grpc.MasterServiceServicer):
     def __init__(self, mappers, reducers, centroids, max_iterations, portNo, data_path):
         self.num_mappers = mappers
@@ -23,6 +37,7 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         self.data_path = data_path
         self.portNo = portNo
         self.ip = socket.gethostbyname(socket.gethostname())
+        self.timer = None
 
         for i in range(self.num_mappers):
             self.mapper_ports.append(self.portNo+i+1)
@@ -46,22 +61,60 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
             reducer_id += 1
         time.sleep(5)
         print("Reducers Started", self.reducer_ports)
+    
+    def startTimer(self):
+        self.timer = MyTimer(1, self.periodic_heartbeat)
+        self.timer.start()
+
+    def periodic_heartbeat(self):
+        for mapper in self.mapper_ports:
+            channel = grpc.insecure_channel(self.ip+":"+str(mapper))
+            stub = map_reduce_pb2_grpc.MapperServiceStub(channel)
+            request = map_reduce_pb2.Empty()
+            try :
+                response = stub.Heartbeat(request)
+                print(f"Heartbeat from Mapper{response.mapper_id}: {response.status}")
+            except:
+                print(f"Heartbeat from Mapper{self.mapper_port_id[mapper]}: FAILURE")
+
+        for reducer in self.reducer_ports:
+            channel = grpc.insecure_channel(self.ip+":"+str(reducer))
+            stub = map_reduce_pb2_grpc.ReducerServiceStub(channel)
+            request = map_reduce_pb2.Empty()
+            try:
+                response = stub.Heartbeat(request)
+                print(f"Heartbeat from Reducer{response.reducer_id}: {response.status}")
+            except:
+                print(f"Heartbeat from Reducer{self.reducer_port_id[reducer]}: FAILURE")
+        self.timer.cancel()
+        self.startTimer()
 
     def getNewCentroids(self):
         converged = True
-        for port in self.reducer_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(port))
+        reducer_port_id = 0
+        while reducer_port_id < len(self.reducer_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.reducer_ports[reducer_port_id]))
             stub = map_reduce_pb2_grpc.ReducerServiceStub(channel)
             request = map_reduce_pb2.CentroidRequest(portNo=str(self.portNo))
-            response = stub.SendNewCentroids(request)
-            key_values = response.key_value
-            for pair in key_values:
-                if pair.value != self.centroids[pair.key]:
-                    converged = False
-                self.centroids[pair.key] = pair.value
+            try:
+                response = stub.SendNewCentroids(request)
+                if response.status == "SUCCESS":
+                    print(f"Status of Centroids Received from Reducer{self.reducer_ports[reducer_port_id]}: {response.status}")
+                    key_values = response.key_value
+                    for pair in key_values:
+                        if pair.value != self.centroids[pair.key]:
+                            converged = False
+                        self.centroids[pair.key] = pair.value
+                    reducer_port_id += 1
+                else:
+                    print(f"Status of Centroids Received from Reducer{self.reducer_ports[reducer_port_id]}: {response.status}")
+            except:
+                    print(f"Status of Centroids Received from Reducer{self.reducer_ports[reducer_port_id]}: FAILURE")
+
         # print(self.centroids)
         centroids = open(f"./centroids.txt", "w")
         dump = open("./dump.txt", "a")
+        dump.write("\nNew Centroids:\n")
         for centroid in self.centroids:
             centroids.write(f"{centroid.x}, {centroid.y}\n")
             dump.write(f"{centroid.x}, {centroid.y}\n")
@@ -90,74 +143,104 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         centroids = self.centroids
         return map_reduce_pb2.MapDataResponse(input_split=data_indices, centroids=centroids, input_path=self.data_path)
 
-    def SendMapperData(self):
-        for mapper in self.mapper_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(mapper))
+    def sendMapperData(self):
+        mapper_port_id = 0
+        while mapper_port_id < len(self.mapper_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.mapper_ports[mapper_port_id]))
             stub = map_reduce_pb2_grpc.MapperServiceStub(channel)
-            indices = self.indices_per_mapper[self.mapper_port_id[mapper]]
+            indices = self.indices_per_mapper[self.mapper_port_id[self.mapper_ports[mapper_port_id]]]
             request = map_reduce_pb2.MapDataRequest(input_split=indices, centroids=self.centroids, input_path=self.data_path)
             try :
                 response = stub.GetMapperData(request)
                 print(f"Status of Data sent to Mapper{response.mapper_id}: {response.status}")
+                if response.status == "SUCCESS":
+                    mapper_port_id += 1
+                else:
+                    print(f"Mapper{response.mapper_id} FAILED. Retrying...")
             except:
-                print(f"Status of Data sent to Mapper{self.mapper_port_id[mapper]}: FAILURE")
+                print(f"Status of Data sent to Mapper{self.mapper_port_id[self.mapper_ports[mapper_port_id]]}: FAILURE")
 
-    def StartMapping(self):
-        for mapper in self.mapper_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(mapper))
+    def startMapping(self):
+        mapper_port_id = 0
+        while mapper_port_id < len(self.mapper_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.mapper_ports[mapper_port_id]))
             stub = map_reduce_pb2_grpc.MapperServiceStub(channel)
             request = map_reduce_pb2.Empty()
             try:
                 response = stub.Mapping(request)
                 print(f"Status of Mapping of Mapper{response.mapper_id}: {response.status}")
+                if response.status == "SUCCESS":
+                    mapper_port_id += 1
+                else:
+                    print(f"Mapper{response.mapper_id} FAILED. Retrying...")
             except:
-                print(f"Status of Mapping of Mapper{self.mapper_port_id[mapper]}: FAILURE")
+                print(f"Status of Mapping of Mapper{self.mapper_port_id[self.mapper_ports[mapper_port_id]]}: FAILURE")
 
-    def StartPartitioning(self):
-        for mapper in self.mapper_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(mapper))
+    def startPartitioning(self):
+        mapper_port_id = 0
+        while mapper_port_id < len(self.mapper_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.mapper_ports[mapper_port_id]))
             stub = map_reduce_pb2_grpc.MapperServiceStub(channel)
             request = map_reduce_pb2.Empty()
             try:
                 response = stub.Partitioning(request)
                 print(f"Status of Partitioning of Mapper{response.mapper_id}: {response.status}")
+                if response.status == "SUCCESS":
+                    mapper_port_id += 1
+                else:
+                    print(f"Mapper{response.mapper_id} FAILED. Retrying...")
             except:
-                print(f"Status of Partitioning of Mapper{self.mapper_port_id[mapper]}: FAILURE")
+                print(f"Status of Partitioning of Mapper{self.mapper_port_id[self.mapper_ports[mapper_port_id]]}: FAILURE")
 
-    def StartReducers(self):
-        for reducer in self.reducer_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(reducer))
+    def startReducers(self):
+        reducer_port_id = 0
+        while reducer_port_id < len(self.reducer_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.reducer_ports[reducer_port_id]))
             stub = map_reduce_pb2_grpc.ReducerServiceStub(channel)
             request = map_reduce_pb2.Empty()
             try:
                 response = stub.GetMapperData(request)
                 print(f"Status of Data Retrieval from Mappers by Reducer{response.reducer_id}: {response.status}")
+                if response.status == "SUCCESS":
+                    reducer_port_id += 1
+                else:
+                    print(f"Reducer{response.reducer_id} FAILED. Retrying...")
             except:
-                print(f"Status of Data Retrieval from Mappers by Reducer{self.reducer_port_id[reducer]}: FAILURE")
+                print(f"Status of Data Retrieval from Mappers by Reducer{self.reducer_port_id[self.reducer_ports[reducer_port_id]]}: FAILURE")
 
 
-    def StartShuffleSort(self):
-        for reducer in self.reducer_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(reducer))
+    def startShuffleSort(self):
+        reducer_port_id = 0
+        while reducer_port_id < len(self.reducer_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.reducer_ports[reducer_port_id]))
             stub = map_reduce_pb2_grpc.ReducerServiceStub(channel)
             request = map_reduce_pb2.Empty()
             try:
                 response = stub.ShuffleSorting(request)
                 print(f"Status of Shuffle Sort of Reducer{response.reducer_id}: {response.status}")
+                if response.status == "SUCCESS":
+                    reducer_port_id += 1
+                else:
+                    print(f"Reducer{response.reducer_id} FAILED. Retrying...")
             except:
-                print(f"Status of Shuffle Sort of Reducer{self.reducer_port_id[reducer]}: FAILURE")
+                print(f"Status of Shuffle Sort of Reducer{self.reducer_port_id[self.reducer_ports[reducer_port_id]]}: FAILURE")
 
 
-    def StartReducing(self):
-        for reducer in self.reducer_ports:
-            channel = grpc.insecure_channel(self.ip+":"+str(reducer))
+    def startReducing(self):
+        reducer_port_id = 0
+        while reducer_port_id < len(self.reducer_ports):
+            channel = grpc.insecure_channel(self.ip+":"+str(self.reducer_ports[reducer_port_id]))
             stub = map_reduce_pb2_grpc.ReducerServiceStub(channel)
             request = map_reduce_pb2.Empty()
             try:
                 response = stub.Reducing(request)
                 print(f"Status of Reduce of Reducer{response.reducer_id}: {response.status}")
+                if response.status == "SUCCESS":
+                    reducer_port_id += 1
+                else:
+                    print(f"Reducer{response.reducer_id} FAILED. Retrying...")
             except:
-                print(f"Status of Reduce of Reducer{self.reducer_port_id[reducer]}: FAILURE")
+                print(f"Status of Reduce of Reducer{self.reducer_port_id[self.reducer_ports[reducer_port_id]]}: FAILURE")
 
 
 if __name__=='__main__':
@@ -182,28 +265,29 @@ if __name__=='__main__':
     master.invoke_mappers()
     print("Invoking Reducers...")
     master.invoke_reducers()
-
     time.sleep(5)
+    
+    master.startTimer()
     for iteration in range(master.max_iterations):
         print("\nIteration Number:", iteration+1)
         dump = open("./dump.txt", "a")
-        dump.write(f"Iteration {iteration+1}\n")
+        dump.write(f"\nIteration {iteration+1}\n")
         dump.close()
         print("\nCentroids for this Iteration:")
         print(master.centroids)
         print("\nSending Data to Mappers...")
-        master.SendMapperData()
+        master.sendMapperData()
         print("\nStart Mapping...")
-        master.StartMapping()
+        master.startMapping()
         print("\nStart Partitioning...")
-        master.StartPartitioning()
+        master.startPartitioning()
 
         print("\nStart Reducers to Get Data from Mappers...")
-        master.StartReducers()
+        master.startReducers()
         print("\nStart Shuffle Sorting...")
-        master.StartShuffleSort()
+        master.startShuffleSort()
         print("\nStart Reducing...")
-        master.StartReducing()
+        master.startReducing()
         print("\nGetting New Centroids...")
         converged = master.getNewCentroids()
         print()
@@ -211,6 +295,6 @@ if __name__=='__main__':
             print("Converged before Maximum Iterations")
             break
     print("KMeans Finished.")
-    
+    master.timer.cancel()
     server.wait_for_termination()
 

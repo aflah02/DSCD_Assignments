@@ -7,6 +7,7 @@ import socket
 import math
 import os
 import shutil
+from random import choices
 
 class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
     def __init__(self, mapperId, portNo, numReducers):
@@ -29,18 +30,30 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         return math.sqrt(math.pow(point1.x - point2.x, 2) + math.pow(point1.y-point2.y, 2))
 
     def GetMapperData(self, request, context):
-        self.indices = request.input_split
-        self.centroids = request.centroids
-        self.input_path = request.input_path
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            self.indices = request.input_split
+            self.centroids = request.centroids
+            self.input_path = request.input_path
+            return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="FAILURE")
+
+    def Heartbeat(self, request, context):
         return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
     
     def Mapping(self, request, context):
-        self.Map(self.indices, self.centroids)
-        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            self.Map(self.indices, self.centroids)
+            return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="FAILURE")
     
     def Partitioning(self, request, context):
-        self.Partition(self.mapper_output)
-        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            self.Partition(self.mapper_output)
+            return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
+        return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="FAILURE")
 
     def GetDataFromMaster(self):
         channel = grpc.insecure_channel(self.ip+":50051")
@@ -53,12 +66,15 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         self.Map(self.indices, self.centroids)
 
     def SendKeyValuePair(self, request, context):
-        reducerId = request.reducerId
-        partition = self.partitions[reducerId]
-        for i in range(len(partition)):
-            # print(partition[i][0])
-            partition[i] = map_reduce_pb2.KeyValue(key=partition[i][0], value=partition[i][1])
-        return map_reduce_pb2.KeyValueResponse(key_value_pairs=partition)
+        flag = choices([0,1], [0.2, 0.8])[0]
+        if flag == 1:
+            reducerId = request.reducerId
+            partition = self.partitions[reducerId]
+            for i in range(len(partition)):
+                partition[i] = map_reduce_pb2.KeyValue(key=partition[i][0], value=partition[i][1])
+            return map_reduce_pb2.KeyValueResponse(key_value_pairs=partition, status="SUCCESS")
+        return map_reduce_pb2.KeyValueResponse(status="FAILURE")
+        
 
     def Map(self, indices, centroids):
         file = open(self.input_path, "r")
@@ -68,7 +84,8 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         file.close()
         mapper_output = []
         self.input = data_points
-        # map = open(f"./Mappers/M{self.mapperId}/map.txt", "a")
+        dump = open("./dump.txt", "a")
+        dump.write(f"\nMap Output for Mapper{self.mapperId}\n")
         for point in self.input:
             min_dist = math.inf
             min_centroid = 0
@@ -77,9 +94,9 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
                     min_centroid = i
                     min_dist = self.get_distance(point, centroids[i])
             mapper_output.append((min_centroid, point))
-            # map.write(f'({min_centroid}, {(point.x, point.y)})\n')
+            dump.write(f'({min_centroid}, {(point.x, point.y)})\n')
         self.mapper_output = mapper_output
-        # map.close()
+        dump.close()
         # self.Partition(mapper_output)
 
     def Partition(self, mapper_output):
@@ -89,7 +106,6 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
             partitions.append([])
             partition.close()
             
-
         for key, value in mapper_output:
             # Use a hash function to determine the reducer for this key
             reducer_id = key % self.numReducers
@@ -98,6 +114,14 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
             partition.close()
             partitions[reducer_id].append((key, value))
         self.partitions = partitions
+
+        dump = open("./dump.txt", "a")
+        dump.write(f"\nPartition Output for Mapper{self.mapperId}")
+        for i in range(len(partitions)):
+            dump.write(f'\nPartition {i+1}\n')
+            for key, value in partitions[i]:
+                dump.write(f'({key}, {(value.x, value.y)})\n')
+        dump.close()
 
 
 if __name__=='__main__':

@@ -74,10 +74,12 @@ class KeyValueRequest(_message.Message):
     def __init__(self, reducerId: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class KeyValueResponse(_message.Message):
-    __slots__ = ("key_value_pairs",)
+    __slots__ = ("key_value_pairs", "status")
     KEY_VALUE_PAIRS_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     key_value_pairs: _containers.RepeatedCompositeFieldContainer[KeyValue]
-    def __init__(self, key_value_pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
+    status: str
+    def __init__(self, key_value_pairs: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ..., status: _Optional[str] = ...) -> None: ...
 
 class CentroidRequest(_message.Message):
     __slots__ = ("portNo",)
@@ -86,10 +88,12 @@ class CentroidRequest(_message.Message):
     def __init__(self, portNo: _Optional[str] = ...) -> None: ...
 
 class CentroidResponse(_message.Message):
-    __slots__ = ("key_value",)
+    __slots__ = ("key_value", "status")
     KEY_VALUE_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     key_value: _containers.RepeatedCompositeFieldContainer[KeyValue]
-    def __init__(self, key_value: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ...) -> None: ...
+    status: str
+    def __init__(self, key_value: _Optional[_Iterable[_Union[KeyValue, _Mapping]]] = ..., status: _Optional[str] = ...) -> None: ...
 
 class KeyValue(_message.Message):
     __slots__ = ("key", "value")
