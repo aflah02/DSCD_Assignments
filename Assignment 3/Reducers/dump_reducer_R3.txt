@@ -1,0 +1,3 @@
+
+Reduce Results for Reducer 3
+(3, (0.824999988079071, 9.75))

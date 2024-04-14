@@ -8,6 +8,7 @@ import math
 import os
 import shutil
 from random import choices
+import time
 
 class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
     def __init__(self, mapperId, portNo, numReducers):
@@ -31,6 +32,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
 
     def GetMapperData(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             self.indices = request.input_split
             self.centroids = request.centroids
@@ -43,6 +45,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
     
     def Mapping(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             self.Map(self.indices, self.centroids)
             return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")
@@ -50,6 +53,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
     
     def Partitioning(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             self.Partition(self.mapper_output)
             return map_reduce_pb2.MapDataResponse(mapper_id=self.mapperId, status="SUCCESS")

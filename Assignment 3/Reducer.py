@@ -6,6 +6,7 @@ import argparse
 import socket
 import os
 from random import choices
+import time
 
 class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
     def __init__(self, reducerId, portNo, mappers):
@@ -23,6 +24,7 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
 
     def SendNewCentroids(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             new_centroids = []
             for key in self.reducer_output.keys():
@@ -35,6 +37,7 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
     
     def GetMapperData(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             self.GetDataFromMappers()
             return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
@@ -42,6 +45,7 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
     
     def ShuffleSorting(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             self.ShuffleSort()
             return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
@@ -49,6 +53,7 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
     
     def Reducing(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
         if flag == 1:
             self.Reduce(self.key_value)
             return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
@@ -70,9 +75,6 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
                     print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
             except:
                 print(f"Status of Data from Mapper{mapper_port_id}: FAILURE")
-                
-            # print(self.key_value_pairs)
-        # self.ShuffleSort()
 
     def ShuffleSort(self):
         # self.key_value_pairs = sorted(self.key_value_pairs , key=lambda k: k.key)
