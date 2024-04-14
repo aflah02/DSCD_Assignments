@@ -1,0 +1,47 @@
+
+Sending Request to M0
+
+Sending Request to M1
+
+Sending Request to M2
+
+Reduce Results for Reducer 1
+(1, (-1.6500000059604645, 7.450000047683716))
+
+Sending Request to M0
+
+Sending Request to M1
+
+Sending Request to M2
+
+Reduce Results for Reducer 1
+(1, (-1.6500000059604645, 7.450000047683716))
+
+Sending Request to M0
+
+Sending Request to M1
+
+Sending Request to M2
+
+Reduce Results for Reducer 1
+(1, (-1.6500000059604645, 7.450000047683716))
+
+Sending Request to M0
+
+Sending Request to M0
+
+Sending Request to M1
+
+Sending Request to M2
+
+Reduce Results for Reducer 1
+(1, (-1.6500000059604645, 7.450000047683716))
+
+Sending Request to M0
+
+Sending Request to M1
+
+Sending Request to M2
+
+Reduce Results for Reducer 1
+(1, (-1.6500000059604645, 7.450000047683716))

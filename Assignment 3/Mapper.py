@@ -73,7 +73,7 @@ class Mapper(map_reduce_pb2_grpc.MapperServiceServicer):
         flag = choices([0,1], [0.2, 0.8])[0]
         if flag == 1:
             reducerId = request.reducerId
-            partition = self.partitions[reducerId]
+            partition = self.partitions[reducerId].copy()
             for i in range(len(partition)):
                 partition[i] = map_reduce_pb2.KeyValue(key=partition[i][0], value=partition[i][1])
             return map_reduce_pb2.KeyValueResponse(key_value_pairs=partition, status="SUCCESS")
@@ -138,11 +138,11 @@ if __name__=='__main__':
     portNo = argparser.parse_args().portNo
     numReducers = argparser.parse_args().numReducers
     open(f"./Mappers/M{mapperId}/dump_mapper_M{mapperId}.txt", 'w').close()
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     mapper = Mapper(mapperId, portNo, numReducers)
     map_reduce_pb2_grpc.add_MapperServiceServicer_to_server(mapper, server)
 
     server.add_insecure_port("[::]:"+str(portNo))
     server.start()
     # mapper.GetDataFromMaster()
-    server.wait_for_termination(timeout=100000000000)
+    server.wait_for_termination()

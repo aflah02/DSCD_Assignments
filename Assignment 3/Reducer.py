@@ -66,6 +66,9 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
             stub = map_reduce_pb2_grpc.MapperServiceStub(channel)
             request = map_reduce_pb2.KeyValueRequest(ip="[::]:"+str(self.portNo), reducerId=self.reducerId)
             try:
+                dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+                dump_reducer.write(f"\nSending Request to M{mapper_port_id}\n")
+                dump_reducer.close()
                 response = stub.SendKeyValuePair(request)
                 if response.status == "SUCCESS":
                     print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
@@ -73,7 +76,8 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
                     mapper_port_id += 1
                 else:
                     print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
-            except:
+            except Exception as e:
+                print(e)
                 print(f"Status of Data from Mapper{mapper_port_id}: FAILURE")
 
     def ShuffleSort(self):
@@ -135,4 +139,4 @@ if __name__=='__main__':
     server.start()
     # print(len(mappers))
     # reducer.GetDataFromMappers()
-    server.wait_for_termination(timeout=100000000000)
+    server.wait_for_termination()
