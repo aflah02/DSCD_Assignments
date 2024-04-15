@@ -40,8 +40,23 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
         time.sleep(5)
         if flag == 1:
             self.GetDataFromMappers()
-            return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="SUCCESS")
-        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, status="FAILURE")
+            shuffle_status = self.ShuffleSort()
+            dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+            dump_reducer.write(f"\Status of Shuffle Sort for Reducer{self.reducerId}: {shuffle_status}\n")
+            dump_reducer.close()
+            if shuffle_status == "FAILURE":
+                return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, stage="Shuffle Sorting", status="FAILURE")
+            reduce_status = self.Reduce(self.key_value)
+            dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+            dump_reducer.write(f"\Status of Reduce for Reducer{self.reducerId}: {reduce_status}\n")
+            dump_reducer.close()
+            if reduce_status == "FAILURE":
+                return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, stage="Reducing", status="FAILURE")
+            return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, stage="All", status="SUCCESS")
+        dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+        dump_reducer.write(f"\Status of Data Received for Reducer{self.reducerId}: FAILURE\n")
+        dump_reducer.close()
+        return map_reduce_pb2.ReduceDataResponse(reducer_id=self.reducerId, stage="Data Sending", status="FAILURE")
     
     def ShuffleSorting(self, request, context):
         flag = choices([0,1], [0.2, 0.8])[0]
@@ -67,57 +82,73 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
             request = map_reduce_pb2.KeyValueRequest(ip="[::]:"+str(self.portNo), reducerId=self.reducerId)
             try:
                 dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
-                dump_reducer.write(f"\nSending Request to M{mapper_port_id}\n")
+                dump_reducer.write(f"\nSending Request to M{mapper_port_id}")
                 dump_reducer.close()
                 response = stub.SendKeyValuePair(request)
+                dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+                dump_reducer.write(f"\nReceived Response from M{mapper_port_id}")
+                dump_reducer.close()
                 if response.status == "SUCCESS":
                     print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
+                    dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+                    dump_reducer.write(f"\nStatus of Data from Mapper{mapper_port_id}: {response.status}")
+                    dump_reducer.close()
                     self.key_value_pairs.extend(response.key_value_pairs)
                     mapper_port_id += 1
                 else:
+                    dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+                    dump_reducer.write(f"\nStatus of Data from Mapper{mapper_port_id}: {response.status}")
+                    dump_reducer.close()
                     print(f"Status of Data from Mapper{mapper_port_id}: {response.status}")
             except Exception as e:
-                print(e)
+                # print(e)
+                dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+                dump_reducer.write(f"\nStatus of Data from Mapper{mapper_port_id}: FAILURE{e}")
+                dump_reducer.close()
                 print(f"Status of Data from Mapper{mapper_port_id}: FAILURE")
 
     def ShuffleSort(self):
-        # self.key_value_pairs = sorted(self.key_value_pairs , key=lambda k: k.key)
-        # print(self.key_value_pairs)
-
-        for key_value in self.key_value_pairs:
-            # print("Reducer ID:", self.reducerId)
-            # print(key_value.key)
-            if key_value.key in self.key_value.keys():
-                self.key_value[key_value.key].append(key_value.value)
-            else:
-                self.key_value[key_value.key] = []
-                self.key_value[key_value.key].append(key_value.value)
-
-        # print(self.key_value)
-        self.key_value = dict(sorted(self.key_value.items()))
-        # print("Reducer ID:", self.reducerId)
-        # print(self.key_value)
-        # self.Reduce(self.key_value)
-
+        flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
+        if flag == 1:
+            for key_value in self.key_value_pairs:
+                if key_value.key in self.key_value.keys():
+                    self.key_value[key_value.key].append(key_value.value)
+                else:
+                    self.key_value[key_value.key] = []
+                    self.key_value[key_value.key].append(key_value.value)
+            self.key_value = dict(sorted(self.key_value.items()))
+            dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+            dump_reducer.write(f"\Shuffle Sort Results for Reducer {self.reducerId}\n")
+            for key in self.key_value.keys():
+                dump_reducer.write(f"({key}, {self.key_value[key]})")
+            dump_reducer.close()
+            return "SUCCESS"
+        return "FAILURE"
 
     def Reduce(self, key_value):
-        reducer = open(f"./Reducers/R{self.reducerId}.txt", "a")
-        dump_reducer = open(f"./Reducers/dump_reducer_R{reducerId}.txt", "a")
-        dump_reducer.write(f"\nReduce Results for Reducer {self.reducerId}\n")
-        for key in key_value.keys():
-            mean_x = 0
-            mean_y = 0
-            for value in key_value[key]:
-                mean_x += value.x
-                mean_y += value.y
-            mean_x /= len(key_value[key])
-            mean_y /= len(key_value[key])
-            reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
-            dump_reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
-            self.reducer_output[key] = map_reduce_pb2.Point(x=mean_x, y=mean_y)
-        # print(self.reducer_output)
-        reducer.close()
-        dump_reducer.close()
+        flag = choices([0,1], [0.2, 0.8])[0]
+        time.sleep(5)
+        if flag == 1:
+            reducer = open(f"./Reducers/R{self.reducerId}.txt", "a")
+            dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
+            dump_reducer.write(f"\nReduce Results for Reducer{self.reducerId}\n")
+            for key in key_value.keys():
+                mean_x = 0
+                mean_y = 0
+                for value in key_value[key]:
+                    mean_x += value.x
+                    mean_y += value.y
+                mean_x /= len(key_value[key])
+                mean_y /= len(key_value[key])
+                reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
+                dump_reducer.write(f"({key}, ({mean_x}, {mean_y}))\n")
+                self.reducer_output[key] = map_reduce_pb2.Point(x=mean_x, y=mean_y)
+            # print(self.reducer_output)
+            reducer.close()
+            dump_reducer.close()
+            return "SUCCESS"
+        return "FAILURE"
 
 if __name__=='__main__':
     argparser = argparse.ArgumentParser()

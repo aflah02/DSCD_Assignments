@@ -10,12 +10,14 @@ class Empty(_message.Message):
     def __init__(self) -> None: ...
 
 class MapDataResponse(_message.Message):
-    __slots__ = ("mapper_id", "status")
+    __slots__ = ("mapper_id", "status", "stage")
     MAPPER_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    STAGE_FIELD_NUMBER: _ClassVar[int]
     mapper_id: int
     status: str
-    def __init__(self, mapper_id: _Optional[int] = ..., status: _Optional[str] = ...) -> None: ...
+    stage: str
+    def __init__(self, mapper_id: _Optional[int] = ..., status: _Optional[str] = ..., stage: _Optional[str] = ...) -> None: ...
 
 class MapDataRequest(_message.Message):
     __slots__ = ("input_split", "centroids", "input_path")
@@ -44,12 +46,14 @@ class ReduceDataRequest(_message.Message):
     def __init__(self, reducers: _Optional[int] = ..., ip: _Optional[str] = ...) -> None: ...
 
 class ReduceDataResponse(_message.Message):
-    __slots__ = ("reducer_id", "status")
+    __slots__ = ("reducer_id", "status", "stage")
     REDUCER_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    STAGE_FIELD_NUMBER: _ClassVar[int]
     reducer_id: int
     status: str
-    def __init__(self, reducer_id: _Optional[int] = ..., status: _Optional[str] = ...) -> None: ...
+    stage: str
+    def __init__(self, reducer_id: _Optional[int] = ..., status: _Optional[str] = ..., stage: _Optional[str] = ...) -> None: ...
 
 class MapperDataRequest(_message.Message):
     __slots__ = ("mapper_id", "ip")

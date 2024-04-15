@@ -1,66 +1,317 @@
+\Status of Data Received for Reducer0: FAILURE
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
-
+Received Response from M2
+Status of Data from Mapper2: FAILURE
 Sending Request to M2
-
-Reduce Results for Reducer 0
-(0, (0.4000000059604645, 7.199999809265137))
-(4, (0.7599999904632568, 9.280000019073487))
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Status of Shuffle Sort for Reducer0: FAILURE
 
 Sending Request to M0
-
-Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 0
-(0, (0.4000000059604645, 7.239999866485595))
-(4, (0.7785714183534894, 9.414285727909633))
-
-Sending Request to M0
-
-Sending Request to M0
-
+Received Response from M1
+Status of Data from Mapper1: FAILURE
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
-
-Reduce Results for Reducer 0
-(0, (0.4000000059604645, 7.2499998807907104))
-(4, (0.7888888782925076, 9.48888889948527))
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
+(0, [x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+])(4, [x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+])\Status of Shuffle Sort for Reducer0: SUCCESS
+\Status of Reduce for Reducer0: FAILURE
+\Status of Data Received for Reducer0: FAILURE
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: FAILURE
+Sending Request to M1
+Received Response from M1
+Status of Data from Mapper1: FAILURE
+Sending Request to M1
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
-
-Reduce Results for Reducer 0
-(0, (0.4000000059604645, 7.25454534183849))
-(4, (0.7954545346173373, 9.536363645033402))
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
+(0, [x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+])(4, [x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+])\Status of Shuffle Sort for Reducer0: SUCCESS
+\Status of Reduce for Reducer0: FAILURE
+\Status of Data Received for Reducer0: FAILURE
+\Status of Data Received for Reducer0: FAILURE
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
-
-Reduce Results for Reducer 0
-(0, (0.4000000059604645, 7.257142748151507))
-(4, (0.7999999889960656, 9.569230776566725))
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Status of Shuffle Sort for Reducer0: FAILURE
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: FAILURE
+Sending Request to M0
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
+(0, [x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+, x: 8.9
+y: 0.2
+, x: 9.8
+y: 1.2
+, x: 9.7
+y: 0.8
+, x: 9.5
+y: 1.5
+, x: 10.2
+y: 0.5
+, x: 9.3
+y: 1.9
+])(4, [x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+, x: 11.5
+y: -1.9
+])\Status of Shuffle Sort for Reducer0: SUCCESS
 
-Reduce Results for Reducer 0
-(0, (0.4000000059604645, 7.258823422824635))
-(4, (0.8033333222071329, 9.593333339691162))
+Reduce Results for Reducer0
+(0, (9.566666603088379, 1.0166666731238365))
+(4, (11.5, -1.899999976158142))
+\Status of Reduce for Reducer0: SUCCESS

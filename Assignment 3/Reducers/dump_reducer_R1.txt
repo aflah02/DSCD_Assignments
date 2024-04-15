@@ -1,47 +1,53 @@
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
-
-Reduce Results for Reducer 1
-(1, (-1.6500000059604645, 7.450000047683716))
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 1
+(1, [x: 10.8
+y: -0.6
+, x: 10.5
+y: -0.1
+, x: 10.3
+y: -0.3
+])\Status of Shuffle Sort for Reducer1: SUCCESS
+\Status of Reduce for Reducer1: FAILURE
+\Status of Data Received for Reducer1: FAILURE
+\Status of Data Received for Reducer1: FAILURE
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 1
+(1, [x: 10.8
+y: -0.6
+, x: 10.5
+y: -0.1
+, x: 10.3
+y: -0.3
+, x: 10.8
+y: -0.6
+, x: 10.5
+y: -0.1
+, x: 10.3
+y: -0.3
+, x: 10.8
+y: -0.6
+, x: 10.5
+y: -0.1
+, x: 10.3
+y: -0.3
+])\Status of Shuffle Sort for Reducer1: SUCCESS
 
-Reduce Results for Reducer 1
-(1, (-1.6500000059604645, 7.450000047683716))
-
-Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 1
-(1, (-1.6500000059604645, 7.450000047683716))
-
-Sending Request to M0
-
-Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 1
-(1, (-1.6500000059604645, 7.450000047683716))
-
-Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 1
-(1, (-1.6500000059604645, 7.450000047683716))
+Reduce Results for Reducer1
+(1, (10.533333460489908, -0.3333333457509677))
+\Status of Reduce for Reducer1: SUCCESS

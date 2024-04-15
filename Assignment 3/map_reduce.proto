@@ -30,6 +30,7 @@ message Empty {
 message MapDataResponse {
   required int32 mapper_id = 1;
   required string status = 2;
+  required string stage = 3;
 }
 
 message MapDataRequest {
@@ -49,6 +50,7 @@ message ReduceDataRequest {
 message ReduceDataResponse {
   required int32 reducer_id = 1;
   required string status = 2;
+  required string stage = 3;
 }
 
 // The message containing mapper data.

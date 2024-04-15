@@ -1,60 +1,104 @@
 
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
-
-Reduce Results for Reducer 3
-(3, (9.547368501362048, 1.0473684248955626))
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Status of Shuffle Sort for Reducer3: FAILURE
 
 Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 3
-(3, (9.547368501362048, 1.0473684248955626))
-
+Received Response from M0
+Status of Data from Mapper0: FAILURE
 Sending Request to M0
-
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
 Sending Request to M1
-
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
 Sending Request to M2
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 3
+(3, [x: 0.4
+y: 7.2
+, x: 8.1
+y: 3.4
+, x: 0.9
+y: 9.6
+, x: 0.7
+y: 9.9
+, x: 0.9
+y: 9.7
+, x: 8.6
+y: 2.6
+, x: 0.8
+y: 9.8
+, x: 7.3
+y: 2.3
+, x: 8.5
+y: 2.7
+, x: 8.3
+y: 2.9
+, x: -1.6
+y: 7.4
+, x: -1.7
+y: 7.5
+, x: -1.8
+y: 7.6
+, x: -1.5
+y: 7.3
+, x: 9.1
+y: 3.1
+, x: 0
+y: 7.1
+, x: 0.3
+y: 7.2
+, x: 0.5
+y: 7.4
+, x: 8.7
+y: 2.4
+, x: 0.4
+y: 7.2
+, x: 8.1
+y: 3.4
+, x: 0.9
+y: 9.6
+, x: 0.7
+y: 9.9
+, x: 0.9
+y: 9.7
+, x: 8.6
+y: 2.6
+, x: 0.8
+y: 9.8
+, x: 7.3
+y: 2.3
+, x: 8.5
+y: 2.7
+, x: 8.3
+y: 2.9
+, x: -1.6
+y: 7.4
+, x: -1.7
+y: 7.5
+, x: -1.8
+y: 7.6
+, x: -1.5
+y: 7.3
+, x: 9.1
+y: 3.1
+, x: 0
+y: 7.1
+, x: 0.3
+y: 7.2
+, x: 0.5
+y: 7.4
+, x: 8.7
+y: 2.4
+])\Status of Shuffle Sort for Reducer3: SUCCESS
 
-Reduce Results for Reducer 3
-(3, (9.547368501362048, 1.0473684248955626))
-
-Sending Request to M0
-
-Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 3
-(3, (9.547368501362048, 1.0473684248955626))
-
-Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M2
-
-Reduce Results for Reducer 3
-(3, (9.547368501362048, 1.0473684248955626))
-
-Sending Request to M0
-
-Sending Request to M1
-
-Sending Request to M2
-
-Sending Request to M2
-
-Reduce Results for Reducer 3
-(3, (9.547368501362048, 1.0473684248955626))
+Reduce Results for Reducer3
+(3, (2.973684277973677, 6.163157889717503))
+\Status of Reduce for Reducer3: SUCCESS
