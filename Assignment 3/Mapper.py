@@ -171,11 +171,11 @@ if __name__=='__main__':
     mapperId = argparser.parse_args().mapperId
     portNo = argparser.parse_args().portNo
     numReducers = argparser.parse_args().numReducers
-    open(f"./Mappers/M{mapperId}/dump_mapper_M{mapperId}.txt", 'w').close()
+    
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     mapper = Mapper(mapperId, portNo, numReducers)
     map_reduce_pb2_grpc.add_MapperServiceServicer_to_server(mapper, server)
-
+    open(f"./Mappers/M{mapperId}/dump_mapper_M{mapperId}.txt", 'w').close()
     server.add_insecure_port("[::]:"+str(portNo))
     server.start()
     # mapper.GetDataFromMaster()

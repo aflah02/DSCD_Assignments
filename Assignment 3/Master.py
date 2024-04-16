@@ -9,6 +9,7 @@ import socket
 import time
 import os
 import threading
+import shutil
 
 class Master(map_reduce_pb2_grpc.MasterServiceServicer):
     def __init__(self, mappers, reducers, centroids, max_iterations, portNo, data_path):
@@ -25,6 +26,7 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         self.data_path = data_path
         self.portNo = portNo
         self.ip = socket.gethostbyname(socket.gethostname())
+        self.pairs = []
 
         for i in range(self.num_mappers):
             self.mapper_ports.append(self.portNo+i+1)
@@ -70,6 +72,11 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
 
         self.indices_per_mapper = indices_per_mapper
         self.centroids = random.sample(data_points, self.num_centroids)
+        dump_master = open("./dump_master.txt", "a")
+        dump_master.write(f"Randomly Initialized Centroids:\n")
+        for centroid in self.centroids:
+            dump_master.write(f"{centroid.x}, {centroid.y}\n")
+        dump_master.close()
     
     def SendMapperData(self, request, context):
         data_indices = self.indices_per_mapper[request.mapper_id]
@@ -93,13 +100,15 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         indices = self.indices_per_mapper[mapper_port_id]
         request = map_reduce_pb2.MapDataRequest(input_split=indices, centroids=self.centroids, input_path=self.data_path)
         try:
+            print(f"Sending grpc request of sending data to Mapper{mapper_port_id}")
             dump_master = open("./dump_master.txt", "a")
-            dump_master.write(f"Sending grpc request to Mapper{mapper_port_id}\n")
+            dump_master.write(f"Sending grpc request of sending data to Mapper{mapper_port_id}\n")
             dump_master.close()
             response = stub.GetMapperData(request)
             dump_master = open("./dump_master.txt", "a")
             dump_master.write(f"Received grpc response from Mapper{mapper_port_id}\n")
             dump_master.close()
+            print(f"Received grpc response from Mapper{mapper_port_id}")
             if response.status == "SUCCESS":
                 print(f"Status of Mapper{response.mapper_id} Mapping Task: {response.status}")
                 print(f"Status of Mapper{response.mapper_id} Partitioning Task: {response.status}")
@@ -109,7 +118,7 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
                 dump_master.close()
             else:
                 dump_master = open("./dump_master.txt", "a")
-                dump_master.write(f"Status of Mapper{response.mapper_id} at {response.stage} Task: {response.status}\n")
+                dump_master.write(f"Mapper{response.mapper_id} FAILED at {response.stage} stage. Retrying...\n")
                 dump_master.close()
                 print(f"Mapper{response.mapper_id} FAILED at {response.stage} stage. Retrying...")
                 self.threadedSendMapperData(mapper_port_id)  # Restart thread for the same mapper_port_id
@@ -215,12 +224,14 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         request = map_reduce_pb2.Empty()
         try:
             dump_master = open("./dump_master.txt", "a")
-            dump_master.write(f"Sending grpc request to Reducer{reducer_port_id}\n")
+            dump_master.write(f"Sending grpc request to start Reducer{reducer_port_id}\n")
             dump_master.close()
+            print(f"Sending grpc request to start Reducer{reducer_port_id}")
             response = stub.GetMapperData(request)
             dump_master = open("./dump_master.txt", "a")
             dump_master.write(f"Received grpc response from Reducer{reducer_port_id}\n")
             dump_master.close()
+            print(f"Received grpc response from Reducer{reducer_port_id}")
             if response.status == "SUCCESS":
                 print(f"Status of Reducer{response.reducer_id} Shuffle Sorting Task: {response.status}")
                 print(f"Status of Reducer{response.reducer_id} Reducing Task: {response.status}")
@@ -230,7 +241,7 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
                 dump_master.close()
             else:
                 dump_master = open("./dump_master.txt", "a")
-                dump_master.write(f"Reducer{reducer_port_id} Status: DOWN\n")
+                dump_master.write(f"Reducer{response.reducer_id} FAILED at {response.stage} stage. Retrying...\n")
                 dump_master.close()
                 print(f"Reducer{response.reducer_id} FAILED at {response.stage} stage. Retrying...")
                 self.threadedStartReducers(reducer_port_id)  # Restart thread for the same mapper_port_id
@@ -322,6 +333,7 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
     def getNewCentroids(self):
         self.converged = True
         threads = []
+        self.pairs = []
         for reducer_port_id in range(len(self.reducer_ports)):
             thread = threading.Thread(target=self.threadedGetNewCentroids, args=(reducer_port_id,))
             thread.start()
@@ -335,6 +347,12 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
         centroids = open(f"./centroids.txt", "w")
         dump_master = open("./dump_master.txt", "a")
         dump_master.write("\nNew Centroids:\n")
+        for pair in self.pairs:
+            for pair_ in pair:
+                print(round(pair_.value.x, 1), round(self.centroids[pair_.key].x, 1), round(pair_.value.y, 1), round(self.centroids[pair_.key].y, 1))
+                if round(pair_.value.x, 1) != round(self.centroids[pair_.key].x, 1) and round(pair_.value.y, 1) != round(self.centroids[pair_.key].y, 1):
+                    self.converged = False
+                self.centroids[pair_.key] = pair_.value
         for centroid in self.centroids:
             centroids.write(f"{centroid.x}, {centroid.y}\n")
             dump_master.write(f"{centroid.x}, {centroid.y}\n")
@@ -350,24 +368,20 @@ class Master(map_reduce_pb2_grpc.MasterServiceServicer):
             response = stub.SendNewCentroids(request)
             if response.status == "SUCCESS":
                 dump_master = open("./dump_master.txt", "a")
-                dump_master.write(f"\nStatus of Centroids Received from Reducer{reducer_port_id}: {response.status}\n")
+                dump_master.write(f"Status of Centroids Received from Reducer{reducer_port_id}: {response.status}\n")
                 dump_master.close()
                 print(f"Status of Centroids Received from Reducer{reducer_port_id}: {response.status}")
                 key_values = response.key_value
-                for pair in key_values:
-                    if pair.value != self.centroids[pair.key]:
-                        self.converged = False
-                    self.centroids[pair.key] = pair.value
-                reducer_port_id += 1
+                self.pairs.append(key_values)
             else:
                 dump_master = open("./dump_master.txt", "a")
-                dump_master.write(f"\nStatus of Centroids Received from Reducer{reducer_port_id}: {response.status}\n")
+                dump_master.write(f"Status of Centroids Received from Reducer{reducer_port_id}: {response.status}\n")
                 dump_master.close()
                 print(f"Status of Centroids Received from Reducer{reducer_port_id}: {response.status}")
                 self.threadedGetNewCentroids(reducer_port_id)
         except Exception as e:
                 dump_master = open("./dump_master.txt", "a")
-                dump_master.write(f"\nStatus of Centroids Received from Reducer{reducer_port_id}: FAILURE\n")
+                dump_master.write(f"Status of Centroids Received from Reducer{reducer_port_id}: FAILURE\n")
                 dump_master.close()
                 print(f"Status of Centroids Received from Reducer{reducer_port_id}: FAILURE")
                 print("Exception:", e)
@@ -386,7 +400,10 @@ if __name__=='__main__':
     max_iters = int(input("Enter number of Iterations: "))
 
     open('./dump_master.txt', 'w').close()
-
+    shutil.rmtree("./Mappers")
+    shutil.rmtree("./Reducers")
+    os.mkdir("./Mappers")
+    os.mkdir("./Reducers")
     master = Master(num_mappers, num_reducers, num_centroids, max_iters, 50051, "./Input/points.txt")
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=20))
     # master.input_split("./Input/points.txt")

@@ -1,4 +1,3 @@
-\Status of Data Received for Reducer0: FAILURE
 
 Sending Request to M0
 Received Response from M0
@@ -15,303 +14,385 @@ Status of Data from Mapper2: SUCCESS\Status of Shuffle Sort for Reducer0: FAILUR
 
 Sending Request to M0
 Received Response from M0
-Status of Data from Mapper0: SUCCESS
-Sending Request to M1
-Received Response from M1
-Status of Data from Mapper1: FAILURE
-Sending Request to M1
-Received Response from M1
-Status of Data from Mapper1: SUCCESS
-Sending Request to M2
-Received Response from M2
-Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
-(0, [x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-])(4, [x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-])\Status of Shuffle Sort for Reducer0: SUCCESS
-\Status of Reduce for Reducer0: FAILURE
-\Status of Data Received for Reducer0: FAILURE
-
-Sending Request to M0
-Received Response from M0
-Status of Data from Mapper0: SUCCESS
-Sending Request to M1
-Received Response from M1
-Status of Data from Mapper1: FAILURE
-Sending Request to M1
-Received Response from M1
-Status of Data from Mapper1: FAILURE
-Sending Request to M1
-Received Response from M1
-Status of Data from Mapper1: SUCCESS
-Sending Request to M2
-Received Response from M2
-Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
-(0, [x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-])(4, [x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-])\Status of Shuffle Sort for Reducer0: SUCCESS
-\Status of Reduce for Reducer0: FAILURE
-\Status of Data Received for Reducer0: FAILURE
-\Status of Data Received for Reducer0: FAILURE
-
-Sending Request to M0
-Received Response from M0
-Status of Data from Mapper0: SUCCESS
-Sending Request to M1
-Received Response from M1
-Status of Data from Mapper1: SUCCESS
-Sending Request to M2
-Received Response from M2
-Status of Data from Mapper2: SUCCESS\Status of Shuffle Sort for Reducer0: FAILURE
-
-Sending Request to M0
-Received Response from M0
 Status of Data from Mapper0: FAILURE
 Sending Request to M0
 Received Response from M0
 Status of Data from Mapper0: SUCCESS
 Sending Request to M1
 Received Response from M1
+Status of Data from Mapper1: FAILURE
+Sending Request to M1
+Received Response from M1
 Status of Data from Mapper1: SUCCESS
 Sending Request to M2
 Received Response from M2
 Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
-(0, [x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-, x: 8.9
-y: 0.2
-, x: 9.8
-y: 1.2
-, x: 9.7
-y: 0.8
-, x: 9.5
-y: 1.5
-, x: 10.2
-y: 0.5
-, x: 9.3
-y: 1.9
-])(4, [x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
-, x: 11.5
-y: -1.9
+(0, [x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+])(4, [x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
 ])\Status of Shuffle Sort for Reducer0: SUCCESS
 
 Reduce Results for Reducer0
-(0, (9.566666603088379, 1.0166666731238365))
-(4, (11.5, -1.899999976158142))
+(0, (-6.600358826773507, 1.3010570364339011))
+(4, (2.684886078039805, -3.760845184326172))
+\Status of Reduce for Reducer0: SUCCESS
+
+Sending Request to M0
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
+Sending Request to M1
+Received Response from M1
+Status of Data from Mapper1: FAILURE
+Sending Request to M1
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
+Sending Request to M2
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
+(0, [x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+])(4, [x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 1.49713278
+y: -7.94646502
+, x: 1.37647831
+y: -8.01072311
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+])\Status of Shuffle Sort for Reducer0: SUCCESS
+
+Reduce Results for Reducer0
+(0, (-6.731930354062249, 1.2284443492398542))
+(4, (2.5380530743037952, -4.25705093495986))
+\Status of Reduce for Reducer0: SUCCESS
+
+Sending Request to M0
+Received Response from M0
+Status of Data from Mapper0: SUCCESS
+Sending Request to M1
+Received Response from M1
+Status of Data from Mapper1: SUCCESS
+Sending Request to M2
+Received Response from M2
+Status of Data from Mapper2: SUCCESS\Shuffle Sort Results for Reducer 0
+(0, [x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -2.1269269
+y: 3.7698884
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+, x: -6.07369852
+y: 0.443787664
+, x: -9.61572266
+y: 1.82144
+, x: -6.05121899
+y: 1.09234571
+, x: -9.36782169
+y: -1.78392053
+, x: -4.55686855
+y: 3.01985788
+, x: -8.41025448
+y: 0.744000137
+])(4, [x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 1.49713278
+y: -7.94646502
+, x: 1.37647831
+y: -8.01072311
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 1.49713278
+y: -7.94646502
+, x: 1.37647831
+y: -8.01072311
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+, x: 4.4482913
+y: -2.63511896
+, x: 1.49713278
+y: -7.94646502
+, x: 1.37647831
+y: -8.01072311
+, x: 2.79571319
+y: -5.68666124
+, x: 0.810653746
+y: -2.96075535
+])\Status of Shuffle Sort for Reducer0: SUCCESS
+
+Reduce Results for Reducer0
+(0, (-6.824030423164368, 1.1776154682040214))
+(4, (2.4579623449932444, -4.52770861712369))
 \Status of Reduce for Reducer0: SUCCESS

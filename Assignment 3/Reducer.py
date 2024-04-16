@@ -130,6 +130,7 @@ class Reducer(map_reduce_pb2_grpc.ReducerServiceServicer):
         flag = choices([0,1], [0.2, 0.8])[0]
         time.sleep(5)
         if flag == 1:
+            reducer = open(f"./Reducers/R{self.reducerId}.txt", "w").close()
             reducer = open(f"./Reducers/R{self.reducerId}.txt", "a")
             dump_reducer = open(f"./Reducers/dump_reducer_R{self.reducerId}.txt", "a")
             dump_reducer.write(f"\nReduce Results for Reducer{self.reducerId}\n")
@@ -161,11 +162,11 @@ if __name__=='__main__':
     
     mappers = argparser.parse_args().mappers.split(" ")
     # print(mappers)
-    open(f"./Reducers/dump_reducer_R{reducerId}.txt", 'w').close()
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     reducer = Reducer(reducerId, portNo, mappers)
     map_reduce_pb2_grpc.add_ReducerServiceServicer_to_server(reducer, server)
-
+    
+    open(f"./Reducers/dump_reducer_R{reducerId}.txt", 'w').close()
     server.add_insecure_port("[::]:"+str(portNo))
     server.start()
     # print(len(mappers))
